@@ -3,62 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>À propos · CoChoice</title>
-  <meta name="description" content="Qui est derrière CoChoice ? Notre mission, nos engagements et notre équipe étudiante." />
+  <title>À propos et contact · CoChoice</title>
+  <meta name="description" content="La mission de CoChoice, où en est le projet et le formulaire pour nous écrire : une question, une idée ou un atelier dans votre établissement." />
+  <meta name="theme-color" content="#F3F0F8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preload" href="/fonts/Nunito-800.woff2" as="font" type="font/woff2" crossorigin />
   <script type="module" src="/src/scripts/main.js"></script>
 </head>
 <body>
-  <!-- HEADER (identique sur les pages vitrine secondaires) -->
-  <header class="sticky top-0 z-50 border-b border-indigo/10 bg-white/90 backdrop-blur">
-    <nav class="container-site flex h-16 items-center justify-between" aria-label="Navigation principale">
-      <a href="index.html" aria-label="Accueil CoChoice"><img src="/logos/cochoice-logo.svg" alt="CoChoice" class="h-8" /></a>
-      <button data-menu-toggle aria-expanded="false" aria-controls="menu-site" aria-label="Menu" class="md:hidden text-2xl text-indigo">&#9776;</button>
-      <ul id="menu-site" data-menu class="hidden absolute inset-x-0 top-16 flex-col gap-4 bg-white p-4 md:static md:flex md:flex-row md:items-center md:gap-8 md:p-0 font-semibold text-indigo">
-        <li><a href="index.html" class="hover:text-pervenche-texte">Accueil</a></li>
-        <li><a href="a-propos.html" aria-current="page" class="hover:text-pervenche-texte">À propos</a></li>
-        <li><a href="contact.html" class="hover:text-pervenche-texte">Contact</a></li>
-        <li><a href="mvp.html" class="btn-primary py-2!">Découvrir l’appli</a></li>
-      </ul>
-    </nav>
+  <a href="#contenu" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-full focus:bg-indigo focus:px-4 focus:py-2 focus:font-bold focus:text-white">Aller au contenu</a>
+
+  <!-- HEADER (identique sur toutes les pages vitrine : seul aria-current="page" change) -->
+  <header class="sticky top-0 z-50 border-b border-indigo/10 bg-white/95 backdrop-blur">
+    <div class="container-site relative flex h-16 items-center gap-2 sm:gap-3 xl:gap-5">
+      <a href="index.html" class="shrink-0" aria-label="CoChoice, accueil"><img src="/logos/cochoice-logo.svg" alt="" width="183" height="32" class="h-6 w-auto sm:h-7" /></a>
+      <nav id="menu-site" data-menu aria-label="Navigation principale" class="hidden absolute inset-x-0 top-full border-b border-indigo/10 bg-white px-4 pt-1 pb-5 shadow-lg sm:px-6 xl:static xl:flex xl:flex-1 xl:items-center xl:justify-between xl:gap-4 xl:border-0 xl:bg-transparent xl:p-0 xl:shadow-none">
+        <ul class="flex flex-col font-bold text-indigo xl:flex-row xl:items-center xl:gap-0.5 xl:text-[15px]">
+          <li><a class="nav-tab" href="index.html">Accueil</a></li>
+          <li><a class="nav-tab" href="pourquoi.html">Pourquoi CoChoice</a></li>
+          <li><a class="nav-tab" href="solution.html">La solution</a></li>
+          <li><a class="nav-tab" href="impact.html">L’impact</a></li>
+          <li><a class="nav-tab" href="a-propos.html" aria-current="page">À propos</a></li>
+        </ul>
+        <!-- TODO lien landing établissements -->
+        <a href="#" class="mt-2 inline-block py-2 font-bold text-pervenche-texte underline underline-offset-4 hover:text-indigo xl:mt-0 xl:py-0 xl:text-sm">Vous êtes un établissement&nbsp;?</a>
+      </nav>
+      <a href="mvp.html" class="btn-primary ml-auto shrink-0 px-3.5! py-2! text-sm sm:px-5! xl:ml-0">Découvrir l’appli</a>
+      <button type="button" class="group inline-flex size-11 shrink-0 items-center justify-center rounded-full text-indigo hover:bg-lavande xl:hidden" data-menu-toggle aria-expanded="false" aria-controls="menu-site">
+        <svg class="group-aria-expanded:hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+        <svg class="hidden group-aria-expanded:block" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+        <span class="sr-only" data-menu-label>Ouvrir le menu</span>
+      </button>
+    </div>
   </header>
 
-  <main>
-    <section class="bg-lavande">
-      <div class="container-site py-16">
-        <p class="surtitre">À propos</p>
-        <h1 class="mt-2 text-4xl md:text-5xl">Pour que la contraception ne repose plus sur une seule personne.</h1>
-        <p class="mt-6 max-w-2xl text-lg">Aujourd’hui, s’informer, anticiper, faire les démarches et payer retombe souvent sur la même personne. Notre mission&nbsp;: aider les étudiant·es de 18 à 25 ans à partager cette charge avec leur partenaire, sans que personne perde la main sur ses choix.</p>
-        <p class="mt-4 max-w-2xl">Le projet s’inscrit dans l’objectif de développement durable n°5 de l’ONU (égalité entre les sexes), cible 5.6 sur la santé et les droits sexuels et reproductifs. <a class="font-bold text-pervenche-texte underline" href="https://www.un.org/sustainabledevelopment/fr/gender-equality/" target="_blank" rel="noopener">En savoir plus sur l’ODD 5</a>.</p>
+  <main id="contenu" tabindex="-1">
+    <!-- NOTRE MISSION -->
+    <section class="bg-lavande" aria-labelledby="mission-title">
+      <div class="container-site py-14 md:py-20">
+        <p class="surtitre">Notre mission</p>
+        <h1 id="mission-title" class="mt-2 max-w-3xl text-4xl md:text-5xl">Pour que la contraception ne repose plus sur une seule personne.</h1>
+        <p class="mt-6 max-w-2xl text-lg">CoChoice aide les étudiantes, les étudiants et leurs partenaires à partager la charge contraceptive, sans que personne perde la main sur ses choix.</p>
       </div>
     </section>
-    <section class="container-site py-16">
-      <h2 class="text-3xl">Nos engagements</h2>
-      <p class="mt-3 max-w-2xl">Notre charte d’achats responsables fixe des règles simples pour tout ce qu’on utilise ou achète.</p>
-      <div class="mt-8 grid gap-6 md:grid-cols-3">
-        <div class="card"><h3 class="text-xl">Tes données protégées</h3><p class="mt-2">Hébergement prévu en Europe, et en France (HDS) pour les données de santé. Zéro revente, zéro pub.</p></div>
-        <div class="card"><h3 class="text-xl">Du travail payé</h3><p class="mt-2">Les pros de santé et les pairs qui animent les ateliers sont rémunéré·es. Pas de bénévolat imposé.</p></div>
-        <div class="card"><h3 class="text-xl">Sobre et honnête</h3><p class="mt-2">Pas de goodies, des supports réutilisables, et aucune promesse écolo qu’on ne peut pas prouver.</p></div>
-      </div>
-      <p class="mt-6 text-sm">Et des lignes rouges&nbsp;: pas de contenu santé publié sans relecture par un·e pro, pas de partenaire qui impose une marque, pas de discours qui culpabilise.</p>
-    </section>
-    <section class="bg-lavande py-16">
+
+    <!-- OÙ ON EN EST -->
+    <section class="py-16 md:py-20" aria-labelledby="etat-title">
       <div class="container-site">
-        <h2 class="text-3xl">L’équipe</h2>
-        <div class="mt-8 grid gap-6 md:grid-cols-2">
-          <div class="card"><h3 class="text-xl">Le Groupe 13</h3><p class="mt-2">Une équipe étudiante du ChangeMaker Project 2026 de Rocket School. On teste le besoin sur le terrain avant de construire&nbsp;: entretiens, ateliers test, puis une première version de l’appli.</p></div>
-          <div class="card"><h3 class="text-xl">Où on en est</h3><p class="mt-2">Le projet est en développement. Pas encore d’appli publiée, pas de partenariat signé, pas de résultats terrain&nbsp;: on te le dira quand ce sera le cas.</p></div>
-        </div>
-        <a href="mvp.html" class="btn-primary mt-10">Découvrir l’appli</a>
+        <h2 id="etat-title" class="surtitre">Où on en est</h2>
+        <p class="mt-3 max-w-3xl text-xl leading-relaxed text-indigo">CoChoice est un projet en développement. On teste le besoin sur le terrain avant de construire : entretiens, puis ateliers test, puis une première version de l’appli. Pas encore d’appli publiée ni de partenariat signé : on le dira ici quand ce sera le cas.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="scroll-mt-16 bg-lavande py-16 md:py-20" id="contact" aria-labelledby="contact-title">
+      <div class="container-site">
+        <p class="surtitre">Contact</p>
+        <h2 id="contact-title" class="mt-2 text-3xl md:text-4xl">Une question, une idée, un atelier ? Écrivez-nous.</h2>
+        <!-- TODO URL Google Forms : renseigner l’attribut action (Google Forms, puis Google Sheet, puis CRM) -->
+        <form class="card mt-8 grid max-w-xl gap-5" action="" method="post" novalidate data-static-form>
+          <div class="grid gap-1">
+            <label for="contact-nom" class="font-semibold text-indigo">Prénom ou pseudo</label>
+            <input id="contact-nom" name="nom" required autocomplete="given-name" maxlength="80" class="champ" />
+          </div>
+          <div class="grid gap-1">
+            <label for="contact-email" class="font-semibold text-indigo">Email</label>
+            <input id="contact-email" type="email" name="email" required autocomplete="email" maxlength="120" class="champ" />
+          </div>
+          <div class="grid gap-1">
+            <label for="contact-profil" class="font-semibold text-indigo">Vous êtes</label>
+            <select id="contact-profil" name="profil" required class="champ">
+              <option value="">Choisir</option>
+              <option value="etudiant">Étudiant·e</option>
+              <option value="etablissement">Établissement</option>
+              <option value="jury-partenaire">Jury ou partenaire</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+          <div class="grid gap-1">
+            <label for="contact-message" class="font-semibold text-indigo">Message</label>
+            <textarea id="contact-message" name="message" rows="5" required maxlength="2000" class="champ"></textarea>
+          </div>
+          <button class="btn-primary justify-self-start" type="submit">Envoyer</button>
+          <p class="text-sm font-semibold text-indigo data-[state=error]:text-rose-texte" role="status" aria-live="polite" data-form-status></p>
+          <p class="rounded-xl bg-lavande px-4 py-3 text-sm text-indigo" data-form-pending hidden>Le formulaire n’est pas encore relié : pour l’instant, aucun message n’est transmis.</p>
+          <p class="text-sm">Vos infos servent uniquement à vous répondre. N’écrivez rien de médical ou d’intime ici.</p>
+        </form>
       </div>
     </section>
   </main>
-  <!-- FOOTER -->
+
+  <!-- FOOTER (identique sur toutes les pages vitrine) -->
   <footer class="bg-indigo text-white">
-    <div class="container-site flex flex-col items-center gap-4 py-10 text-center">
-      <img src="/logos/cochoice-logo-dark.svg" alt="CoChoice" class="h-8" />
-      <p class="font-bold">Mêmes droits, mêmes choix.</p>
-      <p class="text-sm text-white/70">© <span data-year></span> CoChoice · Groupe 13 · Rocket School ChangeMaker Project</p>
+    <div class="container-site flex flex-col items-center gap-5 py-12 text-center">
+      <a href="index.html" aria-label="CoChoice, accueil"><img src="/logos/cochoice-logo-dark.svg" alt="" width="183" height="32" class="h-8 w-auto" /></a>
+      <p class="text-lg font-bold">La contraception, ça se pense à deux.</p>
+      <nav aria-label="Liens utiles">
+        <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 font-semibold">
+          <li><a class="underline underline-offset-4 hover:text-rose" href="a-propos.html#contact">Contact</a></li>
+          <li><a class="underline underline-offset-4 hover:text-rose" href="mentions-legales.html">Mentions légales</a></li>
+          <li><a class="underline underline-offset-4 hover:text-rose" href="mentions-legales.html#sources-title">Sources et crédits</a></li>
+        </ul>
+      </nav>
+      <p class="max-w-xl text-sm text-white/80">Projet étudiant en développement · Groupe 13 · ChangeMaker Project 2026, Rocket School.</p>
+      <p class="text-xs text-white/70">Ni cookie, ni mesure d’audience, ni pub. © <span data-year>2026</span> CoChoice</p>
     </div>
   </footer>
 </body>

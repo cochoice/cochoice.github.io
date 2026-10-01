@@ -10,8 +10,10 @@ export default defineConfig({
     rollupOptions: {
       input: {
         accueil: resolve(__dirname, 'index.html'),
+        pourquoi: resolve(__dirname, 'pourquoi.html'),
+        solution: resolve(__dirname, 'solution.html'),
+        impact: resolve(__dirname, 'impact.html'),
         aPropos: resolve(__dirname, 'a-propos.html'),
-        contact: resolve(__dirname, 'contact.html'),
         landing: resolve(__dirname, 'landing.html'),
         mvp: resolve(__dirname, 'mvp.html'),
         mentionsLegales: resolve(__dirname, 'mentions-legales.html'),

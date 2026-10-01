@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L’impact de CoChoice · Ce que nous voulons changer</title>
+  <meta name="description" content="Le changement visé par CoChoice, l’indicateur qui le mesurera, les hypothèses encore à tester et nos cinq engagements. Aucun résultat annoncé avant d’être mesuré." />
+  <meta name="theme-color" content="#F3F0F8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preload" href="/fonts/Nunito-800.woff2" as="font" type="font/woff2" crossorigin />
+  <script type="module" src="/src/scripts/main.js"></script>
+</head>
+<body>
+  <a href="#contenu" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-full focus:bg-indigo focus:px-4 focus:py-2 focus:font-bold focus:text-white">Aller au contenu</a>
+
+  <!-- HEADER (identique sur toutes les pages vitrine : seul aria-current="page" change) -->
+  <header class="sticky top-0 z-50 border-b border-indigo/10 bg-white/95 backdrop-blur">
+    <div class="container-site relative flex h-16 items-center gap-2 sm:gap-3 xl:gap-5">
+      <a href="index.html" class="shrink-0" aria-label="CoChoice, accueil"><img src="/logos/cochoice-logo.svg" alt="" width="183" height="32" class="h-6 w-auto sm:h-7" /></a>
+      <nav id="menu-site" data-menu aria-label="Navigation principale" class="hidden absolute inset-x-0 top-full border-b border-indigo/10 bg-white px-4 pt-1 pb-5 shadow-lg sm:px-6 xl:static xl:flex xl:flex-1 xl:items-center xl:justify-between xl:gap-4 xl:border-0 xl:bg-transparent xl:p-0 xl:shadow-none">
+        <ul class="flex flex-col font-bold text-indigo xl:flex-row xl:items-center xl:gap-0.5 xl:text-[15px]">
+          <li><a class="nav-tab" href="index.html">Accueil</a></li>
+          <li><a class="nav-tab" href="pourquoi.html">Pourquoi CoChoice</a></li>
+          <li><a class="nav-tab" href="solution.html">La solution</a></li>
+          <li><a class="nav-tab" href="impact.html" aria-current="page">L’impact</a></li>
+          <li><a class="nav-tab" href="a-propos.html">À propos</a></li>
+        </ul>
+        <!-- TODO lien landing établissements -->
+        <a href="#" class="mt-2 inline-block py-2 font-bold text-pervenche-texte underline underline-offset-4 hover:text-indigo xl:mt-0 xl:py-0 xl:text-sm">Vous êtes un établissement&nbsp;?</a>
+      </nav>
+      <a href="mvp.html" class="btn-primary ml-auto shrink-0 px-3.5! py-2! text-sm sm:px-5! xl:ml-0">Découvrir l’appli</a>
+      <button type="button" class="group inline-flex size-11 shrink-0 items-center justify-center rounded-full text-indigo hover:bg-lavande xl:hidden" data-menu-toggle aria-expanded="false" aria-controls="menu-site">
+        <svg class="group-aria-expanded:hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+        <svg class="hidden group-aria-expanded:block" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+        <span class="sr-only" data-menu-label>Ouvrir le menu</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenu" tabindex="-1">
+    <!-- LE CHANGEMENT VISÉ -->
+    <section class="bg-lavande" aria-labelledby="changement-title">
+      <div class="container-site py-14 md:py-20">
+        <p class="surtitre">Le changement visé</p>
+        <h1 id="changement-title" class="mt-2 max-w-4xl text-4xl md:text-5xl">Que la charge mentale de la contraception ne repose plus sur une seule personne.</h1>
+        <p class="mt-6 max-w-3xl text-lg">Aujourd’hui, elle pèse surtout sur les femmes. Nous voulons qu’elle soit partagée entre partenaires, quelle que soit la configuration du couple : femme-homme, femme-femme, homme-homme ou à plusieurs. Avec des tâches réellement partagées, une charge ressentie moins lourde et une liberté de choix intacte.</p>
+        <div class="mt-10 grid gap-6 lg:grid-cols-3">
+          <ul class="grid gap-6 md:grid-cols-2 lg:col-span-2">
+            <li class="card"><p class="font-extrabold text-indigo">ODD 5 · Égalité entre les sexes, cible 5.6.</p><p class="mt-2">L’ONU vise l’égalité femmes-hommes, et en particulier le droit de chacun·e à décider librement de sa sexualité, de sa contraception et de sa santé reproductive.</p></li>
+            <li class="card"><p class="font-extrabold text-indigo">ODD 3 · Bonne santé, cible 3.7.</p><p class="mt-2">Garantir à toutes et tous l’accès à la santé sexuelle et reproductive, y compris à l’information et à l’éducation.</p></li>
+          </ul>
+          <div class="card flex flex-col gap-2">
+            <p class="chiffre">14 %</p>
+            <p class="font-extrabold text-indigo">des femmes</p>
+            <p class="text-sm">ont déjà ressenti une pression pour commencer, poursuivre ou arrêter une contraception contre leur volonté. <a class="lien" href="https://www.ipsos.com/fr-fr/sante-des-femmes-entre-charge-sanitaire-familiale-et-biais-dans-les-pratiques-de-soins" target="_blank" rel="noopener">Ipsos, 2026<span class="sr-only"> (nouvel onglet)</span></a></p>
+            <p class="mt-2 font-semibold text-indigo">C’est pour ça que l’autonomie est au cœur de nos indicateurs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMENT ON LE MESURE -->
+    <section class="py-16 md:py-20" aria-labelledby="mesure-title">
+      <div class="container-site grid gap-8 lg:grid-cols-2 lg:gap-12">
+        <div>
+          <p class="surtitre">Comment on le mesure</p>
+          <h2 id="mesure-title" class="mt-2 text-3xl md:text-4xl">Un indicateur, mesuré avant et 6 semaines après.</h2>
+          <p class="mt-6 text-lg">La part des participantes qui constatent, à six semaines, un meilleur partage d’au moins une tâche qu’elles voulaient partager, une charge ressentie en baisse et une autonomie préservée.</p>
+        </div>
+        <ul class="card grid content-start gap-3 lg:mt-8">
+          <li class="flex gap-3"><span class="mt-2 size-2 shrink-0 rounded-full bg-rose" aria-hidden="true"></span>Questionnaire facultatif, même cohorte, code pseudonyme.</li>
+          <li class="flex gap-3"><span class="mt-2 size-2 shrink-0 rounded-full bg-rose" aria-hidden="true"></span>Point de départ : pas encore mesuré. Objectif chiffré : fixé avant le pilote.</li>
+          <li class="flex gap-3"><span class="mt-2 size-2 shrink-0 rounded-full bg-rose" aria-hidden="true"></span>Notre indicateur complète l’indicateur officiel ONU 5.6.1, sans le remplacer.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- NOS OBJECTIFS D'ACTIVITÉ (chiffres à fixer en groupe : X pour l'instant) -->
+    <section class="bg-lavande py-16 md:py-20" aria-labelledby="objectifs-title">
+      <div class="container-site">
+        <h2 id="objectifs-title" class="text-3xl md:text-4xl">Nos objectifs d’activité</h2>
+        <div class="mt-8 grid gap-6 md:grid-cols-3">
+          <div class="card flex flex-col gap-2"><p class="chiffre">X</p><p class="font-extrabold text-indigo">ateliers</p><p class="text-sm">organisés sur les campus</p></div>
+          <div class="card flex flex-col gap-2"><p class="chiffre">X</p><p class="font-extrabold text-indigo">étudiant·es sensibilisé·es</p><p class="text-sm">dont part d’hommes à suivre</p></div>
+          <div class="card flex flex-col gap-2"><p class="chiffre">X</p><p class="font-extrabold text-indigo">utilisateurs de l’appli</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HYPOTHÈSES -->
+    <section class="py-16 md:py-20" aria-labelledby="hypotheses-title">
+      <div class="container-site">
+        <h2 id="hypotheses-title" class="max-w-3xl text-3xl md:text-4xl">Ce qu’on a vérifié, ce qu’on doit encore prouver</h2>
+        <div class="mt-8 overflow-x-auto rounded-3xl ring-1 ring-indigo/10">
+          <table class="w-full border-collapse text-left">
+            <thead class="bg-lavande text-indigo">
+              <tr><th scope="col" class="px-5 py-4 font-extrabold">Hypothèse</th><th scope="col" class="px-5 py-4 font-extrabold">Statut</th></tr>
+            </thead>
+            <tbody class="divide-y divide-indigo/10">
+              <tr class="bg-lavande/50">
+                <td class="px-5 py-4 align-top font-semibold text-indigo">Les hommes ne viennent pas aux actions de prévention</td>
+                <td class="px-5 py-4 align-top"><span class="inline-block rounded-full bg-indigo px-3 py-1 text-sm font-bold text-white">Validée en entretiens</span><span class="mt-2 block">Aucun chiffre national : on mesurera la présence masculine à nos ateliers</span></td>
+              </tr>
+              <tr>
+                <td class="px-5 py-4 align-top">Les 4 tâches reposent surtout sur les femmes (H1)</td>
+                <td class="px-5 py-4 align-top"><span class="inline-block rounded-full border border-indigo/25 px-3 py-1 text-sm font-bold text-indigo">À tester</span></td>
+              </tr>
+              <tr>
+                <td class="px-5 py-4 align-top">Les hommes sont prêts à prendre en charge une action concrète (H2)</td>
+                <td class="px-5 py-4 align-top"><span class="inline-block rounded-full border border-indigo/25 px-3 py-1 text-sm font-bold text-indigo">À tester</span></td>
+              </tr>
+              <tr>
+                <td class="px-5 py-4 align-top">Les femmes accueillent ce partage si elles gardent la décision (H3)</td>
+                <td class="px-5 py-4 align-top"><span class="inline-block rounded-full border border-indigo/25 px-3 py-1 text-sm font-bold text-indigo">À tester</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- L'ÉCHELLE DU DÉFI -->
+    <section class="bg-lavande py-16 md:py-20" aria-labelledby="echelle-title">
+      <div class="container-site">
+        <p class="surtitre">L’échelle du défi</p>
+        <h2 id="echelle-title" class="mt-2 text-3xl md:text-4xl">Un enjeu qui concerne tous les campus.</h2>
+        <div class="mt-8 grid gap-6 md:grid-cols-3">
+          <div class="card flex flex-col gap-2">
+            <p class="chiffre">3,05 M</p>
+            <p class="font-extrabold text-indigo">d’étudiant·es</p>
+            <p class="text-sm">dans le supérieur en 2025-2026, dont 26,5 % dans le privé. <a class="lien" href="https://www.enseignementsup-recherche.gouv.fr/sites/default/files/2026-07/NF_synth%C3%A8se_effectifs_etudiants_2025-26.pdf" target="_blank" rel="noopener">MESR, 2026<span class="sr-only"> (nouvel onglet)</span></a></p>
+          </div>
+          <div class="card flex flex-col gap-2">
+            <p class="chiffre">36 M€</p>
+            <p class="font-extrabold text-indigo">de CVEC pour la santé</p>
+            <p class="text-sm">20,5 % des 177 M€ collectés financent déjà des projets santé sur les campus. <a class="lien" href="https://www.enseignementsup-recherche.gouv.fr/fr/cvec-un-premier-rapport-national-pour-renforcer-la-transparence-et-valoriser-l-impact-sur-la-vie-100151" target="_blank" rel="noopener">MESR, rapport CVEC<span class="sr-only"> (nouvel onglet)</span></a></p>
+          </div>
+          <div class="card flex flex-col gap-2">
+            <p class="chiffre">259 400</p>
+            <p class="font-extrabold text-indigo">IVG en 2025</p>
+            <p class="text-sm">un record, avec un pic chez les 20-29 ans, l’âge des études. <a class="lien" href="https://www.vidal.fr/actualites/38345-le-nombre-d-ivg-en-hausse-de-2-9-en-2025-avec-un-quart-realisees-en-ville-par-des-sages-femmes-drees.html" target="_blank" rel="noopener">DREES, 2026<span class="sr-only"> (nouvel onglet)</span></a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOS ENGAGEMENTS -->
+    <section class="py-16 md:py-20" aria-labelledby="engagements-title">
+      <div class="container-site">
+        <p class="surtitre">Nos engagements</p>
+        <h2 id="engagements-title" class="mt-2 text-3xl md:text-4xl">Cinq engagements, tenus dès le premier atelier.</h2>
+        <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div class="card"><h3 class="text-lg">Vos données vous appartiennent</h3><p class="mt-2">Hébergement chez un hébergeur certifié pour les données de santé (HDS) en France, chiffrement, collecte limitée au strict nécessaire, aucune revente. Export et suppression à tout moment. L’établissement ne voit jamais de réponse individuelle.</p></div>
+          <div class="card"><h3 class="text-lg">Des contenus fiables</h3><p class="mt-2">Conçus et relus par des professionnel·les de santé, à partir de sources publiques citées.</p></div>
+          <div class="card"><h3 class="text-lg">Un travail rémunéré</h3><p class="mt-2">Les pros de santé et les animateur·rices des ateliers sont payé·es. Pas de bénévolat imposé.</p></div>
+          <div class="card"><h3 class="text-lg">Pour tous les couples</h3><p class="mt-2">Langage inclusif, toutes les configurations de couple, une appli accessible.</p></div>
+          <div class="card"><h3 class="text-lg">Honnête et sobre</h3><p class="mt-2">Aucune promesse qu’on ne peut pas prouver. Nos résultats d’impact seront publiés, même s’ils déçoivent. Des supports réutilisables et des goodies utiles, choisis pour durer.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (identique sur toutes les pages vitrine) -->
+  <footer class="bg-indigo text-white">
+    <div class="container-site flex flex-col items-center gap-5 py-12 text-center">
+      <a href="index.html" aria-label="CoChoice, accueil"><img src="/logos/cochoice-logo-dark.svg" alt="" width="183" height="32" class="h-8 w-auto" /></a>
+      <p class="text-lg font-bold">La contraception, ça se pense à deux.</p>
+      <nav aria-label="Liens utiles">
+        <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 font-semibold">
+          <li><a class="underline underline-offset-4 hover:text-rose" href="a-propos.html#contact">Contact</a></li>
+          <li><a class="underline underline-offset-4 hover:text-rose" href="mentions-legales.html">Mentions légales</a></li>
+          <li><a class="underline underline-offset-4 hover:text-rose" href="mentions-legales.html#sources-title">Sources et crédits</a></li>
+        </ul>
+      </nav>
+      <p class="max-w-xl text-sm text-white/80">Projet étudiant en développement · Groupe 13 · ChangeMaker Project 2026, Rocket School.</p>
+      <p class="text-xs text-white/70">Ni cookie, ni mesure d’audience, ni pub. © <span data-year>2026</span> CoChoice</p>
+    </div>
+  </footer>
+</body>
+</html>

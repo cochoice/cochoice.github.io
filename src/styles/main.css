@@ -46,3 +46,16 @@
 @utility btn-primary { @apply btn bg-indigo text-white hover:bg-pervenche-texte; }
 @utility btn-secondary { @apply btn border-2 border-indigo text-indigo hover:bg-lavande; }
 @utility card { @apply rounded-3xl bg-white p-6 shadow-sm ring-1 ring-indigo/10; }
+
+/* ---------- Site vitrine : navigation, liens, encadrés ---------- */
+/* Onglet du header : l'onglet de la page courante (aria-current="page") est souligné en rose */
+@utility nav-tab {
+  @apply inline-block rounded-lg py-3 hover:text-pervenche-texte xl:px-2.5 xl:py-2;
+  &[aria-current="page"] { @apply text-rose-texte xl:text-indigo; box-shadow: inset 0 -3px 0 var(--color-rose); }
+}
+/* Lien dans le texte (sources, renvois) */
+@utility lien { @apply font-bold text-pervenche-texte underline underline-offset-2 hover:text-indigo; }
+/* Chiffre clé d'une carte */
+@utility chiffre { @apply text-4xl leading-none font-black text-rose-texte; }
+/* Champ de formulaire */
+@utility champ { @apply w-full rounded-xl border border-indigo/25 bg-white px-4 py-3 font-normal text-indigo; }

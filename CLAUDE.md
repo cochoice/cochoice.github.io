@@ -2,7 +2,7 @@
 
 ## Objectif
 Créer un site web moderne, rapide et responsive pour CoChoice (Groupe 13, Rocket School ChangeMaker Project) :
-- **Site vitrine** (3 pages) : présenter le problème, la solution, la mission, l'équipe, le contact.
+- **Site vitrine** (5 onglets) : Accueil, Pourquoi CoChoice, La solution, L'impact, À propos (avec le contact). Contenu validé : `docs/brief-site-v5.html`.
 - **Landing page** (1 page) : convertir sur un seul objectif (inscription email), sans menu de navigation.
 
 ## Stack technique
@@ -18,9 +18,13 @@ cochoice-site/
 ├── README.md            ← démarrage rapide
 ├── package.json
 ├── vite.config.js       ← déclaration des pages (rollupOptions.input)
-├── index.html           ← vitrine : Accueil (hero, constat, solution, CTA)
-├── a-propos.html        ← vitrine : mission, engagements RSE, équipe
-├── contact.html         ← vitrine : formulaire de contact
+├── index.html           ← vitrine : Accueil (hero, constat, 3 briques, ligne rouge, FAQ)
+├── pourquoi.html        ← vitrine : Pourquoi CoChoice (démarche, pivot, entonnoir, problématique)
+├── solution.html        ← vitrine : La solution (parcours, ateliers, appli, box, limites)
+├── impact.html          ← vitrine : L'impact (changement visé, mesure, hypothèses, engagements)
+├── a-propos.html        ← vitrine : mission, état du projet, formulaire de contact (#contact)
+├── mentions-legales.html ← mentions légales, sources (#sources-title), crédits photo
+├── mvp.html             ← présentation de l'appli (MVP)
 ├── landing.html         ← landing : hero + formulaire, bénéfices, étapes, FAQ, CTA final
 ├── public/              ← copié tel quel (chemins absolus /...)
 │   ├── favicon.svg
@@ -35,8 +39,8 @@ cochoice-site/
 ```
 
 ## Charte graphique CoChoice V2 (à respecter strictement)
-- Nom : **CoChoice** (deux majuscules). Signature : « Mêmes droits, mêmes choix. » Sous-signature : « Pour une contraception plus égale. »
-- Ton : jeune et pop, sérieux sur le fond. Tutoiement sur la landing, vouvoiement possible sur la vitrine (à trancher en groupe).
+- Nom : **CoChoice** (deux majuscules). Signature : « La contraception, ça se pense à deux. » Sous-signature : « Pour une contraception plus égale. »
+- Ton : jeune et pop, sérieux sur le fond. Vouvoiement sur tout le site vitrine (validé). Tutoiement réservé à l'appli (`mvp.html`) et à la landing. On parle de partenaires, quelle que soit la configuration (jamais « copain / copine »).
 - Police unique : **Nunito** (titres ExtraBold 800, texte 400/600).
 - Couleurs (classes Tailwind disponibles) :
   | Token | Hex | Usage |
@@ -54,13 +58,13 @@ cochoice-site/
 ## Règles de développement
 1. **Mobile first** : tester à 375 px, 768 px, 1280 px. Aucun scroll horizontal.
 2. **Tailwind d'abord** ; CSS custom uniquement dans des blocs `@utility` de `main.css` (syntaxe Tailwind v4).
-3. Header et footer sont dupliqués dans chaque page vitrine : toute modif doit être répercutée sur `index.html`, `a-propos.html`, `contact.html` (et le footer de `landing.html`).
+3. Header et footer sont dupliqués dans chaque page vitrine : toute modif doit être répercutée à l'identique sur `index.html`, `pourquoi.html`, `solution.html`, `impact.html`, `a-propos.html`, `mentions-legales.html` (seul `aria-current="page"` change). Le menu burger est géré par `src/scripts/main.js`.
 4. Nouvelle page = créer le `.html` à la racine **et** l'ajouter dans `vite.config.js > build.rollupOptions.input`.
 5. Accessibilité : `alt` sur les images, `lang="fr"`, labels sur les champs, contraste AA, navigation clavier OK.
 6. Performance / SEO : `<title>` et `<meta description>` uniques par page, images en webp < 200 Ko, `loading="lazy"` sous la ligne de flottaison.
-7. Contenu : remplacer tous les `[placeholders]` à partir des livrables de la dataroom (Drive). Chiffres toujours sourcés.
+7. Contenu : remplacer tous les `[placeholders]` à partir des livrables de la dataroom (Drive). Chiffres toujours sourcés au format « Institut, année », en lien cliquable (nouvel onglet), et ajoutés à la liste de `mentions-legales.html`.
 8. Formulaires : statiques par défaut ; à brancher sur Formspree, Google Forms ou Google Apps Script (attribut `action`). Ajouter une mention RGPD.
-9. Pas de tiret cadratin « — » dans les textes.
+9. Pas de tiret cadratin (caractère U+2014) dans les textes.
 
 ## Landing page : principes
 - 1 page = 1 objectif = 1 CTA (répété en haut et en bas).
