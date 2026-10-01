@@ -24,7 +24,7 @@ cochoice-site/
 ├── impact.html          ← vitrine : L'impact (changement visé, mesure, hypothèses, engagements)
 ├── a-propos.html        ← vitrine : mission, état du projet, formulaire de contact (#contact)
 ├── mentions-legales.html ← mentions légales, sources (#sources-title), crédits photo
-├── mvp.html             ← présentation de l'appli (MVP)
+├── mvp.html             ← prototype cliquable de l'appli (MVP), brief : docs/brief-appli-mvp.html
 ├── landing.html         ← landing : hero + formulaire, bénéfices, étapes, FAQ, CTA final
 ├── public/              ← copié tel quel (chemins absolus /...)
 │   ├── favicon.svg
