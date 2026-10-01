@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* ---------- Police Nunito (locale, /public/fonts) ---------- */
+@font-face { font-family: "Nunito"; src: url("/fonts/Nunito-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Nunito"; src: url("/fonts/Nunito-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Nunito"; src: url("/fonts/Nunito-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Nunito"; src: url("/fonts/Nunito-800.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "Nunito"; src: url("/fonts/Nunito-900.woff2") format("woff2"); font-weight: 900; font-display: swap; }
+
+/* ---------- Tokens charte CoChoice V2 ---------- */
+@theme {
+  --font-sans: "Nunito", "Arial Rounded MT Bold", Arial, sans-serif;
+
+  --color-rose: #FF7777;          /* accent, fonds, boutons */
+  --color-pervenche: #5B7BFA;     /* accent, fonds, boutons */
+  --color-indigo: #2A1F50;        /* titres, fonds sombres */
+  --color-lavande: #F3F0F8;       /* fonds de section, tableaux */
+  --color-rose-texte: #CC3A44;    /* texte rose (contraste AA) */
+  --color-pervenche-texte: #3D5BE0; /* liens, texte bleu */
+  --color-encre: #5F567C;         /* texte courant */
+
+  /* Page d'accueil 2026 (logo interrupteur lilas / corail) */
+  --color-nuit: #221C48;          /* texte principal, fonds sombres */
+  --color-creme: #FAF7F2;         /* blanc cassé */
+  --color-ciel: #E8EDFB;          /* bleu léger */
+  --color-poudre: #FBE9E7;        /* rose léger */
+  --color-lilas: #A79BDB;         /* moitié gauche du logo */
+  --color-corail: #E08A95;        /* moitié droite du logo */
+  --color-action: #3A31B0;        /* couleur d'action (blanc dessus : 9:1) */
+  --color-action-fonce: #28217F;
+  --color-rose-fonce: #A8344A;    /* texte rose courant (AA sur crème) */
+  --color-gris: #55516E;          /* texte secondaire (AA sur crème) */
+}
+
+/* ---------- Base ---------- */
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-white font-sans text-encre antialiased; }
+  h1, h2, h3 { @apply font-extrabold text-indigo; }
+}
+
+/* ---------- Composants réutilisables (Tailwind v4 : @utility) ---------- */
+@utility container-site { @apply mx-auto w-full max-w-6xl px-4 sm:px-6; }
+@utility surtitre { @apply text-sm font-bold uppercase tracking-widest text-rose-texte; }
+@utility btn { @apply inline-flex items-center justify-center rounded-full px-6 py-3 font-bold transition; }
+@utility btn-primary { @apply btn bg-indigo text-white hover:bg-pervenche-texte; }
+@utility btn-secondary { @apply btn border-2 border-indigo text-indigo hover:bg-lavande; }
+@utility card { @apply rounded-3xl bg-white p-6 shadow-sm ring-1 ring-indigo/10; }

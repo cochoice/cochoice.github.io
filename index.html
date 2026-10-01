@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoChoice · Partager les responsabilités contraceptives, garder la liberté de choisir</title>
+  <meta name="description" content="CoChoice, projet en développement : une application et des ateliers pour comprendre, anticiper et partager les responsabilités contraceptives, selon vos souhaits, sans toucher à la liberté de décision de chacun." />
+  <meta name="theme-color" content="#FAF7F2" />
+  <meta property="og:title" content="CoChoice · Partager les responsabilités. Garder la liberté de choisir." />
+  <meta property="og:description" content="Une application et des ateliers pour partager les responsabilités contraceptives selon vos souhaits. Projet en développement." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preload" href="/fonts/Nunito-900.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/Nunito-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <script type="module" src="/src/scripts/home.js"></script>
+</head>
+<body class="home">
+  <!-- Pictogrammes (SVG inline, trait 1.75) -->
+  <svg width="0" height="0" class="sr-only" aria-hidden="true" focusable="false">
+    <symbol id="i-info" viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 0 4 20.5zM20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 1 1.5 1.5z"/><path d="M7 8h1.5M15.5 8H17M15.5 11.5H17"/></symbol>
+    <symbol id="i-anticipation" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M10 15h4m0 0-1.8-1.8M14 15l-1.8 1.8"/></symbol>
+    <symbol id="i-demarches" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"/></symbol>
+    <symbol id="i-frais" viewBox="0 0 24 24"><path d="M6 3.5h12v17l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4-2 1.4z"/><path d="M9 8.5h6M9 12h6M9 15.5h3"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m0 0-5-5m5 5-5 5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3"/><circle cx="16.5" cy="9.5" r="2.5"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0M14.5 15.2a4.5 4.5 0 0 1 6 4.3"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4H6.5A2.5 2.5 0 0 1 4 13.5z"/></symbol>
+    <symbol id="i-undo" viewBox="0 0 24 24"><path d="M8 7 4 11l4 4"/><path d="M4 11h10a5 5 0 0 1 0 10h-3"/></symbol>
+    <symbol id="i-campus" viewBox="0 0 24 24"><path d="m3 9 9-5 9 5-9 5z"/><path d="M7 11.3V16c0 1.4 2.2 3 5 3s5-1.6 5-3v-4.7M21 9v6"/></symbol>
+    <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18M10.6 6.1A9.7 9.7 0 0 1 12 6c5 0 8.5 4.5 9 6-.3.8-1.2 2.2-2.6 3.5M6.4 7.6C4.6 8.9 3.4 10.7 3 12c.5 1.5 4 6 9 6 1.4 0 2.7-.3 3.8-.9"/><path d="M9.9 10a3 3 0 0 0 4.1 4.1"/></symbol>
+    <symbol id="i-no-sell" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12M14.5 9.2c-.6-.8-1.5-1.2-2.6-1.2-1.6 0-2.7.9-2.7 2 0 2.6 5.6 1.4 5.6 4 0 1.2-1.2 2-2.8 2-1.2 0-2.2-.5-2.8-1.3M12 6.5V8M12 16v1.5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" data-header>
+    <div class="wrap header-inner">
+      <a href="#top" class="logo" aria-label="CoChoice, retour en haut de la page">
+        <svg class="logo-mark" viewBox="0 0 64 32" aria-hidden="true"><path d="M16 0H32V32H16A16 16 0 0 1 16 0Z" fill="#A79BDB"/><path d="M32 0H48A16 16 0 0 1 48 32H32Z" fill="#E08A95"/><circle cx="32" cy="16" r="10.2" fill="#fff" stroke="#221C48" stroke-width="3.6"/></svg>
+        <span class="logo-word">CoChoice</span>
+      </a>
+      <nav class="nav-main" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#concept">Le concept</a></li>
+          <li><a href="#application">L’application</a></li>
+          <li><a href="#ateliers">Les ateliers</a></li>
+          <li><a href="#etablissements">Pour les établissements</a></li>
+        </ul>
+      </nav>
+      <a href="#demo" class="btn btn-primary btn-sm header-cta">Explorer la démo</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-mobile" data-menu-toggle>
+        <span class="menu-toggle-bars" aria-hidden="true"></span><span class="menu-toggle-label">Menu</span>
+      </button>
+    </div>
+    <div class="menu-mobile" id="menu-mobile" hidden data-menu>
+      <nav aria-label="Navigation mobile">
+        <ul>
+          <li><a href="#concept">Le concept</a></li>
+          <li><a href="#application">L’application</a></li>
+          <li><a href="#ateliers">Les ateliers</a></li>
+          <li><a href="#etablissements">Pour les établissements</a></li>
+          <li><a href="#faq">Questions fréquentes</a></li>
+        </ul>
+        <a href="#demo" class="btn btn-primary btn-block">Explorer la démo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu" tabindex="-1">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="status-chip"><span class="status-dot" aria-hidden="true"></span>Projet en développement</p>
+          <h1 class="display" id="hero-title">
+            <span class="display-line">Partager les responsabilités.</span>
+            <span class="display-line display-accent">Garder la liberté de choisir.</span>
+          </h1>
+          <p class="lead">Comprendre, anticiper et partager les responsabilités contraceptives, selon vos souhaits. Une application et des ateliers pour agir seul·e ou s’organiser à deux.</p>
+          <div class="cta-row">
+            <a href="#demo" class="btn btn-primary">Explorer la démo <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a href="#concept" class="btn btn-ghost">Découvrir CoChoice</a>
+          </div>
+          <ul class="hero-facts" aria-label="En bref">
+            <li>Pour les étudiant·es majeur·es de 18 à 29 ans</li>
+            <li>Utilisable seul·e ou à deux</li>
+            <li>Aucune méthode prescrite</li>
+          </ul>
+        </div>
+        <figure class="hero-media">
+          <div class="photo photo-hero">
+            <img
+              src="https://images.unsplash.com/photo-1713056941761-4af15af4c347?auto=format&fit=max&q=60&w=1100"
+              srcset="https://images.unsplash.com/photo-1713056941761-4af15af4c347?auto=format&fit=max&q=60&w=640 640w,
+                      https://images.unsplash.com/photo-1713056941761-4af15af4c347?auto=format&fit=max&q=60&w=1100 1100w,
+                      https://images.unsplash.com/photo-1713056941761-4af15af4c347?auto=format&fit=max&q=55&w=1600 1600w"
+              sizes="(min-width: 1024px) 56vw, 100vw"
+              width="1600" height="1067" fetchpriority="high" decoding="async"
+              alt="Deux jeunes adultes assis sur des marches devant un mur ocre, une boisson à la main, en pleine conversation détendue." />
+          </div>
+          <div class="hero-note" aria-label="Exemple d’action dans l’application, données fictives">
+            <p class="hero-note-tag">Exemple fictif</p>
+            <p class="hero-note-title"><svg class="i" aria-hidden="true"><use href="#i-anticipation"/></svg>Prendre en charge le réapprovisionnement convenu</p>
+            <p class="hero-note-meta"><span class="pill pill-wait">En attente de réponse</span><span>Proposé par Sam</span></p>
+          </div>
+          <figcaption class="credit">Photo d’illustration : Baruk Granda, Unsplash. Les personnes photographiées ne sont pas des utilisateur·ices de CoChoice.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ LE CONCEPT : PROBLÈME AU QUOTIDIEN ============ -->
+    <section class="section concept" id="concept" aria-labelledby="concept-title">
+      <div class="wrap concept-grid">
+        <figure class="concept-media reveal">
+          <div class="photo photo-square">
+            <img loading="lazy" decoding="async"
+              src="https://images.unsplash.com/photo-1758523416144-d100288c5451?auto=format&fit=crop&q=60&w=900&h=900&crop=focalpoint&fp-x=0.55&fp-y=0.5"
+              srcset="https://images.unsplash.com/photo-1758523416144-d100288c5451?auto=format&fit=crop&q=60&w=560&h=560&crop=focalpoint&fp-x=0.55&fp-y=0.5 560w,
+                      https://images.unsplash.com/photo-1758523416144-d100288c5451?auto=format&fit=crop&q=60&w=900&h=900&crop=focalpoint&fp-x=0.55&fp-y=0.5 900w"
+              sizes="(min-width: 1024px) 38vw, 100vw" width="900" height="900"
+              alt="Dans une cuisine le matin, une personne assise à table parle avec une autre debout près du plan de travail." />
+          </div>
+          <figcaption class="credit">Photo d’illustration : Vitaly Gariev, Unsplash.</figcaption>
+        </figure>
+
+        <div class="concept-copy">
+          <p class="kicker"><span class="kicker-num">01</span>Le concept</p>
+          <h2 class="h2" id="concept-title">Qui y pense, avant même de le faire&nbsp;?</h2>
+          <p class="body-lg">La contraception ne se résume pas au choix d’une méthode. Autour d’elle, il y a des responsabilités discrètes, souvent portées par une seule personne sans que personne ne l’ait vraiment décidé.</p>
+
+          <ol class="duty-list" aria-label="Des responsabilités souvent invisibles">
+            <li><span class="duty-verb">Chercher</span><span class="duty-text">une information fiable, comprendre les options, savoir à qui poser une question.</span></li>
+            <li><span class="duty-verb">Anticiper</span><span class="duty-text">un besoin convenu avant qu’il ne devienne urgent.</span></li>
+            <li><span class="duty-verb">Organiser</span><span class="duty-text">une démarche : un rendez-vous, un trajet, un renouvellement.</span></li>
+            <li><span class="duty-verb">Payer</span><span class="duty-text">et décider ensemble de la façon de répartir les dépenses.</span></li>
+            <li><span class="duty-verb">Penser</span><span class="duty-text">aux échéances, pour que ce ne soit pas toujours la même personne qui s’en souvienne.</span></li>
+          </ol>
+          <p class="note">Partager, ce n’est donc pas seulement « aider » quand on vous le demande. C’est aussi prendre en charge la préparation et l’organisation.</p>
+        </div>
+      </div>
+
+      <!-- Prendre une responsabilité en entier -->
+      <div class="wrap">
+        <div class="ownership reveal">
+          <div class="ownership-head">
+            <h3 class="h3">Prendre une responsabilité, en entier</h3>
+            <p>Sans attendre une liste ou une relance de l’autre.</p>
+          </div>
+          <ol class="ownership-steps">
+            <li><span class="os-num" aria-hidden="true">1</span><strong>Y penser</strong><span>Savoir que c’est à vous.</span></li>
+            <li><span class="os-num" aria-hidden="true">2</span><strong>La préparer</strong><span>Repérer quoi, où, quand.</span></li>
+            <li><span class="os-num" aria-hidden="true">3</span><strong>La réaliser</strong><span>Le faire, simplement.</span></li>
+            <li><span class="os-num" aria-hidden="true">4</span><strong>Vérifier</strong><span>S’assurer que c’est effectivement pris en charge.</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Quatre domaines -->
+      <div class="wrap domains-block">
+        <div class="domains-head reveal">
+          <h3 class="h3">Quatre domaines pour s’y retrouver</h3>
+          <p>Le choix de la méthode n’en fait pas partie&nbsp;: il reste une décision personnelle, prise si besoin avec un·e professionnel·le de santé.</p>
+        </div>
+        <ul class="domains">
+          <li class="domain reveal">
+            <svg class="domain-icon" aria-hidden="true"><use href="#i-info"/></svg>
+            <h4>Information</h4>
+            <p>Chercher une information fiable, comprendre les options et préparer une question pour un professionnel.</p>
+          </li>
+          <li class="domain reveal">
+            <svg class="domain-icon" aria-hidden="true"><use href="#i-anticipation"/></svg>
+            <h4>Anticipation</h4>
+            <p>Prévoir un besoin convenu, repérer où obtenir les produits souhaités et anticiper leur réapprovisionnement.</p>
+          </li>
+          <li class="domain reveal">
+            <svg class="domain-icon" aria-hidden="true"><use href="#i-demarches"/></svg>
+            <h4>Démarches</h4>
+            <p>Prendre en charge une aide pratique explicitement souhaitée, sans accéder aux informations médicales de l’autre.</p>
+          </li>
+          <li class="domain reveal">
+            <svg class="domain-icon" aria-hidden="true"><use href="#i-frais"/></svg>
+            <h4>Frais</h4>
+            <p>Discuter des dépenses et d’une répartition librement choisie. Équitable ne veut pas forcément dire moitié-moitié.</p>
+          </li>
+        </ul>
+
+        <div class="not-list reveal">
+          <p class="not-title" id="not-title">Ce que CoChoice n’est pas</p>
+          <ul aria-labelledby="not-title">
+            <li>Un professionnel de santé, ni un substitut à une consultation</li>
+            <li>Un outil qui prescrit ou recommande une méthode</li>
+            <li>Un contraceptif</li>
+            <li>Une garantie contre une grossesse ou une IST</li>
+            <li>Une application de suivi du cycle ou de surveillance des traitements</li>
+          </ul>
+        </div>
+        <p class="source-line">Pour aller plus loin : <a href="https://www.questionsexualite.fr/choisir-sa-contraception/ma-contraception-et-moi/pourquoi-et-comment-parler-contraception-avec-votre-partenaire" target="_blank" rel="noopener">QuestionSexualité, « Pourquoi et comment parler contraception avec votre partenaire »<span class="sr-only"> (nouvel onglet)</span></a>, site de Santé publique France.</p>
+      </div>
+    </section>
+
+    <!-- ============ POINTS DE DÉPART ============ -->
+    <section class="section start" id="application" aria-labelledby="start-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="kicker"><span class="kicker-num">02</span>L’application</p>
+          <h2 class="h2" id="start-title">Par où voulez-vous commencer&nbsp;?</h2>
+          <p class="body-lg">Il n’y a pas de bon profil pour utiliser CoChoice. Votre point de départ change ce que l’application vous propose, pas ce qu’on attend de vous.</p>
+        </div>
+
+        <div class="start-grid">
+          <fieldset class="intent-group">
+            <legend class="sr-only">Choisissez votre point de départ</legend>
+            <label class="intent">
+              <input type="radio" name="intent" value="part" checked />
+              <span class="intent-num" aria-hidden="true">A</span>
+              <span class="intent-body"><span class="intent-title">Je veux prendre davantage ma part</span><span class="intent-sub">Comprendre et choisir une responsabilité concrète.</span></span>
+              <svg class="i intent-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </label>
+            <label class="intent">
+              <input type="radio" name="intent" value="charge" />
+              <span class="intent-num" aria-hidden="true">B</span>
+              <span class="intent-body"><span class="intent-title">J’aimerais alléger ma charge</span><span class="intent-sub">Exprimer ce que je souhaite partager.</span></span>
+              <svg class="i intent-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </label>
+            <label class="intent">
+              <input type="radio" name="intent" value="ensemble" />
+              <span class="intent-num" aria-hidden="true">C</span>
+              <span class="intent-body"><span class="intent-title">Nous voulons nous organiser</span><span class="intent-sub">Proposer des actions et trouver un accord libre.</span></span>
+              <svg class="i intent-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </label>
+            <label class="intent intent-minor">
+              <input type="radio" name="intent" value="info" />
+              <span class="intent-num" aria-hidden="true">D</span>
+              <span class="intent-body"><span class="intent-title">Je souhaite simplement m’informer</span><span class="intent-sub">Sans partenaire connecté, sans engagement.</span></span>
+              <svg class="i intent-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </label>
+          </fieldset>
+
+          <aside class="intent-panel" aria-label="Ce que propose ce point de départ" data-intent-panel>
+            <div class="photo photo-panel">
+              <img loading="lazy" decoding="async"
+                src="https://images.unsplash.com/photo-1777256005646-289df314bd3b?auto=format&fit=crop&q=60&w=800&h=560&crop=focalpoint&fp-x=0.5&fp-y=0.42"
+                srcset="https://images.unsplash.com/photo-1777256005646-289df314bd3b?auto=format&fit=crop&q=60&w=520&h=364&crop=focalpoint&fp-x=0.5&fp-y=0.42 520w,
+                        https://images.unsplash.com/photo-1777256005646-289df314bd3b?auto=format&fit=crop&q=60&w=800&h=560&crop=focalpoint&fp-x=0.5&fp-y=0.42 800w"
+                sizes="(min-width: 1024px) 34vw, 100vw" width="800" height="560"
+                alt="Un jeune homme avec un sac à dos, assis sur un muret en ville, consulte son téléphone." />
+            </div>
+            <p class="credit credit-in">Photo d’illustration : Anton Ryazanov, Unsplash.</p>
+            <div class="intent-panel-body" aria-live="polite">
+              <p class="panel-kicker" data-ip-kicker>Point de départ A</p>
+              <h3 class="h3" data-ip-title>Prendre davantage ma part</h3>
+              <p data-ip-text>Vous repérez une responsabilité utile, vous la préparez, puis vous pouvez proposer de la prendre en charge entièrement.</p>
+              <ul class="tick-list" data-ip-list></ul>
+              <button type="button" class="btn btn-primary btn-block" data-open-scenario>Ouvrir cet aperçu dans la démo <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DÉMO ============ -->
+    <section class="section demo" id="demo" aria-labelledby="demo-title">
+      <div class="wrap">
+        <div class="demo-head">
+          <div>
+            <p class="kicker kicker-light"><span class="kicker-num">03</span>Aperçu interactif</p>
+            <h2 class="h2" id="demo-title">Essayez le parcours avec des données fictives.</h2>
+          </div>
+          <p class="demo-intro">Cet aperçu fonctionne uniquement dans votre navigateur. «&nbsp;Alex&nbsp;» est une personne fictive&nbsp;: aucun second téléphone n’est connecté, c’est vous qui simulez ses réponses. N’y saisissez aucune information personnelle réelle.</p>
+        </div>
+
+        <div class="demo-grid">
+          <aside class="demo-controls" aria-label="Réglages de la démonstration">
+            <div class="ctrl">
+              <label for="demo-scenario" class="ctrl-label">Point de départ</label>
+              <select id="demo-scenario" class="select" data-scenario-select>
+                <option value="part">Je veux prendre davantage ma part</option>
+                <option value="charge">J’aimerais alléger ma charge</option>
+                <option value="ensemble">Nous voulons nous organiser</option>
+                <option value="info">Je souhaite simplement m’informer</option>
+              </select>
+            </div>
+            <div class="ctrl">
+              <span class="ctrl-label" id="partner-label">Partenaire</span>
+              <button type="button" class="switch" role="switch" aria-checked="true" aria-labelledby="partner-label partner-state" data-partner-switch>
+                <span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span>
+                <span id="partner-state" data-partner-state>Alex (fictif) est connecté·e</span>
+              </button>
+              <p class="ctrl-help">Sans partenaire, CoChoice reste entièrement utilisable et rien n’est partagé.</p>
+            </div>
+            <div class="ctrl ctrl-actions">
+              <button type="button" class="btn btn-light btn-sm" data-demo-reset><svg class="i" aria-hidden="true"><use href="#i-undo"/></svg>Recharger l’exemple</button>
+              <button type="button" class="btn btn-outline-light btn-sm" data-demo-clear>Effacer les données de démo</button>
+            </div>
+            <div class="legend">
+              <p class="ctrl-label" id="legend-title">Statuts</p>
+              <ul aria-labelledby="legend-title">
+                <li><span class="pill pill-perso">Personnelle</span> visible par vous seul·e</li>
+                <li><span class="pill pill-wait">En attente</span> proposition sans réponse</li>
+                <li><span class="pill pill-ok">Acceptée</span> accord explicite des deux</li>
+                <li><span class="pill pill-talk">À discuter</span> demande d’échange</li>
+                <li><span class="pill pill-no">Refusée</span> refus respecté, sans relance</li>
+              </ul>
+            </div>
+            <p class="storage-note">Les données de démonstration sont gardées dans le stockage local de ce navigateur, qui n’est pas un espace sécurisé. Elles ne quittent pas votre appareil.</p>
+          </aside>
+
+          <div class="app" data-app>
+            <div class="app-bar">
+              <span class="app-brand"><svg class="logo-mark logo-mark-sm" viewBox="0 0 64 32" aria-hidden="true"><path d="M16 0H32V32H16A16 16 0 0 1 16 0Z" fill="#A79BDB"/><path d="M32 0H48A16 16 0 0 1 48 32H32Z" fill="#E08A95"/><circle cx="32" cy="16" r="10.2" fill="#fff" stroke="#221C48" stroke-width="3.6"/></svg>Aperçu de l’application</span>
+              <span class="fake-tag">Données fictives</span>
+            </div>
+            <div class="app-tabs" role="tablist" aria-label="Espaces de l’application">
+              <button role="tab" type="button" id="tab-actions" aria-controls="panel-app" data-tab="actions">Mes actions</button>
+              <button role="tab" type="button" id="tab-props" aria-controls="panel-app" data-tab="props">Propositions<span class="tab-count" data-count-props></span></button>
+              <button role="tab" type="button" id="tab-souhaits" aria-controls="panel-app" data-tab="souhaits">Mes souhaits</button>
+              <button role="tab" type="button" id="tab-bilan" aria-controls="panel-app" data-tab="bilan">Bilan</button>
+              <button role="tab" type="button" id="tab-reco" aria-controls="panel-app" data-tab="reco">Recommander</button>
+            </div>
+            <div class="app-panel" id="panel-app" role="tabpanel" tabindex="-1" data-app-panel>
+              <p class="app-empty">L’aperçu interactif nécessite JavaScript. Le reste de la page fonctionne sans.</p>
+            </div>
+            <div class="app-toast" role="status" aria-live="polite" data-toast></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMMENT ÇA FONCTIONNE ============ -->
+    <section class="section how" id="fonctionnement" aria-labelledby="how-title">
+      <div class="wrap how-grid">
+        <div class="how-copy">
+          <p class="kicker"><span class="kicker-num">04</span>Comment CoChoice fonctionne</p>
+          <h2 class="h2" id="how-title">Quatre temps, à votre rythme.</h2>
+          <ol class="how-steps">
+            <li class="reveal">
+              <span class="how-num" aria-hidden="true">1</span>
+              <div><h3>Comprendre les responsabilités</h3><p>Des repères simples sur l’information, l’anticipation, les démarches et les frais, avec des liens vers les sources publiques.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="how-num" aria-hidden="true">2</span>
+              <div><h3>Choisir une action utile</h3><p>Une responsabilité concrète, avec ses étapes et une échéance si vous en voulez une. Elle peut rester personnelle.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="how-num" aria-hidden="true">3</span>
+              <div><h3>Proposer un partage, si vous le souhaitez</h3><p>L’autre peut accepter, demander à en discuter ou refuser. Rien n’est partagé sans accord explicite, et chacun peut prendre l’initiative.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="how-num" aria-hidden="true">4</span>
+              <div><h3>Faire le point et ajuster</h3><p>Un bilan personnel et facultatif, qui reste à vous. Tout changement important de responsable ou de périmètre repasse par un accord.</p></div>
+            </li>
+          </ol>
+          <p class="note note-boxed"><strong>Une case cochée n’est pas une preuve.</strong> Terminer des étapes ne montre pas, à lui seul, que la charge a diminué. C’est pour cela que le bilan porte sur le ressenti et la liberté de décision, pas sur un nombre de tâches.</p>
+        </div>
+        <figure class="how-media reveal">
+          <div class="photo photo-how">
+            <img loading="lazy" decoding="async"
+              src="https://images.unsplash.com/photo-1680204444125-a33be1bd03d4?auto=format&fit=crop&q=60&w=900&h=1100&crop=focalpoint&fp-x=0.45&fp-y=0.45"
+              srcset="https://images.unsplash.com/photo-1680204444125-a33be1bd03d4?auto=format&fit=crop&q=60&w=560&h=680&crop=focalpoint&fp-x=0.45&fp-y=0.45 560w,
+                      https://images.unsplash.com/photo-1680204444125-a33be1bd03d4?auto=format&fit=crop&q=60&w=900&h=1100&crop=focalpoint&fp-x=0.45&fp-y=0.45 900w"
+              sizes="(min-width: 1024px) 40vw, 100vw" width="900" height="1100"
+              alt="Un jeune homme pensif dans l’allée d’un magasin, des rayonnages flous derrière lui." />
+          </div>
+          <figcaption class="credit">Photo d’illustration : Belle Lee, Unsplash.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ ATELIERS ============ -->
+    <section class="section workshops" id="ateliers" aria-labelledby="ws-title">
+      <div class="wrap">
+        <figure class="ws-media reveal">
+          <div class="photo photo-wide">
+            <img loading="lazy" decoding="async"
+              src="https://images.unsplash.com/photo-1758270704763-22072a90d3b6?auto=format&fit=crop&q=60&w=1600&h=760&crop=focalpoint&fp-x=0.5&fp-y=0.42"
+              srcset="https://images.unsplash.com/photo-1758270704763-22072a90d3b6?auto=format&fit=crop&q=60&w=760&h=480&crop=focalpoint&fp-x=0.5&fp-y=0.42 760w,
+                      https://images.unsplash.com/photo-1758270704763-22072a90d3b6?auto=format&fit=crop&q=60&w=1600&h=760&crop=focalpoint&fp-x=0.5&fp-y=0.42 1600w"
+              sizes="(min-width: 1200px) 1180px, 100vw" width="1600" height="760"
+              alt="Un groupe d’étudiantes et d’étudiants discute et rit autour de tables dans un amphithéâtre." />
+          </div>
+          <figcaption class="credit">Photo d’illustration : Vitaly Gariev, Unsplash.</figcaption>
+        </figure>
+
+        <div class="ws-grid">
+          <div class="ws-copy reveal">
+            <p class="kicker"><span class="kicker-num">05</span>Les ateliers</p>
+            <h2 class="h2" id="ws-title">Parler, comprendre, puis passer à l’action.</h2>
+            <p class="body-lg">Les ateliers envisagés réunissent des étudiant·es autour d’informations fiables et de situations concrètes. L’atelier ouvre la discussion&nbsp;; l’application aide ensuite à transformer une intention en responsabilité réellement prise en charge.</p>
+            <p>Ils restent accessibles sans compte, et un·e partenaire peut y participer sans utiliser l’application.</p>
+            <button type="button" class="btn btn-primary" data-contact="atelier">Échanger sur un atelier</button>
+          </div>
+          <ol class="ws-list">
+            <li class="reveal"><span class="ws-num" aria-hidden="true">01</span><h3>Informations fiables</h3><p>Des repères issus de sources publiques et de contenus relus par des professionnel·les, sans recommander de méthode.</p></li>
+            <li class="reveal"><span class="ws-num" aria-hidden="true">02</span><h3>Échanges</h3><p>Des temps de parole pour déconstruire les idées reçues, sans culpabiliser personne.</p></li>
+            <li class="reveal"><span class="ws-num" aria-hidden="true">03</span><h3>Situations concrètes</h3><p>Des cas du quotidien pour repérer qui pense à quoi, et ce qui pourrait changer.</p></li>
+            <li class="reveal"><span class="ws-num" aria-hidden="true">04</span><h3>Préparation d’actions</h3><p>Repartir avec une action choisie, que l’on peut garder pour soi ou proposer.</p></li>
+          </ol>
+        </div>
+        <p class="honest reveal"><strong>Où en sommes-nous&nbsp;?</strong> Le contenu et le format des ateliers sont en cours de conception. Aucun calendrier, aucune réservation et aucun intervenant ne sont encore fixés. Nous souhaitons travailler avec des intervenant·es rémunéré·es, proches des campus.</p>
+      </div>
+    </section>
+
+    <!-- ============ AUTONOMIE ET CONFIDENTIALITÉ ============ -->
+    <section class="section privacy" id="confidentialite" aria-labelledby="privacy-title">
+      <div class="wrap privacy-grid">
+        <div class="privacy-copy">
+          <p class="kicker"><span class="kicker-num">06</span>Autonomie et confidentialité</p>
+          <h2 class="h2" id="privacy-title">Ce qui reste personnel le reste.</h2>
+          <p class="body-lg">Partager une responsabilité ne doit jamais devenir une pression sur une décision. Nous concevons CoChoice autour de principes simples.</p>
+          <ul class="principles">
+            <li class="reveal"><svg class="i-lg" aria-hidden="true"><use href="#i-user"/></svg><div><h3>Utilisable seul·e</h3><p>Toutes les fonctions personnelles marchent sans partenaire connecté.</p></div></li>
+            <li class="reveal"><svg class="i-lg" aria-hidden="true"><use href="#i-users"/></svg><div><h3>Partage facultatif</h3><p>Connecter quelqu’un est un choix, jamais une étape obligatoire.</p></div></li>
+            <li class="reveal"><svg class="i-lg" aria-hidden="true"><use href="#i-check"/></svg><div><h3>Accord explicite</h3><p>Une action ne devient commune que si les deux l’acceptent.</p></div></li>
+            <li class="reveal"><svg class="i-lg" aria-hidden="true"><use href="#i-undo"/></svg><div><h3>Droit de refuser et de changer d’avis</h3><p>Un refus n’a pas à être justifié et ne déclenche aucune relance.</p></div></li>
+            <li class="reveal"><svg class="i-lg" aria-hidden="true"><use href="#i-eye-off"/></svg><div><h3>Bilan personnel non partagé</h3><p>Votre ressenti n’est ni montré ni soumis à l’avis de votre partenaire.</p></div></li>
+            <li class="reveal"><svg class="i-lg" aria-hidden="true"><use href="#i-campus"/></svg><div><h3>Rien d’individuel transmis au campus</h3><p>L’établissement ne reçoit qu’un bilan anonymisé, si les effectifs le permettent.</p></div></li>
+            <li class="reveal"><svg class="i-lg" aria-hidden="true"><use href="#i-no-sell"/></svg><div><h3>Aucune vente de données</h3><p>Ni publicité, ni sponsor imposant une marque.</p></div></li>
+          </ul>
+          <p class="note">Ce sont des engagements de conception, pas des certifications. Hébergement, sécurité et durées de conservation seront définis et vérifiés avant tout lancement réel, dans le respect du cadre applicable aux <a href="https://www.cnil.fr/fr/quest-ce-ce-quune-donnee-de-sante" target="_blank" rel="noopener">données de santé (CNIL)<span class="sr-only"> (nouvel onglet)</span></a>.</p>
+        </div>
+        <figure class="privacy-media reveal">
+          <div class="photo photo-tall">
+            <img loading="lazy" decoding="async"
+              src="https://images.unsplash.com/photo-1658279366796-e0c28623cd27?auto=format&fit=crop&q=60&w=900&h=1150&crop=focalpoint&fp-x=0.55&fp-y=0.5"
+              srcset="https://images.unsplash.com/photo-1658279366796-e0c28623cd27?auto=format&fit=crop&q=60&w=560&h=715&crop=focalpoint&fp-x=0.55&fp-y=0.5 560w,
+                      https://images.unsplash.com/photo-1658279366796-e0c28623cd27?auto=format&fit=crop&q=60&w=900&h=1150&crop=focalpoint&fp-x=0.55&fp-y=0.5 900w"
+              sizes="(min-width: 1024px) 36vw, 100vw" width="900" height="1150"
+              alt="Une personne assise sur le rebord d’une grande fenêtre, au calme, le regard tourné vers l’extérieur." />
+          </div>
+          <figcaption class="credit">Photo d’illustration : Kelly Sikkema, Unsplash.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ POUR LES ÉTABLISSEMENTS ============ -->
+    <section class="section campus" id="etablissements" aria-labelledby="campus-title">
+      <div class="wrap campus-grid">
+        <div class="campus-copy">
+          <p class="kicker"><span class="kicker-num">07</span>Pour les établissements</p>
+          <h2 class="h2" id="campus-title">Un programme envisagé pour votre campus.</h2>
+          <p class="body-lg">Pour les responsables de vie étudiante, de prévention ou de santé&nbsp;: des ateliers, un accès à l’application et une évaluation volontaire, pensés comme un ensemble.</p>
+          <p class="test-claim"><span class="test-tag">À tester ensemble</span>Accompagner le passage de l’information à des responsabilités effectivement prises en charge.</p>
+        </div>
+        <div class="campus-card reveal">
+          <p class="campus-card-title">Programme test envisagé</p>
+          <dl class="spec">
+            <div><dt>Durée</dt><dd>8 semaines</dd></div>
+            <div><dt>Accès à l’application</dt><dd>jusqu’à 100</dd></div>
+            <div><dt>Ateliers</dt><dd>4</dd></div>
+            <div><dt>Suivi volontaire</dt><dd>à 6 semaines</dd></div>
+          </dl>
+          <p class="spec-note">Format de travail, ajustable avec chaque établissement. Le tarif sera construit après échange&nbsp;: aucune offre commerciale n’est encore ouverte.</p>
+          <button type="button" class="btn btn-primary btn-block" data-contact="campus">Discuter d’un programme sur votre campus</button>
+        </div>
+      </div>
+      <div class="wrap campus-lower">
+        <figure class="campus-media reveal">
+          <div class="photo photo-campus">
+            <img loading="lazy" decoding="async"
+              src="https://images.unsplash.com/photo-1741637335289-c99652d3155f?auto=format&fit=crop&q=45&w=900&h=620"
+              srcset="https://images.unsplash.com/photo-1741637335289-c99652d3155f?auto=format&fit=crop&q=45&w=640&h=440 640w,
+                      https://images.unsplash.com/photo-1741637335289-c99652d3155f?auto=format&fit=crop&q=45&w=900&h=620 900w"
+              sizes="(min-width: 1024px) 50vw, 100vw" width="900" height="620"
+              alt="Des étudiant·es marchent sur une allée de campus, devant un bâtiment universitaire, sous un grand arbre." />
+          </div>
+          <figcaption class="credit">Photo d’illustration : Zoshua Colah, Unsplash (campus de l’Université de Washington, États-Unis).</figcaption>
+        </figure>
+        <div class="campus-split">
+          <div class="reveal">
+            <h3 class="h4">Ce que l’établissement reçoit</h3>
+            <ul class="tick-list">
+              <li>Des ateliers préparés et animés</li>
+              <li>Des accès à l’application pour les étudiant·es volontaires</li>
+              <li>Un bilan anonymisé, si les effectifs protègent chaque personne</li>
+            </ul>
+          </div>
+          <div class="reveal">
+            <h3 class="h4">Ce qu’il ne reçoit jamais</h3>
+            <ul class="cross-list">
+              <li>Les réponses individuelles des étudiant·es</li>
+              <li>Les actions, souhaits ou bilans de quelqu’un</li>
+              <li>Une obligation de participation pour les étudiant·es</li>
+            </ul>
+          </div>
+          <p class="note reveal">Les <a href="https://www.etudiant.gouv.fr/fr/les-services-de-sante-etudiante-sse-mode-d-emploi-3050" target="_blank" rel="noopener">services de santé étudiante<span class="sr-only"> (nouvel onglet)</span></a> sont des interlocuteurs précieux pour orienter et relayer, en complément des dispositifs existants.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ IMPACT ET ODD ============ -->
+    <section class="section impact" id="impact" aria-labelledby="impact-title">
+      <div class="wrap">
+        <div class="impact-top">
+          <div>
+            <p class="kicker"><span class="kicker-num">08</span>Impact</p>
+            <h2 class="h2" id="impact-title">Ce que nous souhaitons changer</h2>
+          </div>
+          <p class="impact-ambition reveal">Réduire les responsabilités contraceptives portées seules lorsque les femmes souhaitent les partager, <em>tout en préservant leur autonomie de décision.</em></p>
+        </div>
+
+        <div class="impact-grid">
+          <div class="measure reveal">
+            <h3 class="h4">Comment nous prévoyons de mesurer</h3>
+            <div class="timeline">
+              <div class="tl-point"><span class="tl-dot" aria-hidden="true"></span><strong>Avant</strong><span>première mesure, facultative</span></div>
+              <div class="tl-line" aria-hidden="true"></div>
+              <div class="tl-point"><span class="tl-dot tl-dot-end" aria-hidden="true"></span><strong>6 semaines</strong><span>mêmes participantes, volontaires</span></div>
+            </div>
+            <p class="indicator"><span class="indicator-label">Indicateur local envisagé</span>Part des participantes qui assument seules au moins une responsabilité contraceptive qu’elles souhaitent partager.</p>
+            <p class="small-title">Nous suivrons aussi</p>
+            <ul class="follow">
+              <li>la répartition actuelle et souhaitée</li>
+              <li>la charge ressentie</li>
+              <li>la liberté de décision</li>
+              <li>les pressions déclarées</li>
+              <li>les pertes de suivi</li>
+            </ul>
+            <ul class="state-chips" aria-label="État de la mesure">
+              <li><span>Valeur de départ</span><strong>pas encore connue</strong></li>
+              <li><span>Cible chiffrée</span><strong>non validée</strong></li>
+              <li><span>Résultats terrain</span><strong>aucun à ce jour</strong></li>
+            </ul>
+          </div>
+
+          <div class="impact-side">
+            <div class="odd reveal">
+              <p class="odd-num" aria-hidden="true">5</p>
+              <div>
+                <h3 class="h4">ODD 5, cible 5.6</h3>
+                <p>Notre projet s’inscrit dans l’objectif de développement durable n°5 des Nations unies, égalité entre les sexes, cible 5.6 sur la santé et les droits sexuels et reproductifs.</p>
+                <p>L’indicateur officiel 5.6.1 porte sur l’autonomie des femmes dans leurs décisions concernant les relations sexuelles, la contraception et les soins de santé reproductive. Il ne mesure pas directement la charge contraceptive&nbsp;: notre indicateur local le complète, sans le remplacer.</p>
+                <ul class="link-list">
+                  <li><a href="https://www.un.org/sustainabledevelopment/fr/gender-equality/" target="_blank" rel="noopener">ONU, objectif 5<span class="sr-only"> (nouvel onglet)</span></a></li>
+                  <li><a href="https://unstats.un.org/sdgs/metadata/files/Metadata-05-06-01.pdf" target="_blank" rel="noopener">Métadonnées de l’indicateur 5.6.1 (PDF, anglais)<span class="sr-only"> (nouvel onglet)</span></a></li>
+                </ul>
+                <p class="fine">Aucune certification ni labellisation ONU&nbsp;: il s’agit d’un ancrage de notre démarche.</p>
+              </div>
+            </div>
+            <div class="limits reveal">
+              <h3 class="h4">Nos limites, dites clairement</h3>
+              <ul>
+                <li>Un avant/après décrit une évolution, il ne prouve pas que CoChoice l’a causée.</li>
+                <li>Une décision partagée n’est pas automatiquement une décision libre.</li>
+                <li>L’implication d’un partenaire ne doit jamais devenir une pression sur la méthode contraceptive.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq-grid">
+        <div class="faq-head">
+          <p class="kicker"><span class="kicker-num">09</span>Questions fréquentes</p>
+          <h2 class="h2" id="faq-title">Les réponses courtes.</h2>
+          <p>Une question qui n’y figure pas&nbsp;?</p>
+          <button type="button" class="btn btn-ghost btn-sm" data-contact="autre">Poser une question</button>
+        </div>
+        <div class="faq-list">
+          <details class="qa"><summary>Puis-je utiliser CoChoice seul·e&nbsp;?</summary><div class="qa-body"><p>Oui. S’informer, choisir une action, la préparer et faire un bilan fonctionnent sans partenaire connecté.</p></div></details>
+          <details class="qa"><summary>Dois-je connecter mon partenaire&nbsp;?</summary><div class="qa-body"><p>Non. La connexion est facultative et peut être retirée. Un·e partenaire peut aussi venir aux ateliers sans compte.</p></div></details>
+          <details class="qa"><summary>Quelles informations sont partagées&nbsp;?</summary><div class="qa-body"><p>Uniquement les actions que vous choisissez de proposer et que l’autre accepte&nbsp;: intitulé, responsable, étapes et échéance éventuelle. Vos souhaits et votre bilan restent personnels. CoChoice ne demande pas d’informations médicales.</p></div></details>
+          <details class="qa"><summary>Qui décide de la méthode contraceptive&nbsp;?</summary><div class="qa-body"><p>La personne concernée, si besoin avec un·e professionnel·le de santé. CoChoice ne recommande aucune méthode et le partage des responsabilités ne donne aucun droit de regard sur ce choix. Pour comparer les options&nbsp;: <a href="https://www.ameli.fr/assure/sante/themes/contraception/choisir-mode-contraception" target="_blank" rel="noopener">Ameli, choisir sa contraception<span class="sr-only"> (nouvel onglet)</span></a>.</p></div></details>
+          <details class="qa"><summary>Puis-je refuser une proposition&nbsp;?</summary><div class="qa-body"><p>Oui, sans avoir à vous justifier. Vous pouvez aussi demander à en discuter, ou changer d’avis plus tard. Un refus ne déclenche aucune relance automatique.</p></div></details>
+          <details class="qa"><summary>Est-ce une application de suivi du cycle&nbsp;?</summary><div class="qa-body"><p>Non. CoChoice ne suit ni le cycle, ni les symptômes, ni la prise d’un traitement. Elle aide à organiser des responsabilités pratiques.</p></div></details>
+          <details class="qa"><summary>CoChoice remplace-t-il un professionnel de santé&nbsp;?</summary><div class="qa-body"><p>Non. Pour toute question médicale, adressez-vous à un·e professionnel·le ou au <a href="https://www.etudiant.gouv.fr/fr/les-services-de-sante-etudiante-sse-mode-d-emploi-3050" target="_blank" rel="noopener">service de santé étudiante<span class="sr-only"> (nouvel onglet)</span></a> de votre établissement. Les remboursements sont détaillés sur <a href="https://www.ameli.fr/assure/remboursements/rembourse/contraception-ivg/contraception" target="_blank" rel="noopener">Ameli<span class="sr-only"> (nouvel onglet)</span></a>.</p></div></details>
+          <details class="qa"><summary>L’application est-elle déjà disponible&nbsp;?</summary><div class="qa-body"><p>Pas encore. CoChoice est un projet en développement&nbsp;: la démonstration de cette page utilise des données fictives et ne connecte aucun appareil. Aucune date de publication n’est annoncée.</p></div></details>
+          <details class="qa"><summary>Comment envisager un atelier dans mon établissement&nbsp;?</summary><div class="qa-body"><p>Commencez par un échange&nbsp;: votre contexte, ce qui existe déjà, vos contraintes. Nous préciserons ensuite si un programme test a du sens pour vous.</p><button type="button" class="btn btn-ghost btn-sm" data-contact="campus">Discuter d’un programme</button></div></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="logo logo-light" aria-label="CoChoice, retour en haut de la page">
+          <svg class="logo-mark" viewBox="0 0 64 32" aria-hidden="true"><path d="M16 0H32V32H16A16 16 0 0 1 16 0Z" fill="#A79BDB"/><path d="M32 0H48A16 16 0 0 1 48 32H32Z" fill="#E08A95"/><circle cx="32" cy="16" r="10.2" fill="#fff" stroke="#221C48" stroke-width="3.6"/></svg>
+          <span class="logo-word">CoChoice</span>
+        </a>
+        <p class="footer-tagline">Partager les responsabilités. Garder la liberté de choisir.</p>
+        <p class="footer-status"><span class="status-dot" aria-hidden="true"></span>Projet étudiant en développement, Groupe 13, ChangeMaker Project 2026. Aucune application publiée, aucun partenariat conclu.</p>
+      </div>
+      <nav class="footer-col" aria-label="Plan de la page">
+        <p class="footer-title">Navigation</p>
+        <ul>
+          <li><a href="#concept">Le concept</a></li>
+          <li><a href="#application">L’application</a></li>
+          <li><a href="#demo">La démo</a></li>
+          <li><a href="#ateliers">Les ateliers</a></li>
+          <li><a href="#etablissements">Pour les établissements</a></li>
+          <li><a href="#impact">Impact et ODD</a></li>
+          <li><a href="#faq">Questions fréquentes</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <p class="footer-title">Sources</p>
+        <ul>
+          <li><a href="https://www.questionsexualite.fr/choisir-sa-contraception/ma-contraception-et-moi/pourquoi-et-comment-parler-contraception-avec-votre-partenaire" target="_blank" rel="noopener">QuestionSexualité, parler contraception en couple</a></li>
+          <li><a href="https://www.ameli.fr/assure/sante/themes/contraception/choisir-mode-contraception" target="_blank" rel="noopener">Ameli, choisir sa contraception</a></li>
+          <li><a href="https://www.ameli.fr/assure/remboursements/rembourse/contraception-ivg/contraception" target="_blank" rel="noopener">Ameli, contraception et remboursements</a></li>
+          <li><a href="https://www.etudiant.gouv.fr/fr/les-services-de-sante-etudiante-sse-mode-d-emploi-3050" target="_blank" rel="noopener">Étudiant.gouv, services de santé étudiante</a></li>
+          <li><a href="https://www.cnil.fr/fr/quest-ce-ce-quune-donnee-de-sante" target="_blank" rel="noopener">CNIL, définition des données de santé</a></li>
+          <li><a href="https://www.un.org/sustainabledevelopment/fr/gender-equality/" target="_blank" rel="noopener">ONU, objectif de développement durable 5</a></li>
+          <li><a href="https://unstats.un.org/sdgs/metadata/files/Metadata-05-06-01.pdf" target="_blank" rel="noopener">ONU, métadonnées de l’indicateur 5.6.1</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">Contact</p>
+        <p class="footer-text">Le formulaire n’est pas encore relié à un service d’envoi&nbsp;: aucune adresse publique n’est configurée pour le moment.</p>
+        <button type="button" class="btn btn-outline-light btn-sm" data-contact="autre">Ouvrir le formulaire</button>
+        <p class="footer-title footer-title-gap">Crédits photographiques</p>
+        <ul class="credits">
+          <li><a href="https://unsplash.com/photos/RvpYX3pmGsA" target="_blank" rel="noopener">Baruk Granda</a></li>
+          <li><a href="https://unsplash.com/photos/CnVrBbdvnDE" target="_blank" rel="noopener">Vitaly Gariev (cuisine)</a></li>
+          <li><a href="https://unsplash.com/photos/KxyabRVq0Kw" target="_blank" rel="noopener">Anton Ryazanov</a></li>
+          <li><a href="https://unsplash.com/photos/7VfNDEZuktk" target="_blank" rel="noopener">Belle Lee</a></li>
+          <li><a href="https://unsplash.com/photos/TB5HpfJf7mA" target="_blank" rel="noopener">Vitaly Gariev (amphithéâtre)</a></li>
+          <li><a href="https://unsplash.com/photos/LZ03UAy1SMc" target="_blank" rel="noopener">Kelly Sikkema</a></li>
+          <li><a href="https://unsplash.com/photos/kaZHJj-DhC4" target="_blank" rel="noopener">Zoshua Colah</a></li>
+        </ul>
+        <p class="footer-text footer-small">Photos sous <a href="https://unsplash.com/license" target="_blank" rel="noopener">licence Unsplash</a>, à titre d’illustration.</p>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>Cette page n’utilise ni cookie, ni outil de mesure d’audience, ni publicité. Les photos sont chargées depuis le service d’images d’Unsplash.</p>
+      <p>© <span data-year>2026</span> CoChoice · Groupe 13</p>
+    </div>
+  </footer>
+
+  <!-- ============ FORMULAIRE DE CONTACT (modale) ============ -->
+  <dialog class="dialog" id="contact-dialog" aria-labelledby="contact-title" data-contact-dialog>
+    <div class="dialog-inner">
+      <button type="button" class="dialog-close" data-dialog-close aria-label="Fermer le formulaire"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <div data-form-view>
+        <p class="kicker">Prendre contact</p>
+        <h2 class="h3" id="contact-title">Échangeons sur votre projet</h2>
+        <p class="dialog-desc">Quatre informations suffisent. N’indiquez aucune information médicale ou intime.</p>
+        <form class="form" novalidate data-contact-form>
+          <div class="field">
+            <label for="cf-nom">Nom <span class="req">obligatoire</span></label>
+            <input id="cf-nom" name="nom" type="text" autocomplete="name" required maxlength="80" aria-describedby="cf-nom-err" />
+            <p class="field-error" id="cf-nom-err" hidden></p>
+          </div>
+          <div class="field">
+            <label for="cf-email">Email <span class="req">obligatoire</span></label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="120" aria-describedby="cf-email-err" />
+            <p class="field-error" id="cf-email-err" hidden></p>
+          </div>
+          <div class="field">
+            <label for="cf-etab">Établissement <span class="opt">facultatif</span></label>
+            <input id="cf-etab" name="etablissement" type="text" autocomplete="organization" maxlength="120" />
+          </div>
+          <div class="field">
+            <label for="cf-objet">Objet <span class="req">obligatoire</span></label>
+            <select id="cf-objet" name="objet" required aria-describedby="cf-objet-err">
+              <option value="">Choisir un objet</option>
+              <option value="atelier">Échanger sur un atelier</option>
+              <option value="campus">Discuter d’un programme sur notre campus</option>
+              <option value="autre">Autre question sur CoChoice</option>
+            </select>
+            <p class="field-error" id="cf-objet-err" hidden></p>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Envoyer la demande</button>
+          <p class="fine">Vos informations servent uniquement à vous répondre. Elles ne sont ni revendues ni utilisées à des fins publicitaires.</p>
+        </form>
+      </div>
+      <div data-result-view hidden tabindex="-1">
+        <p class="kicker" data-result-kicker>Demande non envoyée</p>
+        <h2 class="h3" data-result-title>Le formulaire n’est pas encore relié</h2>
+        <div data-result-body></div>
+        <div class="dialog-actions">
+          <button type="button" class="btn btn-ghost btn-sm" data-result-back>Modifier ma demande</button>
+          <button type="button" class="btn btn-primary btn-sm" data-dialog-close>Fermer</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>
