@@ -1,7 +1,6 @@
 import '../styles/main.css'
 import '../styles/home.css'
 import { CONFIG } from './config.js'
-import { initDemo } from './demo.js'
 
 document.documentElement.classList.add('js')
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -57,75 +56,12 @@ const revealObserver = new IntersectionObserver((entries, obs) => {
 }, { rootMargin: '0px 0px -8% 0px' })
 document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el))
 
-/* ---------- Démo ---------- */
-const demo = initDemo(document.querySelector('[data-app]'))
-
-/* ---------- Points de départ ---------- */
-const INTENTS = {
-  part: {
-    kicker: 'Point de départ A', title: 'Prendre davantage ma part',
-    text: 'Vous repérez une responsabilité utile, vous la préparez, puis vous pouvez proposer de la prendre en charge en entier.',
-    list: ['Choisir une responsabilité concrète parmi les quatre domaines', 'Préparer ses étapes, avec ou sans échéance', 'Proposer de la prendre en charge, sans rien imposer'],
-  },
-  charge: {
-    kicker: 'Point de départ B', title: 'Alléger ma charge',
-    text: 'Vous faites d’abord le point pour vous-même, en privé. Ensuite seulement, vous décidez de ce que vous voulez partager.',
-    list: ['Noter ce que vous portez aujourd’hui et ce que vous souhaiteriez', 'Préparer une proposition ou une discussion', 'Garder vos souhaits et votre bilan pour vous'],
-  },
-  ensemble: {
-    kicker: 'Point de départ C', title: 'Nous organiser',
-    text: 'Chacun peut proposer une action. L’autre accepte, demande à en discuter ou refuse, et un accord peut être ajusté.',
-    list: ['Examiner une proposition reçue', 'Accepter, en discuter ou refuser', 'Ajuster un accord quand la situation change'],
-  },
-  info: {
-    kicker: 'Point de départ D', title: 'M’informer',
-    text: 'Vous découvrez les responsabilités et des sources fiables, sans connecter personne et sans rien partager.',
-    list: ['Comprendre les quatre domaines', 'Préparer une question pour un professionnel', 'Trouver les services et sources publiques'],
-  },
-}
-const panelBody = document.querySelector('.intent-panel-body')
-const ip = {
-  kicker: document.querySelector('[data-ip-kicker]'),
-  title: document.querySelector('[data-ip-title]'),
-  text: document.querySelector('[data-ip-text]'),
-  list: document.querySelector('[data-ip-list]'),
-}
-const intentRadios = [...document.querySelectorAll('input[name="intent"]')]
-const currentIntent = () => intentRadios.find((r) => r.checked)?.value || 'part'
-
-function renderIntent(key, animate = true) {
-  const d = INTENTS[key]
-  ip.kicker.textContent = d.kicker
-  ip.title.textContent = d.title
-  ip.text.textContent = d.text
-  ip.list.innerHTML = d.list.map((t) => `<li>${t}</li>`).join('')
-  if (animate) {
-    panelBody.classList.remove('is-swapping')
-    void panelBody.offsetWidth
-    panelBody.classList.add('is-swapping')
-  }
-}
-intentRadios.forEach((r) => r.addEventListener('change', () => renderIntent(r.value)))
-renderIntent(currentIntent(), false)
-
-document.querySelector('[data-open-scenario]').addEventListener('click', () => {
-  demo.loadScenario(currentIntent())
-  document.querySelector('#demo').scrollIntoView({ behavior: scrollBehavior(), block: 'start' })
-  demo.focusPanel()
-})
-function syncIntent(name) {
-  const radio = intentRadios.find((r) => r.value === name)
-  if (radio && !radio.checked) { radio.checked = true; renderIntent(name, false) }
-}
-document.addEventListener('cochoice:scenario', (e) => syncIntent(e.detail))
-syncIntent(demo.scenario)
-
 /* ---------- Formulaire de contact (modale) ---------- */
 const dialog = document.querySelector('[data-contact-dialog]')
 const form = dialog.querySelector('[data-contact-form]')
 const formView = dialog.querySelector('[data-form-view]')
 const resultView = dialog.querySelector('[data-result-view]')
-const OBJETS = { atelier: 'Échanger sur un atelier', campus: 'Discuter d’un programme sur notre campus', autre: 'Autre question sur CoChoice' }
+const OBJETS = { atelier: 'Parler d’un atelier', campus: 'Un programme pour mon école', autre: 'Autre question sur CoChoice' }
 let opener = null
 
 function openContact(objet, trigger) {
@@ -166,9 +102,9 @@ function setError(input, message) {
 }
 function validate() {
   const checks = [
-    [form.nom, form.nom.value.trim().length < 2 ? 'Indiquez votre nom (2 caractères minimum).' : ''],
-    [form.email, !form.email.value.trim() ? 'Indiquez une adresse email pour que nous puissions vous répondre.' : !EMAIL_RE.test(form.email.value.trim()) ? 'Cette adresse email ne semble pas valide (exemple : prenom@domaine.fr).' : ''],
-    [form.objet, !form.objet.value ? 'Choisissez l’objet de votre demande.' : ''],
+    [form.nom, form.nom.value.trim().length < 2 ? 'Indique ton nom (2 caractères minimum).' : ''],
+    [form.email, !form.email.value.trim() ? 'Indique ton email pour qu’on puisse te répondre.' : !EMAIL_RE.test(form.email.value.trim()) ? 'Cet email ne semble pas valide (exemple : prenom@domaine.fr).' : ''],
+    [form.objet, !form.objet.value ? 'Choisis l’objet de ton message.' : ''],
   ]
   checks.forEach(([input, msg]) => setError(input, msg))
   const firstInvalid = checks.find(([, msg]) => msg)
@@ -202,12 +138,12 @@ form.addEventListener('submit', async (e) => {
   if (!validate()) return
   if (!CONFIG.contactEndpoint) {
     showResult({
-      kicker: 'Demande non envoyée',
+      kicker: 'Pas envoyé',
       title: 'Le formulaire n’est pas encore relié',
-      html: `<p>Ce site est en cours de construction&nbsp;: aucun service d’envoi n’est configuré. <strong>Rien n’a été transmis ni enregistré.</strong></p>
-        <p>Voici le récapitulatif de votre demande, à conserver si vous le souhaitez&nbsp;:</p>
+      html: `<p>Le site est encore en construction&nbsp;: aucun service d’envoi n’est branché. <strong>Rien n’a été transmis ni enregistré.</strong></p>
+        <p>Voici ton message, si tu veux le garder&nbsp;:</p>
         <div class="result-box" data-recap>${escapeHtml(recap())}</div>
-        <div class="dialog-actions"><button type="button" class="btn btn-ghost btn-sm" data-copy-recap><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg>Copier le récapitulatif</button></div>
+        <div class="dialog-actions"><button type="button" class="btn btn-ghost btn-sm" data-copy-recap><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg>Copier</button></div>
         <p role="status" aria-live="polite" data-copy-status></p>`,
     })
     return
@@ -219,12 +155,12 @@ form.addEventListener('submit', async (e) => {
     const res = await fetch(CONFIG.contactEndpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
     if (!res.ok) throw new Error(String(res.status))
     form.reset()
-    showResult({ kicker: 'Demande envoyée', title: 'Merci, nous avons bien reçu votre demande', html: '<p>Nous reviendrons vers vous par email.</p>' })
+    showResult({ kicker: 'Envoyé', title: 'Merci, on a bien reçu ton message', html: '<p>On te répond par email.</p>' })
   } catch {
-    showResult({ kicker: 'Échec de l’envoi', title: 'Votre demande n’a pas pu être envoyée', html: '<p>Le service d’envoi n’a pas répondu. Rien n’a été transmis&nbsp;: vous pouvez réessayer plus tard.</p>' })
+    showResult({ kicker: 'Oups', title: 'Ton message n’est pas parti', html: '<p>Le service d’envoi n’a pas répondu. Rien n’a été transmis&nbsp;: réessaie un peu plus tard.</p>' })
   } finally {
     submit.disabled = false
-    submit.textContent = 'Envoyer la demande'
+    submit.textContent = 'Envoyer'
   }
 })
 dialog.addEventListener('click', async (e) => {
@@ -232,9 +168,9 @@ dialog.addEventListener('click', async (e) => {
   const status = dialog.querySelector('[data-copy-status]')
   try {
     await navigator.clipboard.writeText(recap())
-    status.textContent = 'Récapitulatif copié.'
+    status.textContent = 'Copié.'
   } catch {
-    status.textContent = 'Copie impossible : sélectionnez le texte du récapitulatif pour le copier.'
+    status.textContent = 'Copie impossible : sélectionne le texte pour le copier.'
   }
 })
 

@@ -13,6 +13,7 @@ export default defineConfig({
         aPropos: resolve(__dirname, 'a-propos.html'),
         contact: resolve(__dirname, 'contact.html'),
         landing: resolve(__dirname, 'landing.html'),
+        mvp: resolve(__dirname, 'mvp.html'),
       },
     },
   },

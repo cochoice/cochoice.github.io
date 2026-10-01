@@ -19,17 +19,17 @@
   --color-pervenche-texte: #3D5BE0; /* liens, texte bleu */
   --color-encre: #5F567C;         /* texte courant */
 
-  /* Page d'accueil 2026 (logo interrupteur lilas / corail) */
-  --color-nuit: #221C48;          /* texte principal, fonds sombres */
-  --color-creme: #FAF7F2;         /* blanc cassé */
-  --color-ciel: #E8EDFB;          /* bleu léger */
-  --color-poudre: #FBE9E7;        /* rose léger */
-  --color-lilas: #A79BDB;         /* moitié gauche du logo */
-  --color-corail: #E08A95;        /* moitié droite du logo */
-  --color-action: #3A31B0;        /* couleur d'action (blanc dessus : 9:1) */
-  --color-action-fonce: #28217F;
-  --color-rose-fonce: #A8344A;    /* texte rose courant (AA sur crème) */
-  --color-gris: #55516E;          /* texte secondaire (AA sur crème) */
+  /* Alias de mise en page (pages accueil et MVP), alignés sur la charte V2 */
+  --color-nuit: #2A1F50;          /* = indigo */
+  --color-creme: #F3F0F8;         /* = lavande, sections alternées */
+  --color-ciel: #E9EDFE;          /* teinte claire de pervenche */
+  --color-poudre: #FFEBEB;        /* teinte claire de rose */
+  --color-lilas: #FF7777;         /* motif : moitié rose (gauche) */
+  --color-corail: #5B7BFA;        /* motif : moitié pervenche (droite) */
+  --color-action: #3D5BE0;        /* = pervenche texte, boutons d'action (blanc dessus : AA) */
+  --color-action-fonce: #2A1F50;  /* survol = indigo */
+  --color-rose-fonce: #CC3A44;    /* = rose texte */
+  --color-gris: #5F567C;          /* = encre */
 }
 
 /* ---------- Base ---------- */

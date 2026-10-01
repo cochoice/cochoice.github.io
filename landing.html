@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rejoindre CoChoice</title>
-  <meta name="description" content="Inscrivez-vous et rejoignez CoChoice, pour une contraception plus égale." />
+  <title>CoChoice · Sois prévenu·e du lancement</title>
+  <meta name="description" content="CoChoice, l’appli pour partager la charge de la contraception avec ton ou ta partenaire. Laisse ton email pour être prévenu·e du lancement." />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <script type="module" src="/src/scripts/main.js"></script>
 </head>
@@ -12,33 +12,37 @@
 
   <!-- LANDING : pas de menu de navigation (1 page = 1 objectif = 1 CTA) -->
   <header class="container-site flex h-16 items-center">
-    <a href="index.html"><img src="/logos/cochoice-logo.svg" alt="CoChoice" class="h-8" /></a>
+    <a href="index.html" aria-label="Accueil CoChoice"><img src="/logos/cochoice-logo.svg" alt="CoChoice" class="h-8" /></a>
   </header>
   <main>
     <!-- HERO + FORMULAIRE -->
     <section class="bg-indigo text-white">
       <div class="container-site grid items-center gap-10 py-20 md:grid-cols-2">
         <div>
-          <p class="text-sm font-bold uppercase tracking-widest text-rose">[Offre / bénéfice principal]</p>
-          <h1 class="mt-3 text-4xl text-white! md:text-5xl">[Titre orienté bénéfice]</h1>
-          <p class="mt-6 text-lg text-white/80">[Sous-titre : pour qui, quoi, pourquoi maintenant]</p>
+          <p class="text-sm font-bold uppercase tracking-widest text-rose">Mêmes droits, mêmes choix.</p>
+          <h1 class="mt-3 text-4xl text-white! md:text-5xl">La contraception, ça se gère à deux.</h1>
+          <p class="mt-6 text-lg text-white/80">Pharmacie, RDV, dépenses, charge mentale&nbsp;: CoChoice t’aide à tout partager avec ton ou ta partenaire. Et c’est la personne qui utilise la contraception qui décide de ce qui est partagé.</p>
+          <a href="mvp.html" class="mt-6 inline-flex items-center gap-2 font-bold text-white underline underline-offset-4 hover:text-rose">Découvrir l’appli et tester le check-in →</a>
         </div>
-        <form id="inscription" class="rounded-3xl bg-white p-6 text-encre" action="" method="post">
-          <h2 class="text-2xl">[Je m'inscris]</h2>
-          <input type="email" name="email" required placeholder="ton@email.fr" class="mt-4 w-full rounded-xl border border-indigo/20 px-4 py-3" />
-          <button type="submit" class="btn-primary mt-4 w-full">[CTA principal]</button>
-          <p class="mt-3 text-xs">[Mention RGPD]</p>
+        <form id="inscription" class="rounded-3xl bg-white p-6 text-encre" novalidate data-static-form>
+          <h2 class="text-2xl">Sois prévenu·e du lancement</h2>
+          <p class="mt-2 text-sm">Un seul email le jour J. Pas de spam.</p>
+          <label for="landing-email" class="mt-4 block font-semibold text-indigo">Ton email</label>
+          <input id="landing-email" type="email" name="email" required autocomplete="email" placeholder="prenom@domaine.fr" class="mt-1 w-full rounded-xl border border-indigo/20 px-4 py-3" />
+          <button type="submit" class="btn-primary mt-4 w-full">Je veux être prévenu·e</button>
+          <p class="mt-3 text-sm font-semibold text-indigo data-[state=error]:text-rose-texte" role="status" aria-live="polite" data-form-status></p>
+          <p class="mt-3 text-xs">Ton email sert uniquement à te prévenir du lancement. Jamais revendu. Tu peux demander sa suppression à tout moment.</p>
         </form>
       </div>
     </section>
 
     <!-- BÉNÉFICES -->
     <section class="container-site py-20">
-      <h2 class="text-center text-3xl md:text-4xl">[Pourquoi CoChoice]</h2>
+      <h2 class="text-center text-3xl md:text-4xl">Pourquoi CoChoice&nbsp;?</h2>
       <div class="mt-10 grid gap-6 md:grid-cols-3">
-        <div class="card"><h3 class="text-xl">[Bénéfice 1]</h3><p class="mt-2">[Preuve]</p></div>
-        <div class="card"><h3 class="text-xl">[Bénéfice 2]</h3><p class="mt-2">[Preuve]</p></div>
-        <div class="card"><h3 class="text-xl">[Bénéfice 3]</h3><p class="mt-2">[Preuve]</p></div>
+        <div class="card"><h3 class="text-xl">Fini le « c’est toujours moi qui y pense »</h3><p class="mt-2">Les tâches et les rappels sont répartis. Chacun·e voit ce qu’il ou elle a à faire.</p></div>
+        <div class="card"><h3 class="text-xl">Les comptes sont clairs</h3><p class="mt-2">Un Tricount de la contraception&nbsp;: qui a payé quoi, qui doit quoi. Sans gêne.</p></div>
+        <div class="card"><h3 class="text-xl">Tu gardes la main</h3><p class="mt-2">Tu choisis ce qui est partagé, tu mets en pause quand tu veux, personne ne choisit ta méthode à ta place.</p></div>
       </div>
     </section>
 
@@ -47,9 +51,9 @@
       <div class="container-site">
         <h2 class="text-center text-3xl md:text-4xl">Comment ça marche</h2>
         <ol class="mt-10 grid gap-6 md:grid-cols-3">
-          <li class="card"><span class="text-3xl font-black text-rose">1</span><p class="mt-2">[Étape 1]</p></li>
-          <li class="card"><span class="text-3xl font-black text-pervenche">2</span><p class="mt-2">[Étape 2]</p></li>
-          <li class="card"><span class="text-3xl font-black text-indigo">3</span><p class="mt-2">[Étape 3]</p></li>
+          <li class="card"><span class="text-3xl font-black text-rose">1</span><p class="mt-2"><strong class="text-indigo">Tu crées ton compte.</strong> Un pseudo suffit, et tu commences en solo.</p></li>
+          <li class="card"><span class="text-3xl font-black text-pervenche">2</span><p class="mt-2"><strong class="text-indigo">Tu invites ton ou ta partenaire</strong>, avec un code ou un QR. Si tu veux.</p></li>
+          <li class="card"><span class="text-3xl font-black text-indigo">3</span><p class="mt-2"><strong class="text-indigo">Vous vous répartissez tout</strong> et vous faites le point chaque mois, en 2 minutes.</p></li>
         </ol>
       </div>
     </section>
@@ -57,14 +61,16 @@
     <!-- FAQ -->
     <section class="container-site max-w-3xl py-20">
       <h2 class="text-3xl">Questions fréquentes</h2>
-      <details class="card mt-6"><summary class="cursor-pointer font-bold text-indigo">[Question 1]</summary><p class="mt-2">[Réponse]</p></details>
-      <details class="card mt-4"><summary class="cursor-pointer font-bold text-indigo">[Question 2]</summary><p class="mt-2">[Réponse]</p></details>
+      <details class="card mt-6"><summary class="cursor-pointer font-bold text-indigo">L’appli est déjà disponible&nbsp;?</summary><p class="mt-2">Pas encore. CoChoice est un projet étudiant en développement. Laisse ton email pour être prévenu·e, ou <a class="font-bold text-pervenche-texte underline" href="mvp.html">découvre le MVP</a>.</p></details>
+      <details class="card mt-4"><summary class="cursor-pointer font-bold text-indigo">Mon ou ma partenaire voit tout&nbsp;?</summary><p class="mt-2">Non. La personne qui utilise la contraception choisit, donnée par donnée, ce qui est partagé. Le reste reste privé.</p></details>
+      <details class="card mt-4"><summary class="cursor-pointer font-bold text-indigo">C’est une appli médicale&nbsp;?</summary><p class="mt-2">Non. CoChoice ne remplace pas un·e pro de santé et ne choisit pas ta méthode. Elle t’aide à t’organiser et à en parler.</p></details>
+      <details class="card mt-4"><summary class="cursor-pointer font-bold text-indigo">C’est gratuit&nbsp;?</summary><p class="mt-2">Le modèle n’est pas encore fixé. L’idée de départ&nbsp;: que les établissements financent l’accès pour leurs étudiant·es.</p></details>
     </section>
 
     <!-- CTA FINAL -->
     <section class="bg-rose py-16 text-center">
-      <h2 class="text-3xl">[Relance du CTA]</h2>
-      <a href="#inscription" class="btn-primary mt-6">[CTA principal]</a>
+      <h2 class="text-3xl">Prêt·e à partager la charge&nbsp;?</h2>
+      <a href="#inscription" class="btn-primary mt-6">Je veux être prévenu·e</a>
     </section>
   </main>
   <!-- FOOTER -->
@@ -72,6 +78,7 @@
     <div class="container-site flex flex-col items-center gap-4 py-10 text-center">
       <img src="/logos/cochoice-logo-dark.svg" alt="CoChoice" class="h-8" />
       <p class="font-bold">Mêmes droits, mêmes choix.</p>
+      <p class="text-sm"><a class="underline underline-offset-4" href="index.html">Le site</a> · <a class="underline underline-offset-4" href="mvp.html">L’appli</a> · <a class="underline underline-offset-4" href="contact.html">Contact</a></p>
       <p class="text-sm text-white/70">© <span data-year></span> CoChoice · Groupe 13 · Rocket School ChangeMaker Project</p>
     </div>
   </footer>

@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L’appli CoChoice (MVP) · Mêmes droits, mêmes choix.</title>
+  <meta name="description" content="Le MVP de l’appli CoChoice : répartir les tâches, les dépenses et la charge mentale de la contraception avec ton ou ta partenaire. Teste le check-in mensuel avec des données fictives." />
+  <meta name="theme-color" content="#F3F0F8" />
+  <meta property="og:title" content="L’appli CoChoice · MVP" />
+  <meta property="og:description" content="Ce qu’on construit en premier, et un check-in à tester. Projet étudiant en développement." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preload" href="/fonts/Nunito-900.woff2" as="font" type="font/woff2" crossorigin />
+  <script type="module" src="/src/scripts/mvp.js"></script>
+</head>
+<body class="mvp">
+  <!-- Pictogrammes -->
+  <svg width="0" height="0" class="sr-only" aria-hidden="true" focusable="false">
+    <symbol id="i-info" viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 0 4 20.5zM20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 1 1.5 1.5z"/><path d="M7 8h1.5M15.5 8H17M15.5 11.5H17"/></symbol>
+    <symbol id="i-anticipation" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M10 15h4m0 0-1.8-1.8M14 15l-1.8 1.8"/></symbol>
+    <symbol id="i-demarches" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"/></symbol>
+    <symbol id="i-frais" viewBox="0 0 24 24"><path d="M6 3.5h12v17l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4-2 1.4z"/><path d="M9 8.5h6M9 12h6M9 15.5h3"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m0 0-5-5m5 5-5 5"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5m0 0 5-5m-5 5 5 5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3"/><circle cx="16.5" cy="9.5" r="2.5"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0M14.5 15.2a4.5 4.5 0 0 1 6 4.3"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M12 21a7 7 0 0 1-7-7V9.5a1.5 1.5 0 0 1 3 0V12M8 12V5.5a1.5 1.5 0 0 1 3 0V11M11 11V4.5a1.5 1.5 0 0 1 3 0V11M14 11V6a1.5 1.5 0 0 1 3 0v8a7 7 0 0 1-5 7"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4H6.5A2.5 2.5 0 0 1 4 13.5z"/></symbol>
+    <symbol id="i-undo" viewBox="0 0 24 24"><path d="M8 7 4 11l4 4"/><path d="M4 11h10a5 5 0 0 1 0 10h-3"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M10 9v6M14 9v6"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2v2h-2zM18 14h2M14 18h2v2M18 18h2v2h-2"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4M8 14h2M12 14h2M16 14h0"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5 19 6v5.5c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4 16a8 8 0 1 1 16 0"/><path d="m12 16 4-5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 4 2.4 5 5.4.6-4 3.7 1.1 5.4L12 16l-4.9 2.7 1.1-5.4-4-3.7L9.6 9z"/></symbol>
+    <symbol id="i-cards" viewBox="0 0 24 24"><rect x="3.5" y="6" width="11" height="14" rx="2"/><path d="M9 4.5 18.5 3a2 2 0 0 1 2.3 1.7L22 15"/></symbol>
+    <symbol id="i-compare" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M3 8h8M13 16h8"/></symbol>
+    <symbol id="i-note" viewBox="0 0 24 24"><path d="M6 3.5h9l3 3V20.5H6z"/><path d="M9 10h6M9 13.5h6M9 17h4"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21c-3.9 0-6.5-2.7-6.5-6.2 0-3.9 3.4-6.3 4.4-10.3 2.9 2 4.3 4.7 4.3 7.1.9-.6 1.5-1.6 1.7-2.8 1.6 1.6 2.6 3.7 2.6 6 0 3.5-2.6 6.2-6.5 6.2z"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="m8.2 10.8 7.6-3.6M8.2 13.2l7.6 3.6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18M10.6 6.1A9.7 9.7 0 0 1 12 6c5 0 8.5 4.5 9 6-.3.8-1.2 2.2-2.6 3.5M6.4 7.6C4.6 8.9 3.4 10.7 3 12c.5 1.5 4 6 9 6 1.4 0 2.7-.3 3.8-.9"/><path d="M9.9 10a3 3 0 0 0 4.1 4.1"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- ============ NAV MVP (distincte de la vitrine) ============ -->
+  <header class="sticky top-0 z-50 border-b border-indigo/10 bg-white/90 backdrop-blur">
+    <nav class="container-site flex h-16 items-center gap-4" aria-label="Navigation de l’appli">
+      <a href="#top" class="flex items-center gap-2" aria-label="CoChoice, haut de la page MVP">
+        <img src="/logos/cochoice-logo.svg" alt="" width="149" height="26" class="h-[26px] w-auto" />
+        <span class="mvp-badge">MVP</span>
+      </a>
+      <ul class="ml-auto hidden items-center gap-1 font-bold text-indigo lg:flex">
+        <li><a class="mvp-navlink" href="#fonctionnalites">Fonctionnalités</a></li>
+        <li><a class="mvp-navlink" href="#checkin">Check-in</a></li>
+        <li><a class="mvp-navlink" href="#demo">Aperçu</a></li>
+        <li><a class="mvp-navlink" href="#apres">Et après&nbsp;?</a></li>
+      </ul>
+      <a href="index.html" class="ml-auto inline-flex min-h-11 items-center gap-2 rounded-full px-3 font-bold text-indigo hover:bg-lavande lg:ml-2">
+        <svg class="i" aria-hidden="true"><use href="#i-back"/></svg><span class="sm:hidden">Le site</span><span class="hidden sm:inline">Retour au site</span>
+      </a>
+    </nav>
+  </header>
+
+  <main id="contenu" tabindex="-1">
+
+    <!-- ============ HERO MVP ============ -->
+    <section id="top" class="bg-lavande" aria-labelledby="mvp-title">
+      <div class="container-site grid items-center gap-12 py-14 md:py-20 lg:grid-cols-2">
+        <div>
+          <p class="mvp-status"><span class="status-dot" aria-hidden="true"></span>MVP en conception · pas encore téléchargeable</p>
+          <p class="surtitre mt-6">L’appli CoChoice</p>
+          <h1 class="mvp-h1 mt-3">La contraception, ça se gère <span class="text-pervenche-texte">à deux.</span></h1>
+          <p class="mt-6 max-w-xl text-lg">Voici ce qu’on construit en premier&nbsp;: une appli pour répartir les tâches, les dépenses et la charge mentale de la contraception avec ton ou ta partenaire. Et c’est toujours la personne qui utilise la contraception qui décide de ce qui est partagé.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#checkin" class="btn btn-primary">Tester le check-in <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a href="#fonctionnalites" class="btn btn-ghost">Voir les fonctionnalités</a>
+          </div>
+        </div>
+
+        <!-- Visuel : trois cartes de l'appli, données fictives -->
+        <div class="mvp-stack" aria-label="Exemples d’écrans de l’appli, données fictives">
+          <div class="card mvp-float mvp-float-1">
+            <p class="mvp-mini-label">Tricount contraceptif</p>
+            <p class="mvp-mini-title">Ce mois-ci</p>
+            <div class="mvp-split" aria-hidden="true"><span style="--w:55%" class="mvp-split-a"></span><span style="--w:45%" class="mvp-split-b"></span></div>
+            <p class="mvp-mini-row"><span class="dot-a"></span>Toi 13,20&nbsp;€ <span class="dot-b ml-3"></span>Alex 10,80&nbsp;€</p>
+            <p class="mvp-mini-foot">Alex te doit 1,20&nbsp;€</p>
+          </div>
+          <div class="card mvp-float mvp-float-2">
+            <p class="mvp-mini-label">Tâche</p>
+            <p class="mvp-mini-title">Passer à la pharmacie</p>
+            <p class="mvp-mini-row"><span class="dot-b"></span>Alex s’en occupe · avant jeudi</p>
+          </div>
+          <div class="card mvp-float mvp-float-3">
+            <p class="mvp-mini-label">Check-in du mois</p>
+            <p class="mvp-mini-title">Charge perçue</p>
+            <div class="mvp-bars" aria-hidden="true">
+              <span><b class="bar-a" style="--w:72%"></b></span>
+              <span><b class="bar-b" style="--w:40%"></b></span>
+            </div>
+            <p class="mvp-mini-foot">Un écart à en parler&nbsp;?</p>
+          </div>
+          <p class="mvp-fake">Données fictives</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FONCTIONNALITÉS ============ -->
+    <section id="fonctionnalites" aria-labelledby="feat-title">
+      <div class="container-site pt-16 md:pt-24">
+        <p class="surtitre">Ce qu’il y a dans le MVP</p>
+        <h2 id="feat-title" class="mvp-h2 mt-2">Tout ce dont vous avez besoin, rien de plus.</h2>
+        <p class="mt-4 max-w-2xl text-lg">Huit blocs, pensés pour une première version. Rien n’est encore disponible&nbsp;: c’est ce qu’on construit.</p>
+      </div>
+
+      <!-- 1. Onboarding et duo -->
+      <div class="feat-block">
+        <div class="container-site feat-grid">
+          <div class="feat-head reveal">
+            <span class="feat-num">01</span>
+            <h3>Onboarding et duo</h3>
+            <p>Tu commences seul·e. Le duo, c’est quand tu veux.</p>
+          </div>
+          <ul class="feat-cards">
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-user"/></svg><h4>Un compte en 30 secondes</h4><p>Email, Apple ou Google. Un pseudo suffit.</p></li>
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-hand"/></svg><h4>Solo d’abord</h4><p>Tu invites ton ou ta partenaire quand tu es prêt·e. Ou jamais.</p></li>
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-qr"/></svg><h4>Invitation par code ou QR</h4><p>Un code à envoyer ou un QR à scanner. C’est tout.</p></li>
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-users"/></svg><h4>Un espace duo</h4><p>Un espace commun que chacun·e peut quitter à tout moment.</p></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 2. Contrôle et confidentialité (mis en avant) -->
+      <div class="feat-block feat-block-dark">
+        <div class="container-site feat-grid">
+          <div class="feat-head reveal">
+            <span class="feat-num">02</span>
+            <h3>Contrôle et confidentialité</h3>
+            <p>La personne qui utilise la contraception garde la main. Toujours.</p>
+          </div>
+          <ul class="feat-cards feat-cards-3">
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-lock"/></svg><h4>Tu choisis ce qui est partagé</h4><p>Donnée par donnée. Rien ne part sans ton accord.</p></li>
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-pause"/></svg><h4>Mode pause</h4><p>Un clic, et plus rien n’est partagé. Sans explication à donner.</p></li>
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-download"/></svg><h4>Tes données t’appartiennent</h4><p>Export et suppression quand tu veux (RGPD). Hébergement de santé (HDS) en France prévu.</p></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3. Partage de la charge -->
+      <div class="feat-block">
+        <div class="container-site feat-grid">
+          <div class="feat-head reveal">
+            <span class="feat-num">03</span>
+            <h3>Partage de la charge</h3>
+            <p>L’argent, le temps, les tâches, et tout ce qu’on garde en tête.</p>
+          </div>
+          <ul class="feat-cards">
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-frais"/></svg><h4>Le Tricount de la contraception</h4><p>Dépenses, soldes, remboursements entre vous. Sans prise de tête.</p></li>
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-check"/></svg><h4>Les tâches, assignées</h4><p>RDV, pharmacie, ordonnance, tests IST&nbsp;: qui s’en occupe, et c’est fait ou pas.</p></li>
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-gauge"/></svg><h4>Score de charge à deux</h4><p>Argent, temps, tâches, charge mentale&nbsp;: où vous en êtes, sans jugement.</p></li>
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-star"/></svg><h4>Ton bilan, façon Wrapped</h4><p>Un récap du mois et de l’année. À partager, si tu en as envie.</p></li>
+          </ul>
+          <p class="feat-link reveal"><a href="#demo">Essaie la répartition des tâches plus bas <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+        </div>
+      </div>
+
+      <!-- 4. Rappels et calendrier -->
+      <div class="feat-block feat-block-soft">
+        <div class="container-site feat-grid">
+          <div class="feat-head reveal">
+            <span class="feat-num">04</span>
+            <h3>Rappels et calendrier</h3>
+            <p>Pour que ce ne soit plus toujours la même personne qui pense à tout.</p>
+          </div>
+          <ul class="feat-cards">
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-bell"/></svg><h4>Des rappels qui collent à ta méthode</h4><p>Le bon rappel, au bon moment, selon ce que tu utilises.</p></li>
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-share"/></svg><h4>Ton ou ta partenaire prévenu·e</h4><p>Seulement si tu l’autorises.</p></li>
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-calendar"/></svg><h4>Un calendrier partagé</h4><p>RDV, renouvellements, dates à ne pas rater.</p></li>
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-shield"/></svg><h4>Dépistage IST à deux</h4><p>Un rappel pour le faire ensemble, sans gêne.</p></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 5. Communication du duo -->
+      <div class="feat-block">
+        <div class="container-site feat-grid">
+          <div class="feat-head reveal">
+            <span class="feat-num">05</span>
+            <h3>Communication du duo</h3>
+            <p>Parce que le plus dur, c’est souvent d’en parler.</p>
+          </div>
+          <ul class="feat-cards feat-cards-2">
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-cards"/></svg><h4>Conversation guidée</h4><p>Des cartes «&nbsp;questions à se poser ensemble&nbsp;»&nbsp;: qui s’en occupe, ce qui me gêne, ce que je suis prêt·e à essayer.</p></li>
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-chat"/></svg><h4>Check-in mensuel, 2 minutes</h4><p>Chacun·e note sa charge perçue, puis vous comparez. <a class="link-inline" href="#checkin">Essaie-le</a>.</p></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 6. Aide à la décision -->
+      <div class="feat-block feat-block-soft">
+        <div class="container-site feat-grid">
+          <div class="feat-head reveal">
+            <span class="feat-num">06</span>
+            <h3>Aide à la décision</h3>
+            <p>Pour t’informer et préparer tes RDV. La décision reste à la personne concernée.</p>
+          </div>
+          <ul class="feat-cards feat-cards-3">
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-compare"/></svg><h4>Comparateur de méthodes à deux</h4><p>Un quiz croisé pour explorer les options, y compris les méthodes masculines autorisées en France.</p></li>
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-note"/></svg><h4>Journal de ressentis</h4><p>Note ce que tu ressens et exporte-le pour ton RDV médical.</p></li>
+            <li class="card feat-card reveal"><svg class="feat-ic" aria-hidden="true"><use href="#i-calendar"/></svg><h4>Prépare ton RDV</h4><p>Tes questions, prêtes à poser. Pour ne rien oublier.</p></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 7 et 8. Information + Engagement -->
+      <div class="feat-block">
+        <div class="container-site feat-duo">
+          <div class="reveal">
+            <div class="feat-head">
+              <span class="feat-num">07</span>
+              <h3>Information</h3>
+              <p>Court, clair, fiable.</p>
+            </div>
+            <ul class="feat-cards feat-cards-2 mt-6">
+              <li class="card feat-card"><svg class="feat-ic" aria-hidden="true"><use href="#i-info"/></svg><h4>Des fiches de 2 minutes</h4><p>L’essentiel sur chaque méthode.</p></li>
+              <li class="card feat-card"><svg class="feat-ic" aria-hidden="true"><use href="#i-check"/></svg><h4>Vrai ou faux&nbsp;?</h4><p>Pour casser les idées reçues.</p></li>
+            </ul>
+          </div>
+          <div class="reveal">
+            <div class="feat-head">
+              <span class="feat-num">08</span>
+              <h3>Engagement</h3>
+              <p>Garder le rythme, sans culpabiliser.</p>
+            </div>
+            <ul class="feat-cards feat-cards-2 mt-6">
+              <li class="card feat-card"><svg class="feat-ic" aria-hidden="true"><use href="#i-flame"/></svg><h4>Streaks, badges, défis</h4><p>À relever à deux.</p></li>
+              <li class="card feat-card"><svg class="feat-ic" aria-hidden="true"><use href="#i-share"/></svg><h4>Carte «&nbsp;duo équilibré&nbsp;»</h4><p>À partager, sans aucune donnée perso dessus.</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Socle -->
+      <div class="container-site pb-16 md:pb-24">
+        <div class="socle reveal">
+          <p class="socle-title">Le socle, non négociable</p>
+          <ul class="socle-list">
+            <li><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg>Hébergement de santé (HDS) en France</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-close"/></svg>Aucune revente de données</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Chiffrement</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Un consentement explicite pour chaque donnée partagée</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>Accessibilité et langage inclusif</li>
+          </ul>
+          <p class="socle-note">Ce sont nos engagements pour le MVP. Ils seront mis en place et vérifiés avant tout lancement.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MINI-DÉMO : CHECK-IN + QUESTION SENSIBLE ============ -->
+    <section id="checkin" class="bg-lavande py-16 md:py-24" aria-labelledby="checkin-title">
+      <div class="container-site">
+        <div class="max-w-2xl">
+          <p class="surtitre">À tester · données fictives</p>
+          <h2 id="checkin-title" class="mvp-h2 mt-2">Le check-in du mois. Toi d’abord, puis tu découvres l’autre.</h2>
+          <p class="mt-4 text-lg">Quatre questions, deux minutes. Tu réponds, puis tu vois ce qu’Alex (fictif) a répondu, côte à côte. Personne ne voit les réponses de l’autre avant d’avoir répondu. Rien n’est envoyé&nbsp;: tout se passe dans ton navigateur.</p>
+          <p class="who-legend mt-4"><span class="who who-a">Toi</span><span class="who who-b">Alex</span></p>
+        </div>
+
+        <div class="checkin-grid mt-10">
+          <div class="card checkin-card" data-checkin aria-live="polite">
+            <noscript><p>La démo nécessite JavaScript.</p></noscript>
+          </div>
+          <div class="card checkin-card checkin-card-alt" data-sensitive aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ APERÇU : PARTAGE DES TÂCHES (démo existante) ============ -->
+    <section class="section demo" id="demo" aria-labelledby="demo-title">
+      <div class="wrap">
+        <div class="demo-head">
+          <div>
+            <p class="kicker kicker-light">Aperçu · partage des tâches</p>
+            <h2 class="h2" id="demo-title">Propose, accepte, ajuste. Comme dans l’appli.</h2>
+          </div>
+          <p class="demo-intro">Ici aussi tout est fictif. Alex n’est pas une vraie personne&nbsp;: c’est toi qui simules ses réponses. N’écris rien de perso.</p>
+        </div>
+
+        <div class="demo-grid">
+          <aside class="demo-controls" aria-label="Réglages de l’aperçu">
+            <div class="ctrl">
+              <label for="demo-scenario" class="ctrl-label">Point de départ</label>
+              <select id="demo-scenario" class="select" data-scenario-select>
+                <option value="part">Je veux prendre plus ma part</option>
+                <option value="charge">J’aimerais alléger ma charge</option>
+                <option value="ensemble">On veut s’organiser à deux</option>
+                <option value="info">Je veux juste m’informer</option>
+              </select>
+            </div>
+            <div class="ctrl">
+              <span class="ctrl-label" id="partner-label">Partenaire</span>
+              <button type="button" class="switch" role="switch" aria-checked="true" aria-labelledby="partner-label partner-state" data-partner-switch>
+                <span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span>
+                <span id="partner-state" data-partner-state>Alex (fictif) est connecté·e</span>
+              </button>
+              <p class="ctrl-help">Sans partenaire, tout marche quand même et rien n’est partagé.</p>
+            </div>
+            <div class="ctrl ctrl-actions">
+              <button type="button" class="btn btn-light btn-sm" data-demo-reset><svg class="i" aria-hidden="true"><use href="#i-undo"/></svg>Recharger l’exemple</button>
+              <button type="button" class="btn btn-outline-light btn-sm" data-demo-clear>Tout effacer</button>
+            </div>
+            <div class="legend">
+              <p class="ctrl-label" id="legend-title">Statuts</p>
+              <ul aria-labelledby="legend-title">
+                <li><span class="pill pill-perso">Personnelle</span> visible par toi seul·e</li>
+                <li><span class="pill pill-wait">En attente</span> pas encore de réponse</li>
+                <li><span class="pill pill-ok">Acceptée</span> d’accord tous les deux</li>
+                <li><span class="pill pill-talk">À discuter</span> on en parle d’abord</li>
+                <li><span class="pill pill-no">Refusée</span> refus respecté, sans relance</li>
+              </ul>
+            </div>
+            <p class="storage-note">Les données de l’aperçu restent dans le stockage local de ce navigateur, qui n’est pas un coffre-fort. Elles ne quittent pas ton appareil.</p>
+          </aside>
+
+          <div class="app" data-app>
+            <div class="app-bar">
+              <span class="app-brand"><img src="/logos/cochoice-mark.svg" alt="" width="44" height="16" class="h-4 w-auto" />Aperçu de l’appli</span>
+              <span class="fake-tag">Données fictives</span>
+            </div>
+            <div class="app-tabs" role="tablist" aria-label="Espaces de l’appli">
+              <button role="tab" type="button" id="tab-actions" aria-controls="panel-app" data-tab="actions">Mes actions</button>
+              <button role="tab" type="button" id="tab-props" aria-controls="panel-app" data-tab="props">Propositions<span class="tab-count" data-count-props></span></button>
+              <button role="tab" type="button" id="tab-souhaits" aria-controls="panel-app" data-tab="souhaits">Mes souhaits</button>
+              <button role="tab" type="button" id="tab-bilan" aria-controls="panel-app" data-tab="bilan">Bilan</button>
+              <button role="tab" type="button" id="tab-reco" aria-controls="panel-app" data-tab="reco">Recommander</button>
+            </div>
+            <div class="app-panel" id="panel-app" role="tabpanel" tabindex="-1" data-app-panel>
+              <p class="app-empty">L’aperçu nécessite JavaScript.</p>
+            </div>
+            <div class="app-toast" role="status" aria-live="polite" data-toast></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ET APRÈS ? ============ -->
+    <section id="apres" class="py-16 md:py-24" aria-labelledby="apres-title">
+      <div class="container-site">
+        <p class="surtitre">Pas dans le MVP</p>
+        <h2 id="apres-title" class="mvp-h2 mt-2">Et après&nbsp;?</h2>
+        <p class="mt-4 max-w-2xl text-lg">Des idées pour la suite, si le MVP fait ses preuves. Rien de tout ça n’est disponible ni promis.</p>
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          <div class="card later reveal">
+            <p class="later-tag">Idées V2</p>
+            <ul class="later-list">
+              <li>Vote anonyme et révélation simultanée</li>
+              <li>Notes partagées et bucket list du duo</li>
+              <li>Simulateur coût et efficacité</li>
+              <li>Contenus snack, validés par des pros</li>
+              <li>Carte des lieux utiles</li>
+              <li>Infos sur la contraception d’urgence</li>
+              <li>Plusieurs partenaires</li>
+            </ul>
+          </div>
+          <div class="card later reveal">
+            <p class="later-tag later-tag-b">Idées V3</p>
+            <ul class="later-list">
+              <li>Parcours d’info</li>
+              <li>Prise de RDV intégrée</li>
+              <li>Téléconsultation</li>
+              <li>Parrainage</li>
+              <li>Box «&nbsp;double protection&nbsp;»</li>
+              <li>Mode campus</li>
+              <li>Version Premium</li>
+              <li>Licences pour les établissements (B2B2C)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA RETOUR ============ -->
+    <section class="bg-indigo py-16 text-center text-white" aria-labelledby="end-title">
+      <div class="container-site">
+        <h2 id="end-title" class="mvp-h2 text-white!">Envie d’être prévenu·e du lancement&nbsp;?</h2>
+        <p class="mx-auto mt-4 max-w-xl text-white/80">Le projet est encore en construction. En attendant, découvre le concept, les ateliers et l’équipe.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          <a href="landing.html" class="btn btn-light">Être prévenu·e</a>
+          <a href="index.html" class="btn btn-outline-light"><svg class="i" aria-hidden="true"><use href="#i-back"/></svg>Retour au site</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-indigo text-white">
+    <div class="container-site flex flex-col items-center gap-3 border-t border-white/15 py-10 text-center">
+      <img src="/logos/cochoice-logo-dark.svg" alt="CoChoice" width="183" height="32" class="h-8 w-auto" />
+      <p class="font-bold">Mêmes droits, mêmes choix.</p>
+      <p class="text-sm text-white/70">Projet étudiant en développement · Groupe 13 · ChangeMaker Project 2026. Aucune appli publiée.</p>
+      <p class="text-sm"><a class="underline underline-offset-4" href="index.html">Le site</a> · <a class="underline underline-offset-4" href="a-propos.html">À propos</a> · <a class="underline underline-offset-4" href="contact.html">Contact</a></p>
+      <p class="text-sm text-white/60">© <span data-year>2026</span> CoChoice</p>
+    </div>
+  </footer>
+</body>
+</html>
