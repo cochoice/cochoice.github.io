@@ -14,6 +14,7 @@ export default defineConfig({
         contact: resolve(__dirname, 'contact.html'),
         landing: resolve(__dirname, 'landing.html'),
         mvp: resolve(__dirname, 'mvp.html'),
+        mentionsLegales: resolve(__dirname, 'mentions-legales.html'),
       },
     },
   },

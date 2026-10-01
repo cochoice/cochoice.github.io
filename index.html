@@ -44,30 +44,17 @@
       <a href="#top" class="logo" aria-label="CoChoice, retour en haut de la page">
         <img src="/logos/cochoice-logo.svg" alt="" width="183" height="32" />
       </a>
-      <nav class="nav-main" aria-label="Navigation principale">
-        <ul>
-          <li><a href="#concept">Le concept</a></li>
-          <li><a href="#ateliers">Les ateliers</a></li>
-          <li><a href="#etablissements">Pour les établissements</a></li>
-          <li><a href="a-propos.html">À propos</a></li>
-        </ul>
-      </nav>
-      <a href="mvp.html" class="btn btn-primary btn-sm header-cta">Découvrir l’appli</a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-mobile" data-menu-toggle>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-site" data-menu-toggle>
         <span class="menu-toggle-bars" aria-hidden="true"></span><span class="menu-toggle-label">Menu</span>
       </button>
-    </div>
-    <div class="menu-mobile" id="menu-mobile" hidden data-menu>
-      <nav aria-label="Navigation mobile">
+      <nav class="nav-main" id="menu-site" aria-label="Navigation principale" data-menu>
         <ul>
           <li><a href="#concept">Le concept</a></li>
           <li><a href="#ateliers">Les ateliers</a></li>
-          <li><a href="#etablissements">Pour les établissements</a></li>
-          <li><a href="#faq">Questions fréquentes</a></li>
+          <li><a href="#etablissements">Établissements</a></li>
           <li><a href="a-propos.html">À propos</a></li>
-          <li><a href="contact.html">Contact</a></li>
         </ul>
-        <a href="mvp.html" class="btn btn-primary btn-block">Découvrir l’appli</a>
+        <a href="mvp.html" class="btn btn-primary btn-sm">Découvrir l’appli</a>
       </nav>
     </div>
   </header>
@@ -174,16 +161,7 @@
           <li class="domain reveal"><svg class="domain-icon" aria-hidden="true"><use href="#i-frais"/></svg><h4>Payer</h4><p>Se répartir les frais comme vous l’avez décidé. Équitable ne veut pas forcément dire moitié-moitié.</p></li>
         </ul>
 
-        <div class="not-list reveal">
-          <p class="not-title" id="not-title">CoChoice, ce n’est pas</p>
-          <ul aria-labelledby="not-title">
-            <li>Un avis médical</li>
-            <li>Une appli qui choisit ta méthode</li>
-            <li>Un contraceptif</li>
-            <li>Une garantie contre une grossesse ou une IST</li>
-            <li>Un outil pour surveiller ton ou ta partenaire</li>
-          </ul>
-        </div>
+        <p class="not-list reveal"><strong>CoChoice, ce n’est pas</strong> un avis médical, une appli qui choisit ta méthode, un contraceptif, une garantie contre une grossesse ou une IST, ni un outil pour surveiller ton ou ta partenaire.</p>
         <p class="source-line">Pour aller plus loin : <a href="https://www.questionsexualite.fr/choisir-sa-contraception/ma-contraception-et-moi/pourquoi-et-comment-parler-contraception-avec-votre-partenaire" target="_blank" rel="noopener">« Pourquoi et comment parler contraception avec ton ou ta partenaire », QuestionSexualité<span class="sr-only"> (nouvel onglet)</span></a>, Santé publique France.</p>
       </div>
     </section>
@@ -195,10 +173,10 @@
           <p class="kicker"><span class="kicker-num">02</span>L’appli</p>
           <h2 class="h2" id="app-title">Une appli pour s’organiser à deux, ou seul·e.</h2>
           <ol class="how-steps">
-            <li class="reveal"><span class="how-num" aria-hidden="true">1</span><div><h3>Tu commences en solo</h3><p>Tu invites ton ou ta partenaire quand tu veux. Ou jamais.</p></div></li>
-            <li class="reveal"><span class="how-num" aria-hidden="true">2</span><div><h3>Vous vous répartissez les tâches</h3><p>Pharmacie, RDV, dépenses&nbsp;: chacun·e prend sa part, pour de vrai.</p></div></li>
-            <li class="reveal"><span class="how-num" aria-hidden="true">3</span><div><h3>Vous en parlez plus facilement</h3><p>Un check-in de 2 minutes par mois et des questions pour lancer la discussion.</p></div></li>
-            <li class="reveal"><span class="how-num" aria-hidden="true">4</span><div><h3>La personne concernée garde la main</h3><p>C’est elle qui choisit ce qui est partagé. Pause en un clic.</p></div></li>
+            <li class="reveal"><div><h3>Tu commences en solo</h3><p>Tu invites ton ou ta partenaire quand tu veux. Ou jamais.</p></div></li>
+            <li class="reveal"><div><h3>Vous vous répartissez les tâches</h3><p>Pharmacie, RDV, dépenses&nbsp;: chacun·e prend sa part, pour de vrai.</p></div></li>
+            <li class="reveal"><div><h3>Vous en parlez plus facilement</h3><p>Un check-in de 2 minutes par mois et des questions pour lancer la discussion.</p></div></li>
+            <li class="reveal"><div><h3>La personne concernée garde la main</h3><p>C’est elle qui choisit ce qui est partagé. Pause en un clic.</p></div></li>
           </ol>
           <div class="cta-row">
             <a href="mvp.html" class="btn btn-primary">Découvrir l’appli <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -244,10 +222,10 @@
             <button type="button" class="btn btn-primary" data-contact="atelier">Parler d’un atelier</button>
           </div>
           <ol class="ws-list">
-            <li class="reveal"><span class="ws-num" aria-hidden="true">01</span><h3>Des infos fiables</h3><p>Des sources publiques et des contenus relus par des pros. Aucune méthode imposée.</p></li>
-            <li class="reveal"><span class="ws-num" aria-hidden="true">02</span><h3>De la discussion</h3><p>On casse les idées reçues, sans pointer personne du doigt.</p></li>
-            <li class="reveal"><span class="ws-num" aria-hidden="true">03</span><h3>Des cas concrets</h3><p>Qui pense à quoi, au quotidien&nbsp;? Et qu’est-ce qui pourrait changer&nbsp;?</p></li>
-            <li class="reveal"><span class="ws-num" aria-hidden="true">04</span><h3>Une action à la sortie</h3><p>Tu repars avec un truc concret à faire, pour toi ou à proposer.</p></li>
+            <li class="reveal"><h3>Des infos fiables</h3><p>Des sources publiques et des contenus relus par des pros. Aucune méthode imposée.</p></li>
+            <li class="reveal"><h3>De la discussion</h3><p>On casse les idées reçues, sans pointer personne du doigt.</p></li>
+            <li class="reveal"><h3>Des cas concrets</h3><p>Qui pense à quoi, au quotidien&nbsp;? Et qu’est-ce qui pourrait changer&nbsp;?</p></li>
+            <li class="reveal"><h3>Une action à la sortie</h3><p>Tu repars avec un truc concret à faire, pour toi ou à proposer.</p></li>
           </ol>
         </div>
         <p class="honest reveal"><strong>On en est où&nbsp;?</strong> Les ateliers sont en cours de conception. Pas encore de dates, de réservations ni d’intervenant·es. Ils seront animés par des personnes rémunérées, proches des campus.</p>
@@ -360,19 +338,8 @@
               <div class="tl-point"><span class="tl-dot tl-dot-end" aria-hidden="true"></span><strong>6 semaines</strong><span>les mêmes personnes, volontaires</span></div>
             </div>
             <p class="indicator"><span class="indicator-label">Notre indicateur</span>La part des participantes qui portent seules au moins une tâche qu’elles aimeraient partager.</p>
-            <p class="small-title">On suit aussi</p>
-            <ul class="follow">
-              <li>qui fait quoi, et ce qui est souhaité</li>
-              <li>la charge ressentie</li>
-              <li>la liberté de choix</li>
-              <li>les pressions éventuelles</li>
-              <li>les personnes perdues de vue</li>
-            </ul>
-            <ul class="state-chips" aria-label="État de la mesure">
-              <li><span>Point de départ</span><strong>pas encore mesuré</strong></li>
-              <li><span>Objectif chiffré</span><strong>pas encore fixé</strong></li>
-              <li><span>Résultats terrain</span><strong>aucun pour l’instant</strong></li>
-            </ul>
+            <p class="follow">On suit aussi qui fait quoi (et ce qui est souhaité), la charge ressentie, la liberté de choix, les pressions éventuelles et les personnes perdues de vue.</p>
+            <p class="state-line">Point de départ&nbsp;: <strong>pas encore mesuré</strong> · Objectif chiffré&nbsp;: <strong>pas encore fixé</strong> · Résultats terrain&nbsp;: <strong>aucun pour l’instant</strong></p>
           </div>
 
           <div class="impact-side">
@@ -443,88 +410,21 @@
           <li><a href="#faq">Questions fréquentes</a></li>
           <li><a href="a-propos.html">À propos</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="mentions-legales.html">Sources et crédits</a></li>
         </ul>
       </nav>
       <div class="footer-col">
-        <p class="footer-title">Sources</p>
-        <ul>
-          <li><a href="https://www.questionsexualite.fr/choisir-sa-contraception/ma-contraception-et-moi/pourquoi-et-comment-parler-contraception-avec-votre-partenaire" target="_blank" rel="noopener">QuestionSexualité, parler contraception avec son ou sa partenaire</a></li>
-          <li><a href="https://www.ameli.fr/assure/sante/themes/contraception/choisir-mode-contraception" target="_blank" rel="noopener">Ameli, choisir sa contraception</a></li>
-          <li><a href="https://www.ameli.fr/assure/remboursements/rembourse/contraception-ivg/contraception" target="_blank" rel="noopener">Ameli, contraception et remboursements</a></li>
-          <li><a href="https://www.etudiant.gouv.fr/fr/les-services-de-sante-etudiante-sse-mode-d-emploi-3050" target="_blank" rel="noopener">Étudiant.gouv, services de santé étudiante</a></li>
-          <li><a href="https://www.cnil.fr/fr/quest-ce-ce-quune-donnee-de-sante" target="_blank" rel="noopener">CNIL, données de santé</a></li>
-          <li><a href="https://www.un.org/sustainabledevelopment/fr/gender-equality/" target="_blank" rel="noopener">ONU, objectif de développement durable 5</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
         <p class="footer-title">Contact</p>
         <p class="footer-text">Le formulaire n’est pas encore relié à une boîte mail&nbsp;: rien n’est envoyé pour l’instant.</p>
-        <button type="button" class="btn btn-outline-light btn-sm" data-contact="autre">Ouvrir le formulaire</button>
-        <p class="footer-title footer-title-gap">Crédits photo</p>
-        <ul class="credits">
-          <li><a href="https://unsplash.com/photos/RvpYX3pmGsA" target="_blank" rel="noopener">Baruk Granda</a></li>
-          <li><a href="https://unsplash.com/photos/CnVrBbdvnDE" target="_blank" rel="noopener">Vitaly Gariev (cuisine)</a></li>
-          <li><a href="https://unsplash.com/photos/KxyabRVq0Kw" target="_blank" rel="noopener">Anton Ryazanov</a></li>
-          <li><a href="https://unsplash.com/photos/TB5HpfJf7mA" target="_blank" rel="noopener">Vitaly Gariev (amphithéâtre)</a></li>
-          <li><a href="https://unsplash.com/photos/LZ03UAy1SMc" target="_blank" rel="noopener">Kelly Sikkema</a></li>
-          <li><a href="https://unsplash.com/photos/kaZHJj-DhC4" target="_blank" rel="noopener">Zoshua Colah</a></li>
-        </ul>
-        <p class="footer-text footer-small">Photos sous <a href="https://unsplash.com/license" target="_blank" rel="noopener">licence Unsplash</a>, pour illustrer.</p>
+        <button type="button" class="btn btn-outline-light btn-sm" data-contact="autre">Nous écrire</button>
       </div>
     </div>
     <div class="wrap footer-bottom">
-      <p>Ce site n’utilise ni cookie, ni mesure d’audience, ni pub. Les photos sont chargées depuis Unsplash.</p>
+      <p>Ni cookie, ni mesure d’audience, ni pub. <a href="mentions-legales.html">Sources et crédits photo</a></p>
       <p>© <span data-year>2026</span> CoChoice · Groupe 13</p>
     </div>
   </footer>
 
-  <!-- ============ FORMULAIRE DE CONTACT (modale) ============ -->
-  <dialog class="dialog" id="contact-dialog" aria-labelledby="contact-title" data-contact-dialog>
-    <div class="dialog-inner">
-      <button type="button" class="dialog-close" data-dialog-close aria-label="Fermer le formulaire"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
-      <div data-form-view>
-        <p class="kicker">Nous écrire</p>
-        <h2 class="h3" id="contact-title">On discute&nbsp;?</h2>
-        <p class="dialog-desc">Quatre infos suffisent. N’écris rien de médical ou d’intime ici.</p>
-        <form class="form" novalidate data-contact-form>
-          <div class="field">
-            <label for="cf-nom">Nom <span class="req">obligatoire</span></label>
-            <input id="cf-nom" name="nom" type="text" autocomplete="name" required maxlength="80" aria-describedby="cf-nom-err" />
-            <p class="field-error" id="cf-nom-err" hidden></p>
-          </div>
-          <div class="field">
-            <label for="cf-email">Email <span class="req">obligatoire</span></label>
-            <input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="120" aria-describedby="cf-email-err" />
-            <p class="field-error" id="cf-email-err" hidden></p>
-          </div>
-          <div class="field">
-            <label for="cf-etab">École ou établissement <span class="opt">facultatif</span></label>
-            <input id="cf-etab" name="etablissement" type="text" autocomplete="organization" maxlength="120" />
-          </div>
-          <div class="field">
-            <label for="cf-objet">Objet <span class="req">obligatoire</span></label>
-            <select id="cf-objet" name="objet" required aria-describedby="cf-objet-err">
-              <option value="">Choisir un objet</option>
-              <option value="atelier">Parler d’un atelier</option>
-              <option value="campus">Un programme pour mon école</option>
-              <option value="autre">Autre question sur CoChoice</option>
-            </select>
-            <p class="field-error" id="cf-objet-err" hidden></p>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Envoyer</button>
-          <p class="fine">Tes infos servent seulement à te répondre. Jamais revendues, jamais utilisées pour de la pub.</p>
-        </form>
-      </div>
-      <div data-result-view hidden tabindex="-1">
-        <p class="kicker" data-result-kicker>Pas envoyé</p>
-        <h2 class="h3" data-result-title>Le formulaire n’est pas encore relié</h2>
-        <div data-result-body></div>
-        <div class="dialog-actions">
-          <button type="button" class="btn btn-ghost btn-sm" data-result-back>Modifier</button>
-          <button type="button" class="btn btn-primary btn-sm" data-dialog-close>Fermer</button>
-        </div>
-      </div>
-    </div>
-  </dialog>
+  <!-- Le formulaire de contact (modale) est créé à la première ouverture : voir src/scripts/home.js -->
 </body>
 </html>
