@@ -30,6 +30,14 @@
   --color-action-fonce: #2A1F50;  /* survol = indigo */
   --color-rose-fonce: #CC3A44;    /* = rose texte */
   --color-gris: #5F567C;          /* = encre */
+
+  /* Animations : entrée du hero (CSS pur, ne dépend pas du JS) */
+  --ease-sortie: cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-entree: entree 0.8s var(--ease-sortie) both;
+  @keyframes entree {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: none; }
+  }
 }
 
 /* ---------- Base ---------- */
@@ -63,3 +71,13 @@
 @utility surtitre-fonce { @apply surtitre text-indigo; }
 /* Icône Phosphor dans une pastille */
 @utility pastille { @apply inline-flex size-12 shrink-0 items-center justify-center rounded-2xl bg-lavande text-rose-texte; }
+
+/* Apparition au défilement : main.js ajoute .is-in quand l'élément entre à l'écran.
+   Décalage optionnel via [--delai:120ms]. Sans JS ou avec « réduire les animations » : contenu visible, statique. */
+@utility apparition {
+  @media (prefers-reduced-motion: no-preference) {
+    transition: opacity 0.7s var(--ease-sortie), transform 0.7s var(--ease-sortie);
+    transition-delay: var(--delai, 0ms);
+    :where(.js) &:not(.is-in) { opacity: 0; transform: translateY(16px); }
+  }
+}

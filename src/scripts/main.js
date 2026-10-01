@@ -20,6 +20,18 @@ if (toggle && menu) {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && isOpen()) setMenu(false, { restoreFocus: true }) })
 }
 
+// Apparitions au défilement (.apparition, cf. main.css ; statiques si prefers-reduced-motion)
+const apparitions = document.querySelectorAll('.apparition')
+if (apparitions.length && 'IntersectionObserver' in window) {
+  document.documentElement.classList.add('js')
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) { entry.target.classList.add('is-in'); obs.unobserve(entry.target) }
+    })
+  }, { rootMargin: '0px 0px -8% 0px' })
+  apparitions.forEach((el) => observer.observe(el))
+}
+
 // Année dynamique dans le footer
 document.querySelectorAll('[data-year]').forEach((el) => (el.textContent = new Date().getFullYear()))
 
