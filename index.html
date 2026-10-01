@@ -34,8 +34,8 @@
       </nav>
       <a href="mvp.html" class="btn-primary ml-auto shrink-0 px-3.5! py-2! text-sm sm:px-5! xl:ml-0">Découvrir l’appli</a>
       <button type="button" class="group inline-flex size-11 shrink-0 items-center justify-center rounded-full text-indigo hover:bg-lavande xl:hidden" data-menu-toggle aria-expanded="false" aria-controls="menu-site">
-        <svg class="group-aria-expanded:hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
-        <svg class="hidden group-aria-expanded:block" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+        <svg class="size-6 group-aria-expanded:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></svg>
+        <svg class="hidden size-6 group-aria-expanded:block" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg>
         <span class="sr-only" data-menu-label>Ouvrir le menu</span>
       </button>
     </div>
@@ -44,13 +44,12 @@
   <main id="contenu" tabindex="-1">
     <!-- HERO -->
     <section class="bg-indigo text-white" aria-labelledby="hero-title">
-      <div class="container-site grid items-center gap-10 py-14 md:py-20 lg:grid-cols-[1.1fr_1fr]">
+      <div class="container-site grid items-center gap-10 py-12 md:py-20 lg:grid-cols-[1.1fr_1fr]">
         <div>
           <p class="text-sm font-bold tracking-widest text-rose uppercase">Projet à impact · Égalité femmes-hommes</p>
           <h1 id="hero-title" class="mt-3 text-4xl leading-tight text-white! md:text-5xl">La contraception, ça se pense à deux.</h1>
-          <p class="mt-6 max-w-2xl text-lg text-white/85">S’informer, anticiper, prendre les rendez-vous, payer : la contraception repose encore presque entièrement sur les femmes. Aujourd’hui, il n’existe que deux méthodes masculines autorisées : le préservatif et la vasectomie, une petite opération qui bloque le passage des spermatozoïdes et qu’on considère comme définitive. D’autres, comme la contraception thermique, attendent encore leur validation. CoChoice aide les étudiantes, les étudiants et leurs partenaires à partager cette charge, sans que personne perde la main sur ses choix.</p>
+          <p class="mt-6 max-w-xl text-lg text-white/85">S’informer, anticiper, prendre les rendez-vous, payer : la contraception repose encore presque entièrement sur les femmes. CoChoice aide les étudiantes, les étudiants et leurs partenaires à partager cette charge, sans que personne perde la main sur ses choix.</p>
           <a href="mvp.html" class="btn mt-8 bg-rose text-indigo hover:bg-white">Découvrir l’appli</a>
-          <p class="mt-6 text-xs text-white/75">Sources : <a class="font-bold underline underline-offset-2 hover:text-rose" href="https://www.urofrance.org/2024/12/06/contraception-masculine-ou-en-est-on-en-2024/" target="_blank" rel="noopener">AFU, 2024<span class="sr-only"> (nouvel onglet)</span></a> · <a class="font-bold underline underline-offset-2 hover:text-rose" href="https://ansm.sante.fr/actualites/anneau-contraceptif-masculin-andro-switch-il-faut-demontrer-lefficacite-et-la-securite-du-dispositif-1" target="_blank" rel="noopener">ANSM<span class="sr-only"> (nouvel onglet)</span></a></p>
         </div>
         <figure>
           <img class="aspect-[3/2] w-full rounded-3xl object-cover"
@@ -65,49 +64,70 @@
       </div>
     </section>
 
-    <!-- LE CONSTAT EN 3 REPÈRES -->
-    <section class="py-16 md:py-20" aria-labelledby="constat-title">
+    <!-- LES MÉTHODES MASCULINES (suite du texte du hero) -->
+    <section class="py-14 md:py-20" aria-label="Les méthodes de contraception masculines">
       <div class="container-site">
-        <p class="surtitre">Le constat</p>
-        <h2 id="constat-title" class="mt-2 max-w-3xl text-3xl md:text-4xl">Tout le monde veut partager. Dans les faits, presque rien ne change.</h2>
-        <div class="mt-10 grid gap-6 md:grid-cols-3">
-          <div class="card flex flex-col gap-2">
-            <p class="chiffre">1 sur 2</p>
-            <p class="font-extrabold text-indigo">jeunes femmes en couple</p>
-            <p class="text-sm">dit que son partenaire n’est pas impliqué dans le choix de la contraception. <a class="lien" href="https://www.frequencemedicale.com/onco-dermato/patient/294149-Contraception-cette-charge-est-elle-partagee-dans-les-couples" target="_blank" rel="noopener">Ifop, 2024<span class="sr-only"> (nouvel onglet)</span></a></p>
+        <div class="max-w-4xl border-l-4 border-rose pl-6 md:pl-10">
+          <p class="text-xl leading-relaxed font-semibold text-indigo md:text-2xl">Aujourd’hui, il n’existe que deux méthodes masculines autorisées : le préservatif et la vasectomie, une petite opération qui bloque le passage des spermatozoïdes et qu’on considère comme définitive. D’autres, comme la contraception thermique, attendent encore leur validation.</p>
+          <p class="mt-4 text-sm">Sources : <a class="lien" href="https://www.urofrance.org/2024/12/06/contraception-masculine-ou-en-est-on-en-2024/" target="_blank" rel="noopener">AFU, 2024<span class="sr-only"> (nouvel onglet)</span></a> · <a class="lien" href="https://ansm.sante.fr/actualites/anneau-contraceptif-masculin-andro-switch-il-faut-demontrer-lefficacite-et-la-securite-du-dispositif-1" target="_blank" rel="noopener">ANSM<span class="sr-only"> (nouvel onglet)</span></a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LE CONSTAT EN 3 REPÈRES -->
+    <section class="bg-lavande py-16 md:py-20" aria-labelledby="constat-title">
+      <div class="container-site">
+        <h2 id="constat-title" class="max-w-3xl text-3xl md:text-4xl">Tout le monde veut partager. Dans les faits, presque rien ne change.</h2>
+        <div class="mt-10 grid gap-8 md:grid-cols-3 md:gap-0 md:divide-x md:divide-indigo/15">
+          <div class="md:pr-8">
+            <p class="text-5xl leading-none font-black text-rose-texte">1 sur 2</p>
+            <p class="mt-3 font-extrabold text-indigo">jeunes femmes en couple</p>
+            <p class="mt-1 text-sm">dit que son partenaire n’est pas impliqué dans le choix de la contraception. <a class="lien" href="https://www.frequencemedicale.com/onco-dermato/patient/294149-Contraception-cette-charge-est-elle-partagee-dans-les-couples" target="_blank" rel="noopener">Ifop, 2024<span class="sr-only"> (nouvel onglet)</span></a></p>
           </div>
-          <div class="card flex flex-col gap-2">
-            <p class="chiffre">80 %</p>
-            <p class="font-extrabold text-indigo">des 18-30 ans</p>
-            <p class="text-sm">souhaitent une responsabilité contraceptive partagée. <a class="lien" href="https://www.pourquoidocteur.fr/Articles/Question-d-actu/37573-Contraception-masculine-d-un-jeune-adulte-pret-recourir" target="_blank" rel="noopener">OpinionWay, 2021<span class="sr-only"> (nouvel onglet)</span></a></p>
+          <div class="md:px-8">
+            <p class="text-5xl leading-none font-black text-rose-texte">80 %</p>
+            <p class="mt-3 font-extrabold text-indigo">des 18-30 ans</p>
+            <p class="mt-1 text-sm">souhaitent une responsabilité contraceptive partagée. <a class="lien" href="https://www.pourquoidocteur.fr/Articles/Question-d-actu/37573-Contraception-masculine-d-un-jeune-adulte-pret-recourir" target="_blank" rel="noopener">OpinionWay, 2021<span class="sr-only"> (nouvel onglet)</span></a></p>
           </div>
-          <div class="card flex flex-col gap-2">
-            <p class="chiffre">2 fois</p>
-            <p class="font-extrabold text-indigo">moins de dépistage chez les hommes</p>
-            <p class="text-sm">alors qu’ils représentent 56 % des cas de chlamydia. <a class="lien" href="https://www.santepubliquefrance.fr/chlamydiae/donnees" target="_blank" rel="noopener">Santé publique France, 2024<span class="sr-only"> (nouvel onglet)</span></a></p>
+          <div class="md:pl-8">
+            <p class="text-5xl leading-none font-black text-rose-texte">2 fois</p>
+            <p class="mt-3 font-extrabold text-indigo">moins de dépistage chez les hommes</p>
+            <p class="mt-1 text-sm">alors qu’ils représentent 56 % des cas de chlamydia. <a class="lien" href="https://www.santepubliquefrance.fr/chlamydiae/donnees" target="_blank" rel="noopener">Santé publique France, 2024<span class="sr-only"> (nouvel onglet)</span></a></p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- COCHOICE EN 3 BRIQUES -->
-    <section class="bg-lavande py-16 md:py-20" aria-labelledby="briques-title">
+    <section class="py-16 md:py-20" aria-labelledby="briques-title">
       <div class="container-site">
-        <p class="surtitre">CoChoice en 3 briques</p>
-        <h2 id="briques-title" class="mt-2 text-3xl md:text-4xl">En parler, s’organiser, se décharger.</h2>
-        <div class="mt-10 grid gap-6 md:grid-cols-3">
-          <div class="card">
-            <h3 class="text-xl">Les ateliers campus</h3>
-            <p class="mt-2">Des ateliers mixtes sur les campus pour comprendre la charge contraceptive et libérer la parole entre étudiantes et étudiants.</p>
-          </div>
-          <div class="card">
-            <h3 class="text-xl">L’appli CoChoice</h3>
-            <p class="mt-2">L’espace des partenaires pour passer de la discussion à l’action : se répartir les tâches et les rappels, partager les frais, faire le point chaque mois. La personne concernée décide de ce qui est partagé.</p>
-          </div>
-          <div class="card border-2 border-dashed border-indigo/20 bg-white/60! shadow-none! ring-0!">
-            <h3 class="flex flex-wrap items-center gap-2 text-xl">La box <span class="rounded-full bg-lavande px-3 py-1 text-xs font-bold tracking-wider text-indigo uppercase">Prochainement</span></h3>
-            <p class="mt-2">Des préservatifs livrés via des pharmacies partenaires. À l’étude : l’envoi de la pilule sur ordonnance. Une charge mentale en moins.</p>
-          </div>
+        <h2 id="briques-title" class="text-3xl md:text-4xl">En parler, s’organiser, se décharger.</h2>
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          <article class="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-indigo/10">
+            <img class="aspect-[16/9] w-full object-cover" loading="lazy" decoding="async"
+              src="https://images.unsplash.com/photo-1758270704763-22072a90d3b6?auto=format&fit=crop&q=60&w=800&h=450&crop=focalpoint&fp-x=0.5&fp-y=0.42"
+              srcset="https://images.unsplash.com/photo-1758270704763-22072a90d3b6?auto=format&fit=crop&q=60&w=560&h=315&crop=focalpoint&fp-x=0.5&fp-y=0.42 560w,
+                      https://images.unsplash.com/photo-1758270704763-22072a90d3b6?auto=format&fit=crop&q=60&w=800&h=450&crop=focalpoint&fp-x=0.5&fp-y=0.42 800w"
+              sizes="(min-width: 768px) 45vw, 100vw" width="800" height="450"
+              alt="Un groupe d’étudiantes et d’étudiants discute et rit autour de tables dans un amphithéâtre." />
+            <div class="p-6">
+              <h3 class="flex items-center gap-3 text-xl"><span class="pastille"><svg class="size-7" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M244.8,150.4a8,8,0,0,1-11.2-1.6A51.6,51.6,0,0,0,192,128a8,8,0,0,1-7.37-4.89,8,8,0,0,1,0-6.22A8,8,0,0,1,192,112a24,24,0,1,0-23.24-30,8,8,0,1,1-15.5-4A40,40,0,1,1,219,117.51a67.94,67.94,0,0,1,27.43,21.68A8,8,0,0,1,244.8,150.4ZM190.92,212a8,8,0,1,1-13.84,8,57,57,0,0,0-98.16,0,8,8,0,1,1-13.84-8,72.06,72.06,0,0,1,33.74-29.92,48,48,0,1,1,58.36,0A72.06,72.06,0,0,1,190.92,212ZM128,176a32,32,0,1,0-32-32A32,32,0,0,0,128,176ZM72,120a8,8,0,0,0-8-8A24,24,0,1,1,87.24,82a8,8,0,1,0,15.5-4A40,40,0,1,0,37,117.51,67.94,67.94,0,0,0,9.6,139.19a8,8,0,1,0,12.8,9.61A51.6,51.6,0,0,1,64,128,8,8,0,0,0,72,120Z"/></svg></span>Les ateliers campus</h3>
+              <p class="mt-3">Des ateliers mixtes sur les campus pour comprendre la charge contraceptive et libérer la parole entre étudiantes et étudiants.</p>
+              <p class="mt-4 text-xs">Photo d’illustration : Vitaly Gariev, Unsplash.</p>
+            </div>
+          </article>
+          <article class="flex flex-col rounded-3xl bg-indigo p-6 text-white md:p-8">
+            <span class="pastille bg-white/10! text-rose!"><svg class="size-7" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z"/></svg></span>
+            <h3 class="mt-6 text-2xl text-white!">L’appli CoChoice</h3>
+            <p class="mt-3 text-lg text-white/85">L’espace des partenaires pour passer de la discussion à l’action : se répartir les tâches et les rappels, partager les frais, faire le point chaque mois. La personne concernée décide de ce qui est partagé.</p>
+          </article>
+          <article class="flex flex-col gap-4 rounded-3xl border-2 border-dashed border-indigo/20 p-6 sm:flex-row sm:items-center md:col-span-2">
+            <span class="pastille"><svg class="size-7" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm176,85.78h0l-80,43.79V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.77Z"/></svg></span>
+            <div>
+              <h3 class="flex flex-wrap items-center gap-2 text-xl">La box <span class="rounded-full bg-lavande px-3 py-1 text-xs font-bold tracking-wider text-indigo uppercase">Prochainement</span></h3>
+              <p class="mt-2">Des préservatifs livrés via des pharmacies partenaires. À l’étude : l’envoi de la pilule sur ordonnance. Une charge mentale en moins.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -121,19 +141,18 @@
     </section>
 
     <!-- FAQ -->
-    <section class="py-16 md:py-20" aria-labelledby="faq-title">
+    <section class="bg-lavande py-16 md:py-20" aria-labelledby="faq-title">
       <div class="container-site max-w-3xl">
-        <p class="surtitre">FAQ</p>
-        <h2 id="faq-title" class="mt-2 text-3xl md:text-4xl">Questions fréquentes</h2>
-        <div class="mt-8 grid gap-4">
-          <details class="card"><summary class="cursor-pointer font-bold text-indigo">L’appli est-elle déjà disponible ?</summary><p class="mt-3">Pas encore : CoChoice est un projet en développement. Le <a class="lien" href="mvp.html">MVP</a> est consultable avec des données fictives.</p></details>
-          <details class="card"><summary class="cursor-pointer font-bold text-indigo">Mon ou ma partenaire voit-il tout ?</summary><p class="mt-3">Non. La personne concernée choisit ce qui est partagé, et peut tout mettre en pause.</p></details>
-          <details class="card"><summary class="cursor-pointer font-bold text-indigo">Est-ce une appli médicale ?</summary><p class="mt-3">Non, elle ne remplace pas un·e professionnel·le de santé.</p></details>
-          <details class="card"><summary class="cursor-pointer font-bold text-indigo">Comment avoir un atelier dans mon école ?</summary><p class="mt-3">Via la page Établissements ou le <a class="lien" href="a-propos.html#contact">formulaire de contact</a>.</p></details>
-          <details class="card"><summary class="cursor-pointer font-bold text-indigo">CoChoice, c’est seulement pour les couples femme-homme ?</summary><p class="mt-3">Non, pour tous les partenaires, quelle que soit la configuration du couple.</p></details>
-          <details class="card"><summary class="cursor-pointer font-bold text-indigo">Je peux l’utiliser seul·e ?</summary><p class="mt-3">Oui. Vous commencez en solo et invitez votre partenaire quand vous le souhaitez, ou jamais.</p></details>
-          <details class="card"><summary class="cursor-pointer font-bold text-indigo">Mon école voit-elle mes réponses ?</summary><p class="mt-3">Jamais. L’établissement reçoit au mieux un bilan anonymisé.</p></details>
-          <details class="card"><summary class="cursor-pointer font-bold text-indigo">Qui crée les contenus ?</summary><p class="mt-3">Des professionnel·les de santé, à partir de sources publiques.</p></details>
+        <h2 id="faq-title" class="text-3xl md:text-4xl">Questions fréquentes</h2>
+        <div class="mt-8 divide-y divide-indigo/10 rounded-3xl bg-white px-6 ring-1 ring-indigo/10">
+          <details class="group py-1"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 rounded-lg py-4 font-bold text-indigo hover:text-pervenche-texte [&::-webkit-details-marker]:hidden">L’appli est-elle déjà disponible ?<svg class="size-5 shrink-0 text-rose-texte transition-transform group-open:rotate-45 motion-reduce:transition-none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></summary><p class="pb-5">Pas encore : CoChoice est un projet en développement. Le <a class="lien" href="mvp.html">MVP</a> est consultable avec des données fictives.</p></details>
+          <details class="group py-1"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 rounded-lg py-4 font-bold text-indigo hover:text-pervenche-texte [&::-webkit-details-marker]:hidden">Mon ou ma partenaire voit-il tout ?<svg class="size-5 shrink-0 text-rose-texte transition-transform group-open:rotate-45 motion-reduce:transition-none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></summary><p class="pb-5">Non. La personne concernée choisit ce qui est partagé, et peut tout mettre en pause.</p></details>
+          <details class="group py-1"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 rounded-lg py-4 font-bold text-indigo hover:text-pervenche-texte [&::-webkit-details-marker]:hidden">Est-ce une appli médicale ?<svg class="size-5 shrink-0 text-rose-texte transition-transform group-open:rotate-45 motion-reduce:transition-none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></summary><p class="pb-5">Non, elle ne remplace pas un·e professionnel·le de santé.</p></details>
+          <details class="group py-1"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 rounded-lg py-4 font-bold text-indigo hover:text-pervenche-texte [&::-webkit-details-marker]:hidden">Comment avoir un atelier dans mon école ?<svg class="size-5 shrink-0 text-rose-texte transition-transform group-open:rotate-45 motion-reduce:transition-none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></summary><p class="pb-5">Via la page <a class="lien" href="https://cochoice.github.io/etablissements/">Établissements</a> ou le <a class="lien" href="a-propos.html#contact">formulaire de contact</a>.</p></details>
+          <details class="group py-1"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 rounded-lg py-4 font-bold text-indigo hover:text-pervenche-texte [&::-webkit-details-marker]:hidden">CoChoice, c’est seulement pour les couples femme-homme ?<svg class="size-5 shrink-0 text-rose-texte transition-transform group-open:rotate-45 motion-reduce:transition-none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></summary><p class="pb-5">Non, pour tous les partenaires, quelle que soit la configuration du couple.</p></details>
+          <details class="group py-1"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 rounded-lg py-4 font-bold text-indigo hover:text-pervenche-texte [&::-webkit-details-marker]:hidden">Je peux l’utiliser seul·e ?<svg class="size-5 shrink-0 text-rose-texte transition-transform group-open:rotate-45 motion-reduce:transition-none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></summary><p class="pb-5">Oui. Vous commencez en solo et invitez votre partenaire quand vous le souhaitez, ou jamais.</p></details>
+          <details class="group py-1"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 rounded-lg py-4 font-bold text-indigo hover:text-pervenche-texte [&::-webkit-details-marker]:hidden">Mon école voit-elle mes réponses ?<svg class="size-5 shrink-0 text-rose-texte transition-transform group-open:rotate-45 motion-reduce:transition-none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></summary><p class="pb-5">Jamais. L’établissement reçoit au mieux un bilan anonymisé.</p></details>
+          <details class="group py-1"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 rounded-lg py-4 font-bold text-indigo hover:text-pervenche-texte [&::-webkit-details-marker]:hidden">Qui crée les contenus ?<svg class="size-5 shrink-0 text-rose-texte transition-transform group-open:rotate-45 motion-reduce:transition-none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></summary><p class="pb-5">Des professionnel·les de santé, à partir de sources publiques.</p></details>
         </div>
       </div>
     </section>

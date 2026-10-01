@@ -30,8 +30,8 @@
       </nav>
       <a href="mvp.html" class="btn-primary ml-auto shrink-0 px-3.5! py-2! text-sm sm:px-5! xl:ml-0">Découvrir l’appli</a>
       <button type="button" class="group inline-flex size-11 shrink-0 items-center justify-center rounded-full text-indigo hover:bg-lavande xl:hidden" data-menu-toggle aria-expanded="false" aria-controls="menu-site">
-        <svg class="group-aria-expanded:hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
-        <svg class="hidden group-aria-expanded:block" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+        <svg class="size-6 group-aria-expanded:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></svg>
+        <svg class="hidden size-6 group-aria-expanded:block" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg>
         <span class="sr-only" data-menu-label>Ouvrir le menu</span>
       </button>
     </div>
@@ -41,15 +41,27 @@
     <!-- LE PARCOURS -->
     <section class="bg-lavande" aria-labelledby="parcours-title">
       <div class="container-site py-14 md:py-20">
-        <p class="surtitre">Comment ça marche</p>
+        <p class="surtitre-fonce">Comment ça marche</p>
         <h1 id="parcours-title" class="mt-2 max-w-3xl text-4xl md:text-5xl">De la discussion à l’action, en quatre temps.</h1>
-        <ol class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <li class="card"><span class="text-3xl font-black text-rose-texte" aria-hidden="true">1</span><p class="mt-2"><strong class="text-indigo">L’atelier</strong> : sur le campus, on en parle entre étudiantes et étudiants.</p></li>
-          <li class="card"><span class="text-3xl font-black text-pervenche-texte" aria-hidden="true">2</span><p class="mt-2"><strong class="text-indigo">L’appli</strong> : présentée en fin d’atelier, chacun·e peut la télécharger.</p></li>
-          <li class="card"><span class="text-3xl font-black text-indigo" aria-hidden="true">3</span><p class="mt-2"><strong class="text-indigo">La vie à deux</strong> : les partenaires se répartissent tâches, rappels et frais.</p></li>
-          <li class="card border-2 border-dashed border-indigo/20 bg-white/60! shadow-none! ring-0!"><span class="text-3xl font-black text-indigo/60" aria-hidden="true">4</span><p class="mt-2"><strong class="text-indigo">La box</strong> (prochainement) : l’essentiel livré, pour alléger la charge mentale.</p></li>
+        <ol class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          <li class="relative lg:after:absolute lg:after:top-5 lg:after:right-0 lg:after:left-14 lg:after:h-0.5 lg:after:bg-indigo/15">
+            <span class="grid size-10 place-items-center rounded-full bg-rose-texte text-lg font-black text-white" aria-hidden="true">1</span>
+            <p class="mt-4"><strong class="text-indigo">L’atelier</strong> : sur le campus, on en parle entre étudiantes et étudiants.</p>
+          </li>
+          <li class="relative lg:after:absolute lg:after:top-5 lg:after:right-0 lg:after:left-14 lg:after:h-0.5 lg:after:bg-indigo/15">
+            <span class="grid size-10 place-items-center rounded-full bg-rose-texte text-lg font-black text-white" aria-hidden="true">2</span>
+            <p class="mt-4"><strong class="text-indigo">L’appli</strong> : présentée en fin d’atelier, chacun·e peut la télécharger.</p>
+          </li>
+          <li class="relative lg:after:absolute lg:after:top-5 lg:after:right-0 lg:after:left-14 lg:after:border-t-2 lg:after:border-dashed lg:after:border-indigo/25">
+            <span class="grid size-10 place-items-center rounded-full bg-rose-texte text-lg font-black text-white" aria-hidden="true">3</span>
+            <p class="mt-4"><strong class="text-indigo">La vie à deux</strong> : les partenaires se répartissent tâches, rappels et frais.</p>
+          </li>
+          <li>
+            <span class="grid size-10 place-items-center rounded-full border-2 border-dashed border-indigo/40 text-lg font-black text-indigo" aria-hidden="true">4</span>
+            <p class="mt-4"><strong class="text-indigo">La box</strong> (prochainement) : l’essentiel livré, pour alléger la charge mentale.</p>
+          </li>
         </ol>
-        <p class="mt-8 max-w-3xl text-lg">L’atelier est la porte d’entrée principale, mais pas la seule : l’appli sera aussi téléchargeable librement, et on la fera connaître sur les réseaux sociaux et par le bouche-à-oreille.</p>
+        <p class="mt-12 max-w-3xl text-lg">L’atelier est la porte d’entrée principale, mais pas la seule : l’appli sera aussi téléchargeable librement, et on la fera connaître sur les réseaux sociaux et par le bouche-à-oreille.</p>
       </div>
     </section>
 
@@ -58,8 +70,7 @@
       <div class="container-site">
         <div class="grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <p class="surtitre">Les ateliers campus</p>
-            <h2 id="ateliers-title" class="mt-2 text-3xl md:text-4xl">Des ateliers pour libérer la parole et impliquer chacun·e.</h2>
+            <h2 id="ateliers-title" class="text-3xl md:text-4xl">Des ateliers pour libérer la parole et impliquer chacun·e.</h2>
             <p class="mt-6 text-lg">Des ateliers mixtes de 1 h 30 à 2 h. Idéalement inscrits à l’emploi du temps, selon ce que permet chaque établissement, pour toucher aussi celles et ceux qui ne viennent jamais. Ils sont animés par un·e animateur·rice CoChoice et un·e professionnel·le de santé (par exemple une sage-femme), avec des contenus conçus par des pros de santé.</p>
           </div>
           <figure>
@@ -73,32 +84,37 @@
           </figure>
         </div>
 
-        <h3 class="mt-14 text-2xl">Le déroulé proposé :</h3>
-        <ol class="mt-6 grid gap-3">
-          <li class="card grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-6"><span class="font-black text-pervenche-texte tabular-nums">20 min</span><p><strong class="text-indigo">Comprendre.</strong> Ce que recouvre vraiment la contraception : les 4 tâches, et les méthodes qui existent, féminines comme masculines, sans en recommander aucune.</p></li>
-          <li class="card grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-6"><span class="font-black text-pervenche-texte tabular-nums">30 min</span><p><strong class="text-indigo">Se mettre en situation.</strong> En petits groupes, des cas du quotidien : « la plaquette se termine dans 3 jours », « le rendez-vous tombe pendant les partiels ». Chacun·e dit qui s’en occupe aujourd’hui et qui pourrait s’en occuper.</p></li>
-          <li class="card grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-6"><span class="font-black text-pervenche-texte tabular-nums">20 min</span><p><strong class="text-indigo">Poser ses questions.</strong> Le ou la pro de santé répond, y compris aux questions anonymes envoyées par QR code.</p></li>
-          <li class="card grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-6"><span class="font-black text-pervenche-texte tabular-nums">10-20 min</span><p><strong class="text-indigo">Passer à l’action.</strong> Chacun·e repart avec des outils pour en parler à son ou sa partenaire, et découvre l’appli.</p></li>
-        </ol>
-        <ul class="mt-8 grid max-w-3xl list-disc gap-2 pl-5">
-          <li><strong class="text-indigo">Pas besoin de compte pour venir. Aucune méthode imposée.</strong></li>
-          <li>Modulable selon chaque établissement : le service de santé de l’université ou de l’école peut co-animer. CoChoice complète ses équipes, il ne les remplace pas.</li>
-        </ul>
-        <div class="mt-10 grid gap-6 md:grid-cols-3">
-          <div class="card flex flex-col gap-2">
-            <p class="chiffre">&lt; 15 %</p>
-            <p class="font-extrabold text-indigo">des élèves</p>
-            <p class="text-sm">reçoivent les 3 séances annuelles d’éducation à la sexualité prévues par la loi au collège et au lycée. <a class="lien" href="https://www.lecese.fr/actualites/eduquer-la-vie-affective-relationnelle-et-sexuelle-passer-obligation-application" target="_blank" rel="noopener">IGÉSR 2021, repris par le CESE<span class="sr-only"> (nouvel onglet)</span></a></p>
+        <div class="mt-16 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
+          <div>
+            <h3 class="text-2xl">Le déroulé proposé :</h3>
+            <ol class="mt-8 ml-2 border-l-2 border-indigo/15">
+              <li class="relative pb-8 pl-8 before:absolute before:top-1.5 before:-left-[9px] before:size-4 before:rounded-full before:bg-rose before:ring-4 before:ring-white sm:grid sm:grid-cols-[6.5rem_1fr] sm:gap-4"><p class="text-lg font-black text-rose-texte tabular-nums">20 min</p><p><strong class="text-indigo">Comprendre.</strong> Ce que recouvre vraiment la contraception : les 4 tâches, et les méthodes qui existent, féminines comme masculines, sans en recommander aucune.</p></li>
+              <li class="relative pb-8 pl-8 before:absolute before:top-1.5 before:-left-[9px] before:size-4 before:rounded-full before:bg-rose before:ring-4 before:ring-white sm:grid sm:grid-cols-[6.5rem_1fr] sm:gap-4"><p class="text-lg font-black text-rose-texte tabular-nums">30 min</p><p><strong class="text-indigo">Se mettre en situation.</strong> En petits groupes, des cas du quotidien : « la plaquette se termine dans 3 jours », « le rendez-vous tombe pendant les partiels ». Chacun·e dit qui s’en occupe aujourd’hui et qui pourrait s’en occuper.</p></li>
+              <li class="relative pb-8 pl-8 before:absolute before:top-1.5 before:-left-[9px] before:size-4 before:rounded-full before:bg-rose before:ring-4 before:ring-white sm:grid sm:grid-cols-[6.5rem_1fr] sm:gap-4"><p class="text-lg font-black text-rose-texte tabular-nums">20 min</p><p><strong class="text-indigo">Poser ses questions.</strong> Le ou la pro de santé répond, y compris aux questions anonymes envoyées par QR code.</p></li>
+              <li class="relative pl-8 before:absolute before:top-1.5 before:-left-[9px] before:size-4 before:rounded-full before:bg-rose before:ring-4 before:ring-white sm:grid sm:grid-cols-[6.5rem_1fr] sm:gap-4"><p class="text-lg font-black text-rose-texte tabular-nums">10-20 min</p><p><strong class="text-indigo">Passer à l’action.</strong> Chacun·e repart avec des outils pour en parler à son ou sa partenaire, et découvre l’appli.</p></li>
+            </ol>
           </div>
-          <div class="card flex flex-col gap-2">
-            <p class="chiffre">84 %</p>
-            <p class="font-extrabold text-indigo">des 15-24 ans</p>
-            <p class="text-sm">jugent l’éducation sexuelle insuffisante. <a class="lien" href="https://www.sidaction.org/communique/sondage-ifop-les-jeunes-linformation-et-la-prevention-du-vih-les-idees-recues-et-les-fausses-informations-perdurent/" target="_blank" rel="noopener">Ifop, 2023<span class="sr-only"> (nouvel onglet)</span></a></p>
+          <ul class="grid content-start gap-5 rounded-3xl bg-lavande p-6 md:p-8">
+            <li class="text-lg font-extrabold text-indigo">Pas besoin de compte pour venir. Aucune méthode imposée.</li>
+            <li>Modulable selon chaque établissement : le service de santé de l’université ou de l’école peut co-animer. CoChoice complète ses équipes, il ne les remplace pas.</li>
+          </ul>
+        </div>
+
+        <div class="mt-16 grid gap-8 border-t border-indigo/10 pt-10 md:grid-cols-3 md:gap-0 md:divide-x md:divide-indigo/15">
+          <div class="md:pr-8">
+            <p class="text-5xl leading-none font-black text-rose-texte">&lt; 15 %</p>
+            <p class="mt-3 font-extrabold text-indigo">des élèves</p>
+            <p class="mt-1 text-sm">reçoivent les 3 séances annuelles d’éducation à la sexualité prévues par la loi au collège et au lycée. <a class="lien" href="https://www.lecese.fr/actualites/eduquer-la-vie-affective-relationnelle-et-sexuelle-passer-obligation-application" target="_blank" rel="noopener">IGÉSR 2021, repris par le CESE<span class="sr-only"> (nouvel onglet)</span></a></p>
           </div>
-          <div class="card flex flex-col gap-2">
-            <p class="chiffre">38 %</p>
-            <p class="font-extrabold text-indigo">des étudiant·es</p>
-            <p class="text-sm">ne connaissent pas leur service de santé étudiante. <a class="lien" href="https://www.ove-national.education.fr/wp-content/uploads/2024/05/OVE-Reperes-Bien-etre-Sante-2024.pdf" target="_blank" rel="noopener">OVE, 2024<span class="sr-only"> (nouvel onglet)</span></a></p>
+          <div class="md:px-8">
+            <p class="text-5xl leading-none font-black text-rose-texte">84 %</p>
+            <p class="mt-3 font-extrabold text-indigo">des 15-24 ans</p>
+            <p class="mt-1 text-sm">jugent l’éducation sexuelle insuffisante. <a class="lien" href="https://www.sidaction.org/communique/sondage-ifop-les-jeunes-linformation-et-la-prevention-du-vih-les-idees-recues-et-les-fausses-informations-perdurent/" target="_blank" rel="noopener">Ifop, 2023<span class="sr-only"> (nouvel onglet)</span></a></p>
+          </div>
+          <div class="md:pl-8">
+            <p class="text-5xl leading-none font-black text-rose-texte">38 %</p>
+            <p class="mt-3 font-extrabold text-indigo">des étudiant·es</p>
+            <p class="mt-1 text-sm">ne connaissent pas leur service de santé étudiante. <a class="lien" href="https://www.ove-national.education.fr/wp-content/uploads/2024/05/OVE-Reperes-Bien-etre-Sante-2024.pdf" target="_blank" rel="noopener">OVE, 2024<span class="sr-only"> (nouvel onglet)</span></a></p>
           </div>
         </div>
       </div>
@@ -117,13 +133,12 @@
           <figcaption class="mt-2 text-xs">Photo d’illustration : Anton Ryazanov, Unsplash.</figcaption>
         </figure>
         <div class="order-1 lg:order-2">
-          <p class="surtitre">L’appli CoChoice</p>
-          <h2 id="appli-title" class="mt-2 text-3xl md:text-4xl">Une appli pour s’organiser à deux, ou seul·e.</h2>
+          <h2 id="appli-title" class="text-3xl md:text-4xl">Une appli pour s’organiser à deux, ou seul·e.</h2>
           <div class="mt-8 grid gap-4 sm:grid-cols-2">
-            <div class="card"><h3 class="text-lg">S’organiser</h3><p class="mt-2">Tâches réparties (RDV, pharmacie, ordonnance), rappels adaptés à la méthode, calendrier partagé.</p></div>
-            <div class="card"><h3 class="text-lg">Partager les frais</h3><p class="mt-2">Un Tricount de la contraception : dépenses, soldes, remboursements.</p></div>
-            <div class="card"><h3 class="text-lg">En parler</h3><p class="mt-2">Des cartes de questions à se poser ensemble. Et un check-in mensuel : chacun·e répond seul·e à 5 questions rapides (qui a pensé à quoi, charge ressentie de 0 à 10), puis les deux réponses s’affichent en même temps pour en discuter.</p></div>
-            <div class="card"><h3 class="text-lg">Garder la main</h3><p class="mt-2">La personne concernée choisit ce qui est partagé. Pause en un clic, export et suppression des données.</p></div>
+            <div class="card"><span class="pastille"><svg class="size-7" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-38.34-85.66a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L116,164.69l42.34-42.35A8,8,0,0,1,169.66,122.34Z"/></svg></span><h3 class="mt-4 text-lg">S’organiser</h3><p class="mt-2">Tâches réparties (RDV, pharmacie, ordonnance), rappels adaptés à la méthode, calendrier partagé.</p></div>
+            <div class="card"><span class="pastille"><svg class="size-7" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M72,104a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H80A8,8,0,0,1,72,104Zm8,40h96a8,8,0,0,0,0-16H80a8,8,0,0,0,0,16ZM232,56V208a8,8,0,0,1-11.58,7.15L192,200.94l-28.42,14.21a8,8,0,0,1-7.16,0L128,200.94,99.58,215.15a8,8,0,0,1-7.16,0L64,200.94,35.58,215.15A8,8,0,0,1,24,208V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-16,0H40V195.06l20.42-10.22a8,8,0,0,1,7.16,0L96,199.06l28.42-14.22a8,8,0,0,1,7.16,0L160,199.06l28.42-14.22a8,8,0,0,1,7.16,0L216,195.06Z"/></svg></span><h3 class="mt-4 text-lg">Partager les frais</h3><p class="mt-2">Un Tricount de la contraception : dépenses, soldes, remboursements.</p></div>
+            <div class="card"><span class="pastille"><svg class="size-7" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M232.07,186.76a80,80,0,0,0-62.5-114.17A80,80,0,1,0,23.93,138.76l-7.27,24.71a16,16,0,0,0,19.87,19.87l24.71-7.27a80.39,80.39,0,0,0,25.18,7.35,80,80,0,0,0,108.34,40.65l24.71,7.27a16,16,0,0,0,19.87-19.86ZM62,159.5a8.28,8.28,0,0,0-2.26.32L32,168l8.17-27.76a8,8,0,0,0-.63-6,64,64,0,1,1,26.26,26.26A8,8,0,0,0,62,159.5Zm153.79,28.73L224,216l-27.76-8.17a8,8,0,0,0-6,.63,64.05,64.05,0,0,1-85.87-24.88A79.93,79.93,0,0,0,174.7,89.71a64,64,0,0,1,41.75,92.48A8,8,0,0,0,215.82,188.23Z"/></svg></span><h3 class="mt-4 text-lg">En parler</h3><p class="mt-2">Des cartes de questions à se poser ensemble. Et un check-in mensuel : chacun·e répond seul·e à 5 questions rapides (qui a pensé à quoi, charge ressentie de 0 à 10), puis les deux réponses s’affichent en même temps pour en discuter.</p></div>
+            <div class="card"><span class="pastille"><svg class="size-7" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Z"/></svg></span><h3 class="mt-4 text-lg">Garder la main</h3><p class="mt-2">La personne concernée choisit ce qui est partagé. Pause en un clic, export et suppression des données.</p></div>
           </div>
           <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
             <a href="mvp.html" class="btn-primary">Découvrir l’appli</a>
@@ -136,11 +151,14 @@
     <!-- LA BOX (PROCHAINEMENT) -->
     <section class="py-16 md:py-20" id="box" aria-labelledby="box-title">
       <div class="container-site">
-        <div class="max-w-4xl rounded-3xl border-2 border-dashed border-indigo/20 p-6 md:p-10">
-          <p class="surtitre">Prochainement · Piste en développement</p>
-          <h2 id="box-title" class="mt-2 text-2xl text-indigo/80 md:text-3xl">Bientôt : une charge mentale en moins.</h2>
-          <p class="mt-4">Une box « double protection » commandée depuis l’appli. Des pharmacies partenaires fournissent les préservatifs selon votre abonnement, avec une carte « tâche du mois » à prendre en charge. Le coût peut être partagé entre partenaires, directement dans le module de partage des frais.</p>
-          <p class="mt-3">À l’étude : l’envoi de la pilule par la poste, sur présentation de l’ordonnance, en lien avec une pharmacie. Nous vérifions encore si c’est faisable.</p>
+        <div class="flex max-w-4xl flex-col gap-6 rounded-3xl border-2 border-dashed border-indigo/20 p-6 sm:flex-row md:p-10">
+          <span class="pastille"><svg class="size-7" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm176,85.78h0l-80,43.79V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.77Z"/></svg></span>
+          <div>
+            <p class="surtitre">Prochainement · Piste en développement</p>
+            <h2 id="box-title" class="mt-2 text-2xl text-indigo/80 md:text-3xl">Bientôt : une charge mentale en moins.</h2>
+            <p class="mt-4">Une box « double protection » commandée depuis l’appli. Des pharmacies partenaires fournissent les préservatifs selon votre abonnement, avec une carte « tâche du mois » à prendre en charge. Le coût peut être partagé entre partenaires, directement dans le module de partage des frais.</p>
+            <p class="mt-3">À l’étude : l’envoi de la pilule par la poste, sur présentation de l’ordonnance, en lien avec une pharmacie. Nous vérifions encore si c’est faisable.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -149,9 +167,8 @@
     <section class="bg-lavande py-16 md:py-20" id="limites" aria-labelledby="limites-title">
       <div class="container-site">
         <div class="mx-auto max-w-4xl rounded-3xl border-l-8 border-rose bg-white p-6 shadow-sm ring-1 ring-indigo/10 md:p-10" role="note">
-          <p class="surtitre">Notre rôle, et ses limites</p>
-          <h2 id="limites-title" class="mt-2 text-2xl md:text-3xl">CoChoice informe et organise. Il ne soigne pas.</h2>
-          <ul class="mt-6 grid gap-4">
+          <h2 id="limites-title" class="text-2xl md:text-3xl">CoChoice informe et organise. Il ne soigne pas.</h2>
+          <ul class="mt-6 grid gap-4 md:grid-cols-2 md:gap-x-10">
             <li><strong class="text-indigo">Pas d’avis médical.</strong> Pour toute question de santé, les professionnel·les de santé et les services de santé étudiante restent vos interlocuteurs.</li>
             <li><strong class="text-indigo">Aucune méthode choisie à votre place.</strong> Nous présentons les méthodes qui existent. La décision revient toujours à la personne qui l’utilise.</li>
             <li><strong class="text-indigo">Pas un contraceptif.</strong> CoChoice ne protège ni d’une grossesse ni des IST.</li>

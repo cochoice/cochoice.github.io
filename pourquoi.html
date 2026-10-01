@@ -29,8 +29,8 @@
       </nav>
       <a href="mvp.html" class="btn-primary ml-auto shrink-0 px-3.5! py-2! text-sm sm:px-5! xl:ml-0">Découvrir l’appli</a>
       <button type="button" class="group inline-flex size-11 shrink-0 items-center justify-center rounded-full text-indigo hover:bg-lavande xl:hidden" data-menu-toggle aria-expanded="false" aria-controls="menu-site">
-        <svg class="group-aria-expanded:hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
-        <svg class="hidden group-aria-expanded:block" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+        <svg class="size-6 group-aria-expanded:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></svg>
+        <svg class="hidden size-6 group-aria-expanded:block" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg>
         <span class="sr-only" data-menu-label>Ouvrir le menu</span>
       </button>
     </div>
@@ -39,28 +39,35 @@
   <main id="contenu" tabindex="-1">
     <!-- INTRO -->
     <section class="bg-lavande" aria-labelledby="intro-title">
-      <div class="container-site py-14 md:py-20">
-        <p class="surtitre">Notre démarche</p>
-        <h1 id="intro-title" class="mt-2 max-w-3xl text-4xl md:text-5xl">Du plus grand enjeu au plus petit geste.</h1>
-        <p class="mt-6 max-w-2xl text-lg">On n’est pas partis d’une idée d’appli. On est partis d’un problème, qu’on a resserré étape par étape jusqu’à trouver un endroit où on pouvait vraiment agir.</p>
+      <div class="container-site grid items-center gap-10 py-12 md:py-16 lg:grid-cols-[1.2fr_1fr]">
+        <div>
+          <p class="surtitre-fonce">Notre démarche</p>
+          <h1 id="intro-title" class="mt-2 max-w-3xl text-4xl md:text-5xl">Du plus grand enjeu au plus petit geste.</h1>
+          <p class="mt-6 max-w-2xl text-lg">On n’est pas partis d’une idée d’appli. On est partis d’un problème, qu’on a resserré étape par étape jusqu’à trouver un endroit où on pouvait vraiment agir.</p>
+        </div>
+        <figure>
+          <img class="aspect-square w-full rounded-3xl object-cover lg:aspect-[4/3]"
+            src="https://images.unsplash.com/photo-1758523416144-d100288c5451?auto=format&fit=crop&q=60&w=900&h=675&crop=focalpoint&fp-x=0.55&fp-y=0.5"
+            srcset="https://images.unsplash.com/photo-1758523416144-d100288c5451?auto=format&fit=crop&q=60&w=560&h=560&crop=focalpoint&fp-x=0.55&fp-y=0.5 560w,
+                    https://images.unsplash.com/photo-1758523416144-d100288c5451?auto=format&fit=crop&q=60&w=900&h=675&crop=focalpoint&fp-x=0.55&fp-y=0.5 900w"
+            sizes="(min-width: 1024px) 40vw, 100vw" width="900" height="675" decoding="async"
+            alt="Dans une cuisine le matin, une personne assise à table parle avec une autre debout près du plan de travail." />
+          <figcaption class="mt-2 text-xs">Photo d’illustration : Vitaly Gariev, Unsplash.</figcaption>
+        </figure>
       </div>
     </section>
 
     <!-- NOTRE PARCOURS : LE PIVOT -->
     <section class="py-16 md:py-20" aria-labelledby="pivot-title">
-      <div class="container-site grid gap-8 lg:grid-cols-2 lg:gap-12">
+      <div class="container-site grid gap-8 lg:grid-cols-2 lg:gap-16">
         <div>
           <p class="surtitre">Notre point de départ</p>
           <h2 id="pivot-title" class="mt-2 text-3xl md:text-4xl">On a d’abord regardé l’entreprise.</h2>
           <p class="mt-6 text-lg">Notre premier sujet : l’accès des femmes aux postes de direction, avec la loi Rixain en ligne de mire (30 % de femmes parmi les cadres dirigeants en 2026, 40 % en 2029).</p>
         </div>
-        <div class="grid gap-6">
-          <div class="card">
-            <p>En creusant, on s’est heurtés à deux murs. Le terrain est déjà très équipé : Index Égapro, cabinets spécialisés, équipes diversité dans les grands groupes. Et les décideurs sont difficiles à joindre, avec des cycles d’achat longs. On ne trouvait pas de service à la fois viable financièrement et capable d’apporter plus que ce qui existe déjà.</p>
-          </div>
-          <div class="card border-l-8 border-rose">
-            <p class="font-semibold text-indigo">On a donc changé de terrain, en gardant le même cap : l’égalité femmes-hommes. Et on s’est arrêtés sur une autre inégalité, plus quotidienne, celle qui se joue dans l’intime.</p>
-          </div>
+        <div class="grid content-start gap-6 lg:pt-10">
+          <p>En creusant, on s’est heurtés à deux murs. Le terrain est déjà très équipé : Index Égapro, cabinets spécialisés, équipes diversité dans les grands groupes. Et les décideurs sont difficiles à joindre, avec des cycles d’achat longs. On ne trouvait pas de service à la fois viable financièrement et capable d’apporter plus que ce qui existe déjà.</p>
+          <p class="border-l-4 border-rose pl-5 text-lg font-semibold text-indigo">On a donc changé de terrain, en gardant le même cap : l’égalité femmes-hommes. Et on s’est arrêtés sur une autre inégalité, plus quotidienne, celle qui se joue dans l’intime.</p>
         </div>
       </div>
     </section>
@@ -70,33 +77,33 @@
       <div class="container-site">
         <h2 id="entonnoir-title" class="mx-auto max-w-3xl text-3xl md:text-center md:text-4xl">De l’égalité femmes-hommes à la contraception partagée</h2>
         <ol class="relative mt-10 grid gap-5 border-l-2 border-indigo/15 pl-6 md:justify-items-center md:gap-4 md:border-0 md:pl-0">
-          <li class="relative w-full rounded-3xl bg-white p-6 shadow-sm ring-1 ring-indigo/10 before:absolute before:top-7 before:-left-[33px] before:size-4 before:rounded-full before:border-4 before:border-lavande before:bg-rose md:before:hidden">
-            <p class="surtitre">1 · L’enjeu</p>
-            <h3 class="mt-1 text-xl">L’égalité femmes-hommes se joue aussi dans l’intime.</h3>
+          <li class="relative w-full rounded-3xl bg-white p-6 shadow-sm ring-1 ring-indigo/10 before:absolute before:top-8 before:-left-[33px] before:size-4 before:rounded-full before:border-4 before:border-lavande before:bg-rose md:before:hidden">
+            <p class="flex items-center gap-3 font-bold text-rose-texte"><span class="grid size-8 place-items-center rounded-full bg-rose-texte font-black text-white" aria-hidden="true">1</span>L’enjeu</p>
+            <h3 class="mt-3 text-xl">L’égalité femmes-hommes se joue aussi dans l’intime.</h3>
             <p class="mt-2">L’ONU en fait son 5e objectif de développement durable. Dans le monde, seules 56,3 % des femmes de 15-49 ans décident elles-mêmes de leur sexualité, de leur contraception et de leur santé reproductive.</p>
             <p class="mt-2 text-sm"><a class="lien" href="https://unstats.un.org/sdgs/report/2026/extended-report/Extended-Report-2026_Goal-5.pdf" target="_blank" rel="noopener">ONU, rapport ODD 2026<span class="sr-only"> (nouvel onglet)</span></a></p>
           </li>
-          <li class="relative w-full rounded-3xl bg-white p-6 shadow-sm ring-1 ring-indigo/10 before:absolute before:top-7 before:-left-[33px] before:size-4 before:rounded-full before:border-4 before:border-lavande before:bg-rose md:w-[94%] md:before:hidden">
-            <p class="surtitre">2 · Le sujet</p>
-            <h3 class="mt-1 text-xl">La contraception, ce n’est pas qu’une méthode.</h3>
+          <li class="relative w-full rounded-3xl bg-white p-6 shadow-sm ring-1 ring-indigo/10 before:absolute before:top-8 before:-left-[33px] before:size-4 before:rounded-full before:border-4 before:border-lavande before:bg-rose md:w-[94%] md:before:hidden">
+            <p class="flex items-center gap-3 font-bold text-rose-texte"><span class="grid size-8 place-items-center rounded-full bg-rose-texte font-black text-white" aria-hidden="true">2</span>Le sujet</p>
+            <h3 class="mt-3 text-xl">La contraception, ce n’est pas qu’une méthode.</h3>
             <p class="mt-2">Derrière chaque contraception, il y a quatre tâches : s’informer, anticiper, faire les démarches, payer. Et les pratiques bougent : chez les 18-29 ans, 8,7 % des femmes n’ont aucune contraception, deux fois plus qu’en 2016.</p>
             <p class="mt-2 text-sm"><a class="lien" href="https://csf.inserm.fr/resultats/sante-reproductive/" target="_blank" rel="noopener">Inserm, enquête CSF-2023<span class="sr-only"> (nouvel onglet)</span></a></p>
           </li>
-          <li class="relative w-full rounded-3xl bg-white p-6 shadow-sm ring-1 ring-indigo/10 before:absolute before:top-7 before:-left-[33px] before:size-4 before:rounded-full before:border-4 before:border-lavande before:bg-rose md:w-[88%] md:before:hidden">
-            <p class="surtitre">3 · Le problème</p>
-            <h3 class="mt-1 text-xl">Une charge qui retombe presque toujours sur la même personne.</h3>
+          <li class="relative w-full rounded-3xl bg-white p-6 shadow-sm ring-1 ring-indigo/10 before:absolute before:top-8 before:-left-[33px] before:size-4 before:rounded-full before:border-4 before:border-lavande before:bg-rose md:w-[88%] md:before:hidden">
+            <p class="flex items-center gap-3 font-bold text-rose-texte"><span class="grid size-8 place-items-center rounded-full bg-rose-texte font-black text-white" aria-hidden="true">3</span>Le problème</p>
+            <h3 class="mt-3 text-xl">Une charge qui retombe presque toujours sur la même personne.</h3>
             <p class="mt-2">80 % des 18-30 ans veulent partager la contraception. Pourtant, une jeune femme en couple sur deux la choisit sans son partenaire.</p>
             <p class="mt-2 text-sm"><a class="lien" href="https://www.pourquoidocteur.fr/Articles/Question-d-actu/37573-Contraception-masculine-d-un-jeune-adulte-pret-recourir" target="_blank" rel="noopener">OpinionWay, 2021<span class="sr-only"> (nouvel onglet)</span></a> · <a class="lien" href="https://www.frequencemedicale.com/onco-dermato/patient/294149-Contraception-cette-charge-est-elle-partagee-dans-les-couples" target="_blank" rel="noopener">Ifop, 2024<span class="sr-only"> (nouvel onglet)</span></a></p>
           </li>
-          <li class="relative w-full rounded-3xl bg-white p-6 shadow-sm ring-1 ring-indigo/10 before:absolute before:top-7 before:-left-[33px] before:size-4 before:rounded-full before:border-4 before:border-lavande before:bg-rose md:w-[82%] md:before:hidden">
-            <p class="surtitre">4 · Ce qu’on a compris</p>
-            <h3 class="mt-1 text-xl">Les hommes sont invités. Ils ne se sentent pas concernés.</h3>
+          <li class="relative w-full rounded-3xl bg-white p-6 shadow-sm ring-1 ring-indigo/10 before:absolute before:top-8 before:-left-[33px] before:size-4 before:rounded-full before:border-4 before:border-lavande before:bg-rose md:w-[82%] md:before:hidden">
+            <p class="flex items-center gap-3 font-bold text-rose-texte"><span class="grid size-8 place-items-center rounded-full bg-rose-texte font-black text-white" aria-hidden="true">4</span>Ce qu’on a compris</p>
+            <h3 class="mt-3 text-xl">Les hommes sont invités. Ils ne se sentent pas concernés.</h3>
             <p class="mt-2">Les actions de prévention leur sont ouvertes, mais elles ne les touchent pas : ils se font dépister deux fois moins que les femmes, et nos entretiens confirment qu’ils ne viennent pas. Le vrai travail est de fond : leur faire sentir que le sujet les regarde. Quand c’est le cas, ils s’en saisissent : les vasectomies ont été multipliées par 27 entre 2010 et 2025.</p>
             <p class="mt-2 text-sm"><a class="lien" href="https://www.santepubliquefrance.fr/chlamydiae/donnees" target="_blank" rel="noopener">Santé publique France, 2024<span class="sr-only"> (nouvel onglet)</span></a> · Entretiens Groupe 13, 2026 · <a class="lien" href="https://www.epi-phare.fr/rapports-detudes-et-publications/vasectomie-france-2010-2025/" target="_blank" rel="noopener">EPI-PHARE, 2026<span class="sr-only"> (nouvel onglet)</span></a></p>
           </li>
-          <li class="relative w-full rounded-3xl bg-indigo p-6 text-white shadow-sm before:absolute before:top-7 before:-left-[33px] before:size-4 before:rounded-full before:border-4 before:border-lavande before:bg-indigo md:w-[76%] md:before:hidden">
-            <p class="text-sm font-bold tracking-widest text-rose uppercase">5 · Notre réponse</p>
-            <h3 class="mt-1 text-xl text-white!">La contraception, ça se pense à deux.</h3>
+          <li class="relative w-full rounded-3xl bg-indigo p-6 text-white shadow-sm before:absolute before:top-8 before:-left-[33px] before:size-4 before:rounded-full before:border-4 before:border-lavande before:bg-indigo md:w-[76%] md:before:hidden">
+            <p class="flex items-center gap-3 font-bold text-rose"><span class="grid size-8 place-items-center rounded-full bg-rose font-black text-indigo" aria-hidden="true">5</span>Notre réponse</p>
+            <h3 class="mt-3 text-xl text-white!">La contraception, ça se pense à deux.</h3>
             <p class="mt-2 text-white/85">Notre objectif : que les étudiantes et les étudiants, et en particulier les hommes, se sentent concernés. CoChoice va les chercher là où ils sont, avec des ateliers sur les campus, puis donne aux partenaires une appli pour passer de la discussion à l’action, dans la durée.</p>
             <a href="solution.html" class="btn mt-5 bg-rose text-indigo hover:bg-white">Voir la solution</a>
           </li>

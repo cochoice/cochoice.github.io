@@ -26,24 +26,45 @@ document.querySelectorAll('[data-year]').forEach((el) => (el.textContent = new D
 // Formulaires statiques (landing, contact).
 // Adresse d'envoi : attribut action du formulaire, sinon CONFIG.contactEndpoint (config.js).
 // Tant qu'aucune adresse n'est renseignée, rien n'est envoyé et on le dit.
+// Erreur affichée sous le champ (élément [data-field-error] désigné par aria-describedby)
+function fieldError(field, message) {
+  const err = document.getElementById(field.getAttribute('aria-describedby') || '')
+  if (!err?.hasAttribute('data-field-error')) return false
+  err.textContent = message
+  err.hidden = !message
+  if (message) field.setAttribute('aria-invalid', 'true')
+  else field.removeAttribute('aria-invalid')
+  return true
+}
+const errorMessage = (field) => (field.validity.valueMissing
+  ? field.dataset.msgRequired || 'Ce champ est obligatoire.'
+  : field.dataset.msgInvalid || 'Cette information ne semble pas valide.')
+
 document.querySelectorAll('[data-static-form]').forEach((form) => {
   const status = form.querySelector('[data-form-status]')
+  const pending = form.querySelector('[data-form-pending]')
   const endpoint = form.getAttribute('action') || CONFIG.contactEndpoint
-  if (!endpoint) form.querySelectorAll('[data-form-pending]').forEach((el) => (el.hidden = false))
+  if (!endpoint && pending) pending.hidden = false
+  form.addEventListener('input', (e) => { if (e.target.getAttribute('aria-invalid') && e.target.checkValidity()) fieldError(e.target, '') })
   form.addEventListener('submit', async (e) => {
     e.preventDefault()
-    const invalid = [...form.elements].find((el) => el.willValidate && !el.checkValidity())
-    if (invalid) {
-      status.textContent = invalid.type === 'email'
-        ? 'Cet email ne semble pas valide (exemple : prenom@domaine.fr).'
-        : 'Il manque une information obligatoire.'
+    status.classList.remove('sr-only')
+    const fields = [...form.elements].filter((el) => el.willValidate)
+    const invalid = fields.filter((el) => !el.checkValidity())
+    const inline = fields.map((el) => fieldError(el, el.checkValidity() ? '' : errorMessage(el))).some(Boolean)
+    if (invalid.length) {
+      status.textContent = inline
+        ? `${invalid.length > 1 ? `${invalid.length} champs sont à compléter` : 'Un champ est à compléter'}.`
+        : invalid[0].type === 'email' ? 'Cet email ne semble pas valide (exemple : prenom@domaine.fr).' : 'Il manque une information obligatoire.'
       status.dataset.state = 'error'
-      invalid.focus()
+      invalid[0].focus()
       return
     }
     if (!endpoint) {
       status.textContent = 'Le formulaire n’est pas encore relié : rien n’a été envoyé ni enregistré. Merci de votre patience, le branchement arrive bientôt.'
       status.dataset.state = 'info'
+      // La note visible le dit déjà : on la met en avant et on n'annonce le message qu'aux lecteurs d'écran
+      if (pending) { status.classList.add('sr-only'); pending.classList.add('ring-2', 'ring-rose') }
       return
     }
     try {
