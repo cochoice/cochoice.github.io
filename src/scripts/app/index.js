@@ -38,6 +38,7 @@ export function initApp(root, { onFeedback }) {
   let state = load() || seed()
   let ui = {}
   let liveTimer
+  let enterTimer
 
   const ctx = {
     get state() { return state },
@@ -70,6 +71,7 @@ export function initApp(root, { onFeedback }) {
       screen.innerHTML = demarrage.view(ctx)
     }
     ui.fresh = null
+    ui.revealing = false
     ui.error = ''
     screen.scrollTop = scroll
     if (fk) screen.querySelector(`[data-fk="${CSS.escape(fk)}"]`)?.focus({ preventScroll: true })
@@ -103,11 +105,20 @@ export function initApp(root, { onFeedback }) {
 
   function go(tab, { target, keepUi = false } = {}) {
     if (!keepUi) ui = {}
-    if (tab === 'accueil' && state.tab !== 'accueil') state.cardIndex += 1
+    const changed = state.tab !== tab
+    if (tab === 'accueil' && changed) state.cardIndex += 1
     state.tab = tab
     save(state)
     render()
     screen.scrollTop = 0
+    // Changement d'onglet visible (fondu court, désactivé si « réduire les animations »)
+    if (changed) {
+      clearTimeout(enterTimer)
+      screen.classList.remove('is-entering')
+      void screen.offsetWidth
+      screen.classList.add('is-entering')
+      enterTimer = setTimeout(() => screen.classList.remove('is-entering'), 250)
+    }
     if (target) focus(target)
   }
 

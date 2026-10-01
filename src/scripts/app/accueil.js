@@ -1,5 +1,12 @@
 // Accueil : le mois en 5 cartes, chacune ouvre son onglet.
-import { PARTNER, CARDS, esc, icon, monthName, ofMonth, fmtDue, ownerName, balance, balanceText } from './data.js'
+import { PARTNER, CARDS, esc, icon, money, monthName, ofMonth, fmtDue, ownerName, balance } from './data.js'
+
+// Solde mis en avant : une phrase courte et le montant en grand
+function amount(state, owed) {
+  if (!state.duo) return '<span class="a-amount-label">Tu utilises CoChoice seul·e</span>'
+  if (!owed) return '<span class="a-amount">Vous êtes quittes</span>'
+  return `<span class="a-amount-label">${owed > 0 ? `${PARTNER} te doit` : `Tu dois à ${PARTNER}`}</span><span class="a-amount">${money(Math.abs(owed))}</span>`
+}
 
 // Prochaine tâche : la plus proche avec une échéance, sinon la première en cours
 export function nextTask(state) {
@@ -21,12 +28,13 @@ export function view({ state }) {
         <span>${t ? `${esc(t.title)}${t.due ? ` · ${fmtDue(t.due)}` : ''}` : 'Rien de prévu. Propose une tâche.'}</span>
       </button>
       <button type="button" class="a-card" data-go="frais" data-fk="home-frais">
-        <span class="a-row"><b>Frais du mois</b><span class="a-pill ${owed ? 'a-pill-ok' : ''}">${state.duo ? balanceText(owed) : 'Solo'}</span></span>
+        <b>Frais du mois</b>
+        ${amount(state, owed)}
       </button>
-      <button type="button" class="a-card" data-go="checkin" data-fk="home-checkin">
+      <button type="button" class="a-card a-card-dark" data-go="checkin" data-fk="home-checkin">
         <span class="a-row"><b>Check-in ${ofMonth()}</b>${ci}</span>
       </button>
-      <button type="button" class="a-card" data-go="checkin" data-target="#a-deck" data-fk="home-card">
+      <button type="button" class="a-card a-card-soft" data-go="checkin" data-target="#a-deck" data-fk="home-card">
         <b>À se poser ensemble</b>
         <span>« ${esc(card)} »</span>
       </button>

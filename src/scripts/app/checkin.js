@@ -37,7 +37,7 @@ function viewQuestion(ci) {
     field = `<div class="a-choices">${q.options.map((o, i) => `<label class="a-choice"><input type="radio" name="v" value="${i}" ${val === i ? 'checked' : ''} required /><span>${esc(o)}</span></label>`).join('')}</div>`
   }
   return `<form class="a-form a-form-plain" data-form="checkin" novalidate>
-    <p class="a-step">Question ${ci.step + 1} sur ${QUESTIONS.length}</p>
+    <p class="sr-only">Question ${ci.step + 1} sur ${QUESTIONS.length}</p>
     <div class="a-progress" aria-hidden="true"><i style="width:${((ci.step + 1) / QUESTIONS.length) * 100}%"></i></div>
     <fieldset class="a-choices">
       <legend class="a-q" id="ci-q" tabindex="-1" data-focus>${esc(q.q)}</legend>
@@ -69,29 +69,31 @@ function viewDone(ctx) {
 
 function viewReveal(ctx) {
   const ci = ctx.state.checkin
-  const rows = QUESTIONS.map((q) => {
+  const rows = QUESTIONS.map((q, i) => {
     const me = ci.answers[q.id]
     const alex = ALEX_ANSWERS[q.id]
     if (q.type === 'scale') {
       const bar = (v, cls) => `<span class="a-bar"><i class="${cls}" style="width:${(v / q.max) * 100}%"></i></span>`
-      return `<div class="a-box"><p class="a-box-title">${esc(q.short)}</p>
+      return `<div class="a-box a-reveal" style="--i:${i}"><p class="a-box-title">${esc(q.short)}</p>
         <p class="a-row"><span>Toi</span><span>${me}</span></p>${bar(me, 'a-bar-me')}
         <p class="a-row"><span>${PARTNER}</span><span>${alex}</span></p>${bar(alex, 'a-bar-alex')}</div>`
     }
-    return `<div class="a-box"><p class="a-box-title">${esc(q.short)}</p>
+    return `<div class="a-box a-reveal" style="--i:${i}"><p class="a-box-title">${esc(q.short)}</p>
       <p class="a-says"><span class="a-who a-who-me">Toi</span>${esc(answerLabel(q, me))}</p>
       <p class="a-says"><span class="a-who a-who-alex">${PARTNER}</span>${esc(answerLabel(q, alex))}</p></div>`
   }).join('')
   const gap = mainGap(ci.answers)
   const talk = gap
-    ? `<div class="a-box a-talk"><p class="a-row"><b>Un écart à en parler</b><span class="a-pill a-pill-no">${gap.label}</span></p>
+    ? `<div class="a-box a-talk a-reveal" style="--i:${QUESTIONS.length}"><p class="a-row"><b>Un écart à en parler</b><span class="a-pill a-pill-no">${gap.label}</span></p>
         <p>« ${esc(TALK[gap.id].q)} »</p>
         ${ci.talkDone ? `<p class="a-ok">${icon('check')}Tâche créée dans l’onglet Tâches.</p><button type="button" class="a-btn a-btn-small" data-go="taches">Voir la tâche</button>`
           : `<button type="button" class="a-btn a-btn-primary" data-act="ci-task" data-fk="ci-task">Transformer en tâche</button>`}
       </div>`
     : `<p class="a-ok">${icon('check')}Pas d’écart marqué ce mois-ci. Une carte ci-dessous peut quand même lancer la discussion.</p>`
-  return `<p class="a-sub" tabindex="-1" data-focus>Vous avez répondu tous les deux. Voici vos réponses, côte à côte.</p>
+  return `<div class="a-reveal-list ${ctx.ui.revealing ? 'is-revealing' : ''}">
+    <p class="a-sub" tabindex="-1" data-focus>Vous avez répondu tous les deux. Voici vos réponses, côte à côte.</p>
     ${rows}${talk}
+    </div>
     <button type="button" class="a-btn a-btn-ghost a-btn-small" data-act="ci-restart">Refaire le check-in</button>`
 }
 
@@ -103,7 +105,7 @@ export function view(ctx) {
     ${body}
     <section class="a-deck" id="a-deck" aria-labelledby="a-deck-title" tabindex="-1">
       <h3 class="a-section" id="a-deck-title">${icon('cards')}À se poser ensemble</h3>
-      <div class="a-deck-card"><p class="a-step">Carte ${n + 1} sur ${CARDS.length}</p><p class="a-deck-q">« ${esc(CARDS[n])} »</p></div>
+      <div class="a-deck-card"><p class="sr-only">Carte ${n + 1} sur ${CARDS.length}</p><p class="a-deck-q">« ${esc(CARDS[n])} »</p></div>
       <div class="a-btns a-btns-split">
         <button type="button" class="a-btn a-btn-ghost a-btn-small" data-act="deck-prev" data-fk="deck-prev">${icon('arrow-left')}Précédente</button>
         <button type="button" class="a-btn a-btn-small" data-act="deck-next" data-fk="deck-next">Suivante${icon('arrow-right')}</button>
@@ -133,7 +135,7 @@ export const forms = {
 export const actions = {
   'ci-prev': (ctx) => { ctx.state.checkin.step -= 1; ctx.commit(); ctx.focus('[data-focus]') },
   'ci-edit': (ctx) => { Object.assign(ctx.state.checkin, { phase: 'quiz', step: 0 }); ctx.commit(); ctx.focus('[data-focus]') },
-  'ci-reveal': (ctx) => { ctx.state.checkin.phase = 'reveal'; ctx.commit('Réponses révélées, côte à côte.'); ctx.focus('[data-focus]') },
+  'ci-reveal': (ctx) => { ctx.state.checkin.phase = 'reveal'; ctx.ui.revealing = true; ctx.commit('Réponses révélées, côte à côte.'); ctx.focus('[data-focus]') },
   'ci-restart': (ctx) => { ctx.state.checkin = { step: 0, answers: {}, phase: 'quiz', keepPrivate: false, talkDone: false }; ctx.commit(); ctx.focus('[data-focus]') },
   'ci-task': (ctx) => {
     const gap = mainGap(ctx.state.checkin.answers)

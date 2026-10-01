@@ -8,10 +8,14 @@ export function view({ state, ui }) {
   switch (state.step) {
     case 1:
       return `<div class="a-onb a-onb-welcome">
-        <img src="/logos/cochoice-logo.svg" alt="CoChoice" width="183" height="32" class="a-onb-logo" />
-        <h2 class="a-onb-title" tabindex="-1" data-focus>La contraception, ça se pense à deux.</h2>
-        <button type="button" class="a-btn a-btn-primary" data-act="onb-next" data-fk="onb-start">Commencer</button>
-        <p class="a-muted">Tu peux tout faire seul·e. Le duo, c’est quand tu veux.</p>
+        <div class="a-onb-hero">
+          <img src="/logos/cochoice-mark.svg" alt="CoChoice" width="176" height="64" class="a-onb-mark" />
+          <h2 class="a-onb-big" tabindex="-1" data-focus>La contraception, ça se pense à deux.</h2>
+        </div>
+        <div class="a-onb-foot">
+          <button type="button" class="a-btn a-btn-primary a-btn-block" data-act="onb-next" data-fk="onb-start">Commencer</button>
+          <p class="a-muted">Tu peux tout faire seul·e. Le duo, c’est quand tu veux.</p>
+        </div>
       </div>`
     case 2:
       return `<form class="a-onb" data-form="onb-profil" novalidate>
@@ -55,10 +59,14 @@ export function view({ state, ui }) {
       </div>`
     default:
       return `<div class="a-onb a-onb-welcome">
-        <span class="a-joined" aria-hidden="true">${icon('users-three')}</span>
-        <h2 class="a-onb-title" tabindex="-1" data-focus>${PARTNER} a rejoint ton duo</h2>
-        <p>Vous pouvez maintenant vous répartir les tâches, partager les frais et faire le check-in du mois. C’est toi qui choisis ce qui est partagé.</p>
-        <button type="button" class="a-btn a-btn-primary" data-act="onb-finish" data-fk="onb-finish">C’est parti</button>
+        <div class="a-onb-hero">
+          <span class="a-joined" aria-hidden="true">${icon('users-three')}</span>
+          <h2 class="a-onb-big" tabindex="-1" data-focus>${PARTNER} a rejoint ton duo</h2>
+          <p>Vous pouvez maintenant vous répartir les tâches, partager les frais et faire le check-in du mois. C’est toi qui choisis ce qui est partagé.</p>
+        </div>
+        <div class="a-onb-foot">
+          <button type="button" class="a-btn a-btn-primary a-btn-block" data-act="onb-finish" data-fk="onb-finish">C’est parti</button>
+        </div>
       </div>`
   }
 }

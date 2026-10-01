@@ -11,8 +11,9 @@
 /* ---------- Page ---------- */
 .mvp-banner { background: var(--color-indigo); color: #fff; text-align: center; font-size: .85rem; font-weight: 700; padding: .45rem 1rem; }
 .mvp-intro { display: grid; gap: 2.5rem; padding-block: 2.5rem 3rem; align-items: center; }
-@media (min-width: 1024px) { .mvp-intro { grid-template-columns: 1fr auto; gap: 4rem; padding-block: 3.5rem; } }
+@media (min-width: 1024px) { .mvp-intro { grid-template-columns: 1fr auto; gap: 4rem; padding-block: 2rem; } }
 .mvp-shortcuts { display: grid; gap: .6rem; max-width: 28rem; }
+@media (min-width: 1024px) { .mvp-shortcuts { grid-template-columns: 1fr 1fr; max-width: 36rem; } }
 .mvp-shortcut {
   display: flex; align-items: center; gap: .75rem; width: 100%; min-height: 48px; padding: .7rem 1rem;
   border-radius: 1rem; background: #fff; border: 1.5px solid rgb(42 31 80 / .14);
@@ -20,14 +21,17 @@
 }
 .mvp-shortcut .i { color: var(--color-rose-texte); width: 1.4em; height: 1.4em; }
 .mvp-shortcut:hover { border-color: var(--color-pervenche-texte); }
-.mvp-list { display: grid; gap: .5rem; padding-left: 1.2rem; list-style: disc; }
-.mvp-list li::marker { color: var(--color-rose-texte); }
+/* « Et après ? » : discret, en étiquettes, sans cartes */
+.mvp-later { display: grid; gap: 2rem; }
+@media (min-width: 768px) { .mvp-later { grid-template-columns: 1fr 1fr; gap: 3rem; } }
+.mvp-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .9rem; }
+.mvp-chips li { padding: .35rem .85rem; border-radius: 999px; background: var(--color-lavande); color: var(--color-indigo); font-weight: 700; font-size: .9rem; }
 
 /* ---------- Cadre de téléphone (768 px et plus) ---------- */
 .mvp-phone { justify-self: center; }
 .app-shell {
   position: relative; display: flex; flex-direction: column; overflow: hidden;
-  width: min(380px, 100%); height: clamp(600px, calc(100dvh - 9rem), 760px);
+  width: min(380px, 100%); height: clamp(560px, calc(100dvh - 11rem), 740px);
   background: #fff; color: var(--color-encre); font-size: .95rem; line-height: 1.45;
   border: 10px solid var(--color-indigo); border-radius: 44px;
   box-shadow: 0 24px 60px -24px rgb(42 31 80 / .45);
@@ -109,18 +113,30 @@
 .a-card { display: grid; gap: .3rem; width: 100%; text-align: left; padding: .85rem .95rem; border-radius: 1rem; background: var(--color-lavande); color: var(--color-encre); cursor: pointer; border: 1.5px solid transparent; }
 button.a-card:hover { border-color: var(--color-pervenche-texte); }
 .a-card b { color: var(--color-indigo); display: inline-flex; align-items: center; gap: .35rem; }
+.a-card-dark { background: var(--color-indigo); color: #fff; }
+.a-card-dark b { color: #fff; }
+.a-card-dark .a-pill-ok { background: #fff; color: var(--color-indigo); }
+button.a-card-dark:hover { border-color: var(--color-rose); }
+.a-card-soft { background: var(--color-poudre); }
+.a-card-soft span { font-weight: 700; color: var(--color-indigo); }
+.a-amount-label { font-size: .85rem; }
+.a-amount { font-size: 1.9rem; font-weight: 900; line-height: 1.1; color: var(--color-indigo); font-variant-numeric: tabular-nums; }
 .a-card-box { cursor: default; background: #fff; border: 1.5px dashed rgb(42 31 80 / .25); }
 .a-card-box .a-btn { justify-self: start; }
 
 /* ---------- Démarrage ---------- */
 .a-onb { display: flex; flex-direction: column; gap: .9rem; min-height: 100%; }
-.a-onb-welcome { justify-content: center; align-items: center; text-align: center; }
-.a-onb-logo { width: 170px; height: auto; margin-bottom: .5rem; }
+.a-onb-welcome { justify-content: space-between; margin: -1.1rem -1rem -1.5rem; padding: 1.5rem 1.25rem 1.25rem; min-height: calc(100% + 2.6rem); background: linear-gradient(180deg, var(--color-lavande) 0%, #fff 70%); }
+.a-onb-hero { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 1.25rem; }
+.a-onb-mark { width: 176px; height: auto; }
+.a-onb-big { font-size: 2.1rem; font-weight: 900; line-height: 1.1; color: var(--color-indigo); text-wrap: balance; }
+.a-onb-foot { display: grid; gap: .6rem; text-align: center; }
 .a-onb-title { font-size: 1.45rem; font-weight: 900; color: var(--color-indigo); line-height: 1.2; }
 .a-duo-code { justify-items: center; text-align: center; }
 .a-code { font-size: 1.6rem; font-weight: 900; letter-spacing: .12em; color: var(--color-indigo); }
 .a-code-sm { letter-spacing: .1em; color: var(--color-indigo); }
 .a-qr { width: 96px; height: 96px; color: var(--color-indigo); }
+.a-reveal-list { display: flex; flex-direction: column; gap: .9rem; }
 .a-joined { display: grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; background: var(--color-lavande); color: var(--color-rose-texte); }
 .a-joined .i { width: 2.4rem; height: 2.4rem; }
 
@@ -162,7 +178,9 @@ button.a-card:hover { border-color: var(--color-pervenche-texte); }
 .a-upcoming span { min-width: 5.6rem; font-weight: 800; color: var(--color-indigo); }
 .a-task { display: grid; gap: .45rem; padding: .85rem .95rem; border-radius: 1rem; border: 1.5px solid rgb(42 31 80 / .14); background: #fff; }
 .a-task .a-row { align-items: flex-start; }
-.a-task .a-sub { margin-top: -.2rem; }
+.a-meta { display: flex; flex-wrap: wrap; gap: .25rem .85rem; font-size: .82rem; margin-top: -.15rem; }
+.a-meta span { display: inline-flex; align-items: center; gap: .3rem; }
+.a-meta .i { width: 1em; height: 1em; color: var(--color-rose-texte); }
 .a-task-title { display: flex; align-items: flex-start; gap: .4rem; font-weight: 900; color: var(--color-indigo); font-size: .95rem; line-height: 1.3; }
 .a-task-title .i { margin-top: .1rem; color: var(--color-rose-texte); }
 .a-task-remind { display: flex; align-items: center; gap: .35rem; font-size: .8rem; font-weight: 700; }
@@ -226,5 +244,11 @@ button.a-card:hover { border-color: var(--color-pervenche-texte); }
   .a-btn, .mvp-shortcut, .a-card, .a-chip { transition: border-color .15s, background-color .15s, transform .15s; }
   .a-btn:active, .mvp-shortcut:active, button.a-card:active { transform: scale(.98); }
   .a-task.is-new { animation: a-pop .5s cubic-bezier(.16, 1, .3, 1); }
+  /* Changement d'onglet */
+  .a-screen.is-entering > * { animation: a-pop .18s ease-out; }
+  /* Révélation du check-in : réponses l'une après l'autre, barres qui se remplissent */
+  .a-reveal-list.is-revealing .a-reveal { animation: a-pop .5s cubic-bezier(.16, 1, .3, 1) both; animation-delay: calc(var(--i) * 90ms); }
+  .a-reveal-list.is-revealing .a-bar i { transform-origin: left; animation: a-grow .7s cubic-bezier(.16, 1, .3, 1) both; animation-delay: calc(var(--i) * 90ms + 150ms); }
+  @keyframes a-grow { from { transform: scaleX(0); } to { transform: none; } }
   @keyframes a-pop { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 }

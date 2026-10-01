@@ -5,12 +5,10 @@ import { PARTNER, FAMILIES, SUGGESTIONS, STATUS, OWNERS, esc, icon, newId, fmtDu
 const pill = (t) => `<span class="a-pill a-pill-${STATUS[t.status].cls}">${STATUS[t.status].label}</span>`
 
 function meta(t) {
-  const parts = [FAMILIES[t.family].label]
-  if (t.status === 'perso') parts.push('visible par toi seul·e')
-  else if (t.status === 'attente') parts.push(`proposée à ${PARTNER}`)
-  else parts.push(ownerName(t.owner))
-  if (t.due) parts.push(fmtDue(t.due))
-  return parts.join(' · ')
+  const who = t.status === 'perso' ? 'visible par toi seul·e' : t.status === 'attente' ? `proposée à ${PARTNER}` : ownerName(t.owner)
+  return `<span>${FAMILIES[t.family].label}</span>
+    <span>${icon(t.status === 'perso' ? 'lock' : 'user')}${who}</span>
+    ${t.due ? `<span>${icon('calendar-blank')}${fmtDue(t.due)}</span>` : ''}`
 }
 
 function reminder(t) {
@@ -51,7 +49,7 @@ function card(ctx, t) {
     : ''
   return `<article class="a-task ${ctx.ui.fresh === t.id ? 'is-new' : ''} ${t.status === 'faite' ? 'is-done' : ''}" aria-labelledby="tt-${t.id}">
     <div class="a-row"><h3 class="a-task-title" id="tt-${t.id}">${icon(FAMILIES[t.family].icon)}${esc(t.title)}</h3>${pill(t)}</div>
-    <p class="a-sub">${meta(t)}</p>
+    <p class="a-meta">${meta(t)}</p>
     ${reminder(t)}
     ${msg ? `<p class="a-task-msg">${msg}</p>` : ''}
     ${btns.filter(Boolean).length ? `<div class="a-btns">${btns.join('')}</div>` : ''}

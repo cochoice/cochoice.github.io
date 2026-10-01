@@ -45,6 +45,7 @@
     <symbol id="i-x" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol>
     <symbol id="i-house" viewBox="0 0 256 256" fill="currentColor"><path d="M219.31,108.68l-80-80a16,16,0,0,0-22.62,0l-80,80A15.87,15.87,0,0,0,32,120v96a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V160h32v56a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V120A15.87,15.87,0,0,0,219.31,108.68ZM208,208H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48V120l80-80,80,80Z"/></symbol>
     <symbol id="i-user-circle" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 256 256" fill="currentColor"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></symbol>
   </svg>
 
   <a href="#contenu" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-full focus:bg-indigo focus:px-4 focus:py-2 focus:font-bold focus:text-white" data-page>Aller au contenu</a>
@@ -95,15 +96,15 @@
       </div>
     </section>
 
-    <!-- ET APRÈS ? -->
-    <section class="py-16 md:py-20" aria-labelledby="apres-title" data-page>
+    <!-- ET APRÈS ? (volontairement discret : rien n'est promis) -->
+    <section class="py-14 md:py-20" aria-labelledby="apres-title" data-page>
       <div class="container-site">
         <h2 id="apres-title" class="text-3xl md:text-4xl">Et après ?</h2>
         <p class="mt-3 max-w-2xl text-lg">Ce qui viendra si le MVP fait ses preuves. Rien de tout ça n’est disponible ni promis.</p>
-        <div class="mt-8 grid gap-6 md:grid-cols-2">
-          <div class="card">
-            <h3 class="text-xl">Si le MVP fait ses preuves</h3>
-            <ul class="mvp-list mt-4">
+        <div class="mvp-later mt-8">
+          <div>
+            <h3 class="text-lg">Si le MVP fait ses preuves</h3>
+            <ul class="mvp-chips">
               <li>Calendrier partagé complet</li>
               <li>Bilan du mois façon Wrapped</li>
               <li>Comparateur de méthodes à deux (y compris méthodes masculines autorisées)</li>
@@ -112,10 +113,10 @@
               <li>Plus de deux partenaires</li>
             </ul>
           </div>
-          <div class="card">
-            <h3 class="text-xl">Plus tard</h3>
-            <ul class="mvp-list mt-4">
-              <li>La box « double protection » (déjà annoncée sur l’accueil)</li>
+          <div>
+            <h3 class="text-lg">Plus tard</h3>
+            <ul class="mvp-chips">
+              <li>La box « double protection » (déjà annoncée dans l’appli)</li>
               <li>Envoi de la pilule sur ordonnance (à l’étude)</li>
               <li>Espace établissement : statistiques anonymes par code atelier</li>
               <li>Prise de RDV, téléconsultation</li>
@@ -129,10 +130,9 @@
     <!-- CTA -->
     <section class="bg-indigo py-16 text-center text-white" aria-labelledby="end-title" data-page>
       <div class="container-site">
-        <h2 id="end-title" class="text-3xl text-white! md:text-4xl">Envie d’être prévenu·e du lancement ?</h2>
-        <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <h2 id="end-title" class="text-3xl text-white! md:text-4xl">Envie de la vraie appli ?</h2>
+        <div class="mt-8 flex justify-center">
           <a href="a-propos.html#contact" class="btn bg-rose text-indigo hover:bg-white" data-feedback-link data-feedback-msg="feedback-msg">Être prévenu·e du lancement</a>
-          <a href="index.html" class="btn border-2 border-white/60 text-white hover:bg-white/10"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-left"/></svg>Retour au site</a>
         </div>
         <p class="mx-auto mt-4 max-w-xl text-white/85" id="feedback-msg" role="status"></p>
       </div>
