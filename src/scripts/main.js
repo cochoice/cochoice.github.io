@@ -1,4 +1,5 @@
 import '../styles/main.css'
+import './audience.js'
 import { CONFIG } from './config.js'
 
 // Menu mobile (burger) : ouverture, fermeture par Échap ou au clic sur un lien

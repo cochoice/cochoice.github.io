@@ -2,6 +2,7 @@
 // Sous 768 px, l'appli s'ouvre en plein écran, sans cadre, avec « Quitter la démo ».
 import '../styles/main.css'
 import '../styles/mvp.css'
+import './audience.js'
 import { CONFIG } from './config.js'
 import { initApp } from './app/index.js'
 
